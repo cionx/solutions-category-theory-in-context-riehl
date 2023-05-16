@@ -1,0 +1,35 @@
+\subsection{}
+
+We denote the suspected category by~$\cat{G}$.
+It has the same objects as the original category~$\cat{C}$, but its morphisms are only the isomorphisms from~$\cat{C}$.
+
+The objects of~$\cat{G}$ are also objects of~$\cat{C}$ by definition of~$\cat{G}$, and for every two objects~$x$ and~$y$ of~$\cat{G}$ the set~$\cat{G}(x, y)$ of isomorphisms from~$x$ to~$y$ (in~$\cat{C}$) is a subset of~$\cat{C}(x, y)$.
+
+For every object~$x$ of~$\cat{C}$ let~$\id_x$ be the identity morphism of~$x$ in the original category~$\cat{C}$.
+This identity morphism is an isomorphism in~$\cat{C}$ (it is its own inverse) and therefore contained in~$\cat{G}$.
+This shows that all identity morphisms from~$\cat{C}$ are contained in~$\cat{G}$.
+
+Let~$f$ and~$g$ be two morphisms in~$\cat{G}$ that are composable in~$\cat{C}$, i.e., such that the codomain of~$f$ equals the domain of~$g$;
+suppose more specifically that~$f \colon x \to y$ and~$g \colon y \to z$.
+The composite~$g f$ in~$\cat{C}$ is again an isomorphism in~$\cat{C}$:
+its inverse is given by the composite~$f^{-1} g^{-1}$.
+Therefore, $g f$ is again contained in~$\cat{G}$.
+
+We have shown that~$\cat{G}$ contains all identity morphisms of~$\cat{C}$ and that~$\cat{G}$ is closed under composition.
+This shows that~$\cat{G}$ is a subcategory of~$\cat{C}$.
+
+Let~$f \colon x \to y$ be a morphism in~$\cat{G}$.
+This means that~$f$ is in isomorphism in~$\cat{C}$, which in turn means that there exists a (unique) morphism~$f^{-1} \colon y \to x$ with both~$f f^{-1} = \id_y$ and~$f^{-1} f = \id_x$ in~$\cat{C}$.
+But these equalities also tell us that~$f^{-1}$ is an isomorphism with inverse~$f$ (so that~$(f^{-1})^{-1} = f$), which entails that~$f^{-1}$ is also a morphism in~$\cat{G}$.
+The morphisms~$f$ and~$f^{-1}$ are also mutually inverse in~$\cat{G}$, whence~$f$ is an isomorphism in~$\cat{G}$.
+
+We have shows that every morphism in~$\cat{G}$ is an isomorphism, not only in~$\cat{C}$ but already in~$\cat{G}$, which shows that~$\cat{G}$ is a groupoid.
+
+Let now~$\cat{G}'$ be another subcategory of~$\cat{C}$ that is also a groupoid.
+This means that there exists for every morphism~$f \colon x \to y$ in~$\cat{G}'$ another morphism~$f^{-1} \colon y \to x$ in~$\cat{G}'$ with~$f f^{-1} = \id_y$ and~$f^{-1} f = \id_x$ in~$\cat{G}'$.
+In these two equalities, both composition and identity morphisms take place in~$\cat{G}'$.
+But since~$\cat{G}'$ is a subcategory of~$\cat{G}$ this entails that~$f$ and~$f^{-1}$ are also mutually inverse in~$\cat{C}$.
+This in turn means that~$f$ is contained in~$\cat{G}$.
+
+We have shown that every morphism in~$\cat{G}'$ is also contained in~$\cat{G}$.
+This shows that~$\cat{G}$ is indeed the \emph{maximal} groupoid in~$\cat{C}$.
