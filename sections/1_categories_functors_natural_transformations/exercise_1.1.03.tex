@@ -1,0 +1,93 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+We denote the object of~$c / \cat{C}$ as pairs~$(f, x)$, where~$x$ is an object of~$\cat{C}$ and~$f$ is a morphism from~$c$ to~$x$ in~$\cat{C}$.
+
+We first need to explain how the composition of morphisms in~$c / \cat{C}$ is supposed to work.
+
+Given two morphisms~$φ \colon (f, x) \to (g, y)$ and~$ψ \colon (g, y) \to (h, z)$ in~$c / \cat{C}$, we have the following commutative diagram:
+\[
+	\begin{tikzcd}
+		{}
+		&
+		c
+		\arrow{dl}[above left]{f}
+		\arrow{d}[right]{g}
+		\arrow{dr}[above right]{h}
+		&
+		{}
+		\\
+		x
+		\arrow{r}[above]{φ}
+		&
+		y
+		\arrow{r}[above]{ψ}
+		&
+		z
+	\end{tikzcd}
+\]
+By leaving out the middle arrow of this diagram, we arrive at the following commutative diagram:
+\[
+	\begin{tikzcd}
+		{}
+		&
+		c
+		\arrow{dl}[above left]{f}
+		\arrow{dr}[above right]{h}
+		&
+		{}
+		\\
+		x
+		\arrow{rr}[above]{ψ φ}
+		&
+		{}
+		&
+		z
+	\end{tikzcd}
+\]
+The commutativity of this diagram tells us that the composite~$ψ φ$ (taken in~$\cat{C}$) is a morphism from~$(f, x)$ to~$(h, z)$ in~$c / \cat{C}$.
+This allows us to define the composition of~$φ$ and~$ψ$ in~$c / \cat{C}$ as their composition in~$\cat{C}$.
+
+The associativity of the composition in~$c / \cat{C}$ then follows from the associativity of the composition in~$\cat{C}$.
+
+We have for every object~$(f, x)$ in~$c / \cat{C}$ the following commutative diagram:
+\[
+	\begin{tikzcd}
+		{}
+		&
+		c
+		\arrow{dl}[above left]{f}
+		\arrow{dr}[above right]{f}
+		&
+		{}
+		\\
+		x
+		\arrow{rr}[above]{\id_x}
+		&
+		{}
+		&
+		x
+	\end{tikzcd}
+\]
+The commutativity of this diagram tells us that~$\id_x$ is a morphism from~$(f, x)$ to~$(f, x)$ in~$c / \cat{C}$.
+We have for every morphism~$φ \colon (f, x) \to (g, y)$ the equalities
+\[
+	φ 1_x = φ \,, \quad 1_y φ = φ
+\]
+in~$\cat{C}$, and therefore also in~$c / \cat{C}$.
+
+We have thus shown that the identity morphism of~$x$ in~$\cat{C}$ serves as the identity morphism of~$(f, x)$ in~$c / \cat{C}$.%
+\footnote{
+	We should actually ensure that~\spaces{$\Hom$} in~$c / \cat{C}$ are pairwise disjoint, but we don’t care about this for now -- we could just apply the usual construction of replacing every morphism~$φ \colon (f, x) \to (g, y)$ by its triple~$(φ, (f, x), (g, y))$ to ensure that technical condition.
+}
+
+
+
+\subsubsection{}
+
+This part of the exercise works completely dual to the first part:
+just reverse all the arrows.
+(That is,~$\cat{C} / c ≅ (c / \cat{C}^{\op})^{\op}$.)
