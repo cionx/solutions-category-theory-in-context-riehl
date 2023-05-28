@@ -1,0 +1,140 @@
+\subsection{}
+
+The exercise tasks us with proving that two categories are isomorphic, even though the book has yet to introduce the notion of an isomorphism of categories.
+We will construct in the following a contravariant functor from~$\cat{C} / c$ to~$c / \cat{C}$ that is bijective on objects and on morphisms.
+
+Let~$c$ be an object in a category~$\cat{C}$.
+
+The objects of the slice category~$\cat{C} / c$ are the pairs~$(x, f)$ consisting of another object~$x$ of~$\cat{C}$ and a morphism~$f \colon c \to x$ in~$\cat{C}$.
+Similarly, the objects of the slice category~$c / \cat{C}^{\op}$ are the pairs~$(x, f')$ consisting of another object~$x$ of~$\cat{C}^{\op}$ and a morphism~$f' \colon x \to c$ in~$\cat{C}^{\op}$.
+The two categories~$\cat{C}$ and~$\cat{C}^{\op}$ have the same objects, and we know that morphisms in~$\cat{C}^{\op}$ correspond bijectively to morphisms in~$\cat{C}$ via the mapping~$(f \colon x \to y) \mapsto (f^{\op} \colon y \to x)$.
+It follows that this bijection restricts to a bijection between the objects of~$\cat{C} / c$ on the one hand and the objects of~$c / \cat{C}^{\op}$ on the other hand.
+More explicitly, this bijection is given by
+\[
+	(x, {\textstyle f \colon x \to c})
+	\mapsto
+	(x, {\textstyle f^{\op} \colon c \to x}) \,.
+\]
+
+Let~$(x, f)$ and~$(y, g)$ be two objects of~$\cat{C}/ c$.
+A morphism from~$(x, f)$ to~$(y, g)$ in~$\cat{C} / c$ is a morphism~$φ$ from~$x$ to~$y$ in~$\cat{C}$ for which the following diagram commutes:
+\[
+	\begin{tikzcd}[column sep = normal]
+		x
+		\arrow{rr}[above]{φ}
+		\arrow{dr}[below left]{f}
+		&
+		{}
+		&
+		y
+		\arrow{dl}[below right]{g}
+		\\
+		{}
+		&
+		c
+		&
+		{}
+	\end{tikzcd}
+\]
+Similarly, a morphism from~$(y, g^{\op})$ to~$(x, f^{\op})$ in~$c / \cat{C}^{\op}$ is a morphism~$φ'$ from~$y$ to~$x$ in~$\cat{C}^{\op}$ for which the following diagram commutes:
+\[
+	\begin{tikzcd}[column sep = normal]
+		{}
+		&
+		c
+		\arrow{dl}[above left]{g^{\op}}
+		\arrow{dr}[above right]{f^{\op}}
+		&
+		{}
+		\\
+		y
+		\arrow{rr}[above]{φ'}
+		&
+		{}
+		&
+		x
+	\end{tikzcd}
+\]
+We have thus for every morphism~$φ \colon x \to y$ in~$\cat{C}$ the sequence of equivalences
+\begin{align*}
+	{}&
+	\text{$φ$ is a morphism from~$(x, f)$ to~$(y, g)$ in~$\cat{C} / c$}
+	\\
+	\iff{}&
+	g φ = f
+	\\
+	\iff{}&
+	(g φ)^{\op} = f^{\op}
+	\\
+	\iff{}&
+	φ^{\op} g^{\op} = f^{\op}
+	\\
+	\iff{}&
+	\text{$φ^{\op}$ is a morphism from~$(y, g^{\op})$ to~$(x, f^{\op})$ in~$c / \cat{C}^{\op}$} \,.
+\end{align*}
+These equivalences tell us that the bijection between morphisms of~$\cat{C}$ and morphisms of~$\cat{C}^{\op}$ given by~$φ \mapsto φ^{\op}$ restricts for every two objects~$(x, f)$ and~$(y, g)$ of~$\cat{C} / c$ to a bijection between morphisms from~$(x, f)$ to~$(y, g)$ in~$\cat{C} / c$ on the one hand and morphisms from~$(y, g^{\op})$ to~$(x, f^{\op})$ in~$c / \cat{C}^{\op}$ on the other hand:
+\[
+	\begin{tikzcd}[column sep = normal]
+		x
+		\arrow{rr}[above]{φ}
+		\arrow{dr}[below left]{f}
+		&
+		{}
+		&
+		y
+		\arrow{dl}[below right]{g}
+		\\
+		{}
+		&
+		c
+		&
+		{}
+	\end{tikzcd}
+	\qquad\onetoone\qquad
+\begin{tikzcd}[column sep = normal]
+		x
+		&
+		{}
+		&
+		\arrow{ll}[above]{φ^{\op}}
+		y
+		\\
+		{}
+		&
+		c
+		\arrow{ul}[below left]{f^{\op}}
+		\arrow{ur}[below right]{g^{\op}}
+		&
+		{}
+	\end{tikzcd}
+\]
+
+We have thus constructed a bijection between the objects of the two categories~$\cat{C} / c$ and~$c / \cat{C}^{\op}$, given by~$(x, f) \mapsto (x, f^{\op})$, as well as for every two objects~$(x, f)$ and~$(y, g)$ of~$\cat{C} / c$ a bijection between the morphisms from~$(x, f)$ to~$(y, g)$ in~$\cat{C} / c$ and the morphisms from~$(y, g^{\op})$ to~$(x, f^{\op})$ in~$c / \cat{C}^{\op}$, given by~$φ \mapsto φ^{\op}$.
+We denote these mappings by~$D$ (for \enquote{duality}).
+
+It remains to check the functoriality of~$D$.
+We have for every object~$(x, f)$ of~$\cat{C} / c$ the sequence of equalities
+\[
+	D(\id_{(x, f)})
+	= \id_{(x, f)}^{\op}
+	= \id_{x, \cat{C}}^{\op}
+	= \id_{x, \cat{C}^{\op}}
+	= \id_{(x, f^{\op})}
+	= \id_{D((x, f))} \,,
+\]
+which shows that~$D$ preserves identities.
+We also have for any two composable morphisms~$φ \colon (x, f) \to (y, g)$ and~$ψ \colon (y, g) \to (z, h)$ in~$\cat{C} / c$ the sequence of equalities
+\[
+	D(ψ φ)
+	=
+	(ψ φ)^{\op}
+	=
+	φ^{\op} ψ^{\op}
+	=
+	D(φ) D(ψ) \,,
+\]
+which shows that~$D$ contravariantly preserves composition.
+
+Regarding the second part of this exercise:
+By using the contravariant isomorphism~$D$, one could actually define~$\cat{C} / c$ as~$(c / \cat{C}^{\op})^{\op}$.
+This would then allow us to deduce part~(ii) of Exercise~1.1.iii from the previous part~(i).
