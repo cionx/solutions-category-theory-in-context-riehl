@@ -1,0 +1,28 @@
+\subsection{}
+
+
+
+\subsubsection*{First part, first proof}
+
+Let~$f \colon x \to y$ be a morphism in a category~$\cat{C}$ that is both a monomorphism and a split epimorphism.
+The second assumption tells us that there exists a morphism~$g \colon y \to x$ with~$f g = \id_y$.
+It follows that~$f g f = \id_y f = f = f \id_x$, and therefore~$g f = \id_x$ because~$f$ is a monomorphism.
+This shows that~$g$ is already a two-sided inverse to~$f$.
+The existence of this two-sided inverse means that~$f$ is an isomorphism.
+
+
+
+\subsubsection*{First part, second proof}
+
+As before, let~$f \colon x \to y$ be a morphism in a category~$\cat{C}$ that is both a monomorphism and a split epimorphism.
+The induced map~$f_* \colon \cat{C}(c, x) \to \cat{C}(c, y)$ is injective for every object~$c$ of~$\cat{C}$ because~$f$ is a monomorphism, and it is also surjective because~$f$ is a split epimorphism.
+This shows that~$f_*$ is a bijective for every object~$c$ of~$\cat{C}$, which in turn shows that~$f$ is an isomorphism.
+
+
+
+\subsubsection*{Second part}
+
+Suppose now that~$f$ is a morphism in a category~$\cat{C}$ that is both a split monomorphism and an epimorphism.
+This means that~$f^{\op}$ is both a split epimorphism and a monomorphism in~$\cat{C}^{\op}$.
+As seen above,~$f^{\op}$ is therefore an isomorphism in~$\cat{C}^{\op}$.
+This is in turn equivalent to~$f$ being an isomorphism in~$\cat{C}$.
