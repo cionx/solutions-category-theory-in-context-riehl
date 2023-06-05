@@ -1,0 +1,44 @@
+\subsection{}
+
+We consider the partially ordered set~$P$ given by four elements~$a_1, b_1, a_2, b_2$ with non-trivial relations $a_1 ≤ b_1$ and~$a_2 ≤ b_2$, and the partially ordered set~$Q$ with elements~$1, 2, 3$ and~$1 ≤ 2 ≤ 3$.
+The categories~$\cat{P}$ and~$\cat{Q}$ corresponding to~$P$ and~$Q$ look respectively as follows:
+\[
+	\begin{array}{lc}
+		P:
+		&
+		\begin{tikzcd}
+			a_1
+			\arrow{r}
+			&
+			b_1
+			&[-2em]
+			a_2
+			\arrow{r}
+			&
+			b_2
+		\end{tikzcd}
+		\\[3em]
+		Q:
+		&
+		\begin{tikzcd}
+			{}
+			&
+			2
+			\arrow{dr}
+			&
+			{}
+			\\
+			1
+			\arrow{ur}
+			\arrow{rr}
+			&
+			{}
+			&
+			3
+		\end{tikzcd}
+	\end{array}
+\]
+
+We have a functor~$F \colon \cat{P} \to \cat{Q}$ that maps the morphism~$a_1 \to b_1$ to the morphism~$1 \to 2$, and the morphism~$a_2 \to b_2$ to the morphism~$2 \to 3$.
+The two morphisms~$1 \to 2$ and~$2 \to 3$ lie in the image of~$F$, but their composite~$1 \to 3$ does not.
+The image of~$F$ is therefore not a subcategory of~$\cat{Q}$.
