@@ -1,0 +1,66 @@
+\subsection{}
+
+Let~$\cat{C}$ be a category and let~$c$ be an object of~$\cat{C}$.
+
+
+
+\subsubsection*{The construction~$\cat{C}(c, \ph)$}
+
+We need to show that~$\cat{C}(c, \ph)$ is compatible with identities and composition of morphisms.
+\begin{itemize*}
+
+	\item
+		Let~$x$ be an arbitrary object of~$\cat{C}$.
+		The induced map
+		\[
+			(\id_x)_* \colon \cat{C}(c, x) \to \cat{C}(c, x)
+		\]
+		is the identity map of the set~$\cat{C}(c, x)$ since
+		\[
+			(\id_x)_*(h) = \id_x ∘ h = h = \id_{\cat{C}(c, x)}(h)
+		\]
+		for every~$h ∈ \cat{C}(c, x)$.
+
+	\item
+		Let~$f \colon x \to y$ and~$g \colon y \to z$ be two composable morphisms in~$\cat{C}$.
+		We have the sequence of equalities
+		\[
+			(g f)_*(h) = (g f) h = g (f h) = g_*(f h) = g_*( f_*(h) )
+		\]
+		for every~$h ∈ \cat{C}(c, x)$, and therefore the equality~$(g f)_* = g_* f_*$.
+
+\end{itemize*}
+
+We have altogether shown that~$\cat{C}(c, \ph)$ is a covariant functor from~$\cat{C}$ to~$\Set$.
+
+
+
+\subsubsection*{The construction~$\cat{C}(\ph, c)$}
+
+We proceed dually to the contravariant case.
+
+\begin{itemize*}
+
+	\item
+		Let~$x$ be an arbitrary object of~$\cat{C}$.
+		The induced map
+		\[
+			(\id_x)^* \colon \cat{C}(x, c) \to \cat{C}(x, c)
+		\]
+		is the identity map of the set~$\cat{C}(x, c)$ since
+		\[
+			(\id_x)^*(h) = h ∘ \id_x = h = \id_{\cat{C}(x, c)}(h)
+		\]
+		for every~$h ∈ \cat{C}(x, c)$.
+
+	\item
+		Let~$f \colon x \to y$ and~$g \colon y \to z$ be two composable morphisms in~$\cat{C}$.
+		We have the sequence of equalities
+		\[
+			(g f)^*(h) = h (g f) = (h g) f = f^*(h g) = f^*( g^*(h) )
+		\]
+		for every~$h ∈ \cat{C}(z, c)$, and therefore the equality~$(g f)^* = g^* f^*$.
+
+\end{itemize*}
+
+We have altogether shown that~$\cat{C}(\ph, c)$ is a contravariant functor from~$\cat{C}$ to~$\Set$.
