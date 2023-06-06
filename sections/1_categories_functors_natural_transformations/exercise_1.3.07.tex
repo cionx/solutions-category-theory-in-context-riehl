@@ -1,0 +1,86 @@
+\subsection{}
+
+Let~$\cat{C}$ be a category and let~$c$ be an arbitrary object of~$\cat{C}$.
+Let~$𝟙$ be the category consisting of a single object~$\ast$ and only the morphism~$\id_{\ast}$.
+
+Let~$F_c$ be the constant functor from~$𝟙$ to~$\cat{C}$ corresponding to the object~$c$, i.e., the functor
+\[
+	F_c \colon 𝟙 \to \cat{C} \,,
+	\quad
+	\ast \mapsto c \,,
+	\quad
+	\id_{\ast} \mapsto \id_c \,.
+\]
+We can construct the slice category~$\cat{C} / c$ as the comma category~$\Id_{\cat{C}} ↓ F_c$, and the slice category~$c / \cat{C}$ as the comma category~$F_c ↓ \Id_{\cat{C}}$.
+
+The domain functor~$(\Id_{\cat{C}} ↓ F_c) \to \cat{C}$ corresponds to the functor~$\cat{C} / c \to \cat{C}$ given by
+\[
+	\left(
+		\begin{tikzcd}
+			x
+			\arrow{d}
+			\\
+			c
+		\end{tikzcd}
+	\right)
+	\mapsto
+	x \,,
+	\qquad
+	\left(
+		\begin{tikzcd}[column sep = normal]
+			x
+			\arrow{rr}[above]{f}
+			\arrow{dr}
+			&
+			{}
+			&
+			y
+			\arrow{dl}
+			\\
+			{}
+			&
+			c
+			&
+			{}
+		\end{tikzcd}
+	\right)
+	\mapsto
+	\Bigl( x \xto{f} y \Bigr) \,.
+\]
+The codomain functor~$(\Id_{\cat{C}} ↓ F_c) \to 𝟙$ corresponds to the constant functor~$\cat{C} / c \to 𝟙$.
+
+The domain functor~$(F_c ↓ \Id_{\cat{C}}) \to 𝟙$ corresponds to the constant functor~$c / \cat{C} \to 𝟙$.
+The codomain functor~$(F_c ↓ \Id_{\cat{C}}) \to \cat{C}$ corresponds to the functor~$c / \cat{C} \to \cat{C}$ given by
+\[
+	\left(
+		\begin{tikzcd}
+			c
+			\arrow{d}
+			\\
+			x
+		\end{tikzcd}
+	\right)
+	\mapsto
+	x \,,
+	\qquad
+	\left(
+		\begin{tikzcd}[column sep = normal]
+			{}
+			&
+			c
+			\arrow{dl}
+			\arrow{dr}
+			&
+			{}
+			\\
+			x
+			\arrow{rr}[above]{f}
+			&
+			{}
+			&
+			y
+		\end{tikzcd}
+	\right)
+	\mapsto
+	\Bigl( x \xto{f} y \Bigr) \,.
+\]
