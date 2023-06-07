@@ -1,0 +1,45 @@
+\subsection{}
+
+Let~$φ \colon G \to H$ be a homomorphism of groups.
+For every element~$g$ of~$G$, the homomorphism~$φ$ maps the conjugacy class of~$g$ into the conjugacy class of~$φ(g)$.
+The homomorphism~$φ$ does therefore induce a map
+\[
+	\Conj(φ)
+	\colon
+	\Conj(G) \to \Conj(H) \,,
+	\quad
+	\class{g} \mapsto \class{φ(g)} \,.
+\]
+We have for any two homomorphism of groups~$φ \colon G \to H$ and~$ψ \colon H \to K$ the sequence of equalities
+\begin{align*}
+	\Conj(ψ)( \Conj(φ)( \class{g} ) )
+	&=
+	\Conj(ψ)( \class{φ(g)} ) \\
+	&=
+	\class{ψ(φ(g))} \\
+	&=
+	\class{(ψ φ)(g)} \\
+	&=
+	\Conj(ψ φ)( \class{g} )
+\end{align*}
+for every~$g ∈ G$, and therefore the equality
+\[
+	\Conj(ψ φ) = \Conj(ψ) ∘ \Conj(φ) \,.
+\]
+
+We also have for every group~$G$ the sequence of equalities
+\[
+	\Conj(\id_G)(\class{g})
+	=
+	\class{\id_G(g)}
+	=
+	\class{g}
+	=
+	\id_{\Conj(G)}(\class{g})
+\]
+for every~$g ∈ G$, and therefore the equality
+\[
+	\Conj(\id_G) = \id_{\Conj(G)} \,.
+\]
+
+This proves altogether the functoriality of~$\Conj$.
