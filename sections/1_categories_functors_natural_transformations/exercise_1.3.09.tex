@@ -1,0 +1,139 @@
+\subsection{}
+
+
+
+\subsubsection*{For isomorphisms}
+
+Every isomorphism of groups~$φ \colon G \to H$ induces isomorphisms of groups
+\begin{gather*}
+	\Gcenter(φ)
+	\colon
+	\Gcenter(G) \to \Gcenter(H) \,,
+	\quad
+	g \mapsto φ(g) \,,
+	\\
+	\Commutator(φ)
+	\colon
+	\Commutator(G) \to \Commutator(H) \,,
+	\quad
+	g \mapsto φ(g) \,,
+	\\
+	\Aut(φ)
+	\colon
+	\Aut(G) \to \Aut(H) \,,
+	\quad
+	ψ \mapsto φ ψ φ^{-1} \,.
+\end{gather*}
+In this way, the constructions~$\Gcenter$,~$\Commutator$ and~$\Aut$ become functors from~$\Group_{\iso}$ to~$\Group$.
+
+
+
+\subsubsection*{For epimorphisms}
+
+We use in following without proof that a homomorphism of groups is an epimorphism in~$\Group$ if and only if it is surjective.
+
+\begin{itemize}
+
+	\item
+		Let~$φ \colon G \to H$ be an epimorphism of groups.
+		We claim that
+		\[
+			φ( \Gcenter(G) ) ⊆ \Gcenter(H) \,.
+		\]
+		Indeed, let~$z$ be an element of~$\Gcenter(G)$ and let~$h$ be an element of~$H$.
+		There exists by assumption some element~$g$ of~$G$ with~$h = φ(g)$.
+		It follows that
+		\[
+			φ(z) h = φ(z) φ(g) = φ(z g) = φ(g z) = φ(g) φ(z) = h φ(z) \,.
+		\]
+		This shows that~$φ(z)$ is contained in~$\Gcenter(H)$, as claimed.
+
+		It follows that the homomorphism~$φ$ restricts to a homomorphism of groups from~$\Gcenter(G)$ to~$\Gcenter(H)$.
+		This observation allows us to extend~$\Gcenter$ to a functor from~$\Group_{\epi}$ to~$\Group$.
+
+	\item
+		Every homomorphism of groups~$φ \colon G \to H$ induces a homomorphism groups from~$\Commutator(G)$ to~$\Commutator(H)$ by restriction.
+		This entails that~$\Commutator$ extends to a functor from~$\Group_{\epi}$ to~$\Group$.
+
+	\item
+		An epimorphism of groups~$φ \colon G \to H$ does not necessarily induce a map from~$\Aut(G)$ to~$\Aut(H)$.
+		An automorphism~$ψ$ of~$G$ descends to an endomorphism of~$H$ if and only if~$ψ(\ker(φ)) ⊆ \ker(φ)$.
+		(However, it is not clear to the author of these answers that there couldn’t exist another functor from~$\Group_{\epi}$ from~$\Group$ that assigns to each group its automorphism group.)
+
+\end{itemize}
+
+
+
+\subsubsection*{For homomorphisms}
+
+\begin{itemize}
+
+	\item
+		If~$\Gcenter$ were to extend to a functor from~$\Group$ to~$\Group$, then the commutative diagram
+		\[
+			\begin{tikzcd}[column sep = normal]
+				{}
+				&
+				\symm_3
+				\arrow{dr}[above right]{\sign}
+				&
+				{}
+				\\
+				ℤ / 2
+				\arrow{ur}
+				\arrow{rr}[above]{\id_{ℤ / 2}}
+				&
+				{}
+				&
+				ℤ / 2
+			\end{tikzcd}
+		\]
+		would result in the following commutative diagram:
+		\[
+			\begin{tikzcd}[column sep = normal]
+				{}
+				&
+				\Gcenter(\symm_3)
+				\arrow{dr}
+				&
+				{}
+				\\
+				\Gcenter(ℤ / 2)
+				\arrow{ur}
+				\arrow{rr}[above]{\Gcenter(\id_{ℤ / 2})}
+				&
+				{}
+				&
+				\Gcenter(ℤ / 2)
+			\end{tikzcd}
+		\]
+		We have~$\Gcenter(ℤ / 2) = ℤ / 2$ and $\Gcenter(\symm_3) = 1$ (the trivial group), and therefore would get the following commutative diagram:
+		\[
+			\begin{tikzcd}[column sep = normal]
+				{}
+				&
+				1
+				\arrow{dr}
+				&
+				{}
+				\\
+				ℤ / 2
+				\arrow{ur}
+				\arrow{rr}[above]{\id_{ℤ / 2}}
+				&
+				{}
+				&
+				ℤ / 2
+			\end{tikzcd}
+		\]
+		The commutativity of this diagram would mean that the identity morphism of~$ℤ / 2$ is the trivial homomorphism.
+		But this is not the case!
+
+	\item
+		$\Commutator$ extends to a functor from~$\Group$ to~$\Group$ in the usual way.
+
+	\item
+		If~$\Aut$ were to extend to a functor from~$\Group$ to~$\Group$, then it would also extend to a functor from~$\Group_{\epi}$ to~$\Group$.
+		This would contradict the previous part of this exercise.
+
+\end{itemize}
