@@ -1,0 +1,11 @@
+\subsection{}
+
+Let~$P$ and~$A$ be two preordered sets with corresponding categories~$\cat{P}$ and~$\cat{Q}$.
+We have seen in Exercise~1.3.ii (page~22) that a functor~$F$ from~$\cat{P}$ to~$\cat{Q}$ is \enquote{the same} as an isotone map~$f$ from~$P$ to~$Q$, via the assignments~$F(p) = f(p)$ for every~$p ∈ P$, and~$F(p_1 \to p_2) = (f(p_1) \to f(p_2))$ for all~$p_1, p_2 ∈ P$.
+Let in the following~$F, G \colon \cat{P} \to \cat{Q}$ be two functors with corresponding isotone maps~$f, g \colon P \to Q$.
+
+There exists at most one natural transformation from~$F$ to~$G$ since for every element~$p$ on~$P$ there exists at most one morphism from~$F(p)$ to~$G(p)$ in~$\cat{Q}$.
+The existence of a transformation from~$F$ to~$G$ is equivalent to the existence of a family~$(α_p)_{p ∈ P}$ of morphisms~$α_p \colon f(p) \to g(p)$, which in turn is equivalent to having~$f(p) ≤ q(p)$ for every~$p ∈ P$.
+Such a transformation is then automatically natural since every diagram in~$\cat{Q}$ commutes (because every two morphisms in~$\cat{Q}$ with the same domain and the same codomain are already equal).
+
+We find overall that there exists a natural transformation from~$F$ to~$G$ if and only if~$f ≤ g$, in the sense that~$f(p) ≤ g(p)$ for every~$p ∈ P$, and that this natural transformation is then unique.
