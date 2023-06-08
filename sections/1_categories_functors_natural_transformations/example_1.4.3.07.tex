@@ -1,0 +1,85 @@
+\subsection*{Example~1.4.3}
+
+
+
+\subsubsection*{(vii)}
+
+Suppose that~$α$ is a natural transformation from~$F$ to~$G$, where~$F$ is the identity functor of~$\Vect_𝕜$, and
+\[
+	G
+	\colon
+	\Vect_𝕜 \to \Vect_𝕜 \,,
+	\quad
+	V \mapsto V ⊗ V \,,
+	\quad
+	f \mapsto f ⊗ f \,.
+\]
+We then have for every linear map~$f \colon 𝕜 \to V$ the following commutative square diagram:
+\[
+	\begin{tikzcd}
+		𝕜
+		\arrow{r}[above]{α_𝕜}
+		\arrow{d}[left]{f}
+		&
+		𝕜 ⊗ 𝕜
+		\arrow{d}[right]{f ⊗ f}
+		\\
+		V
+		\arrow{r}[above]{α_V}
+		&
+		V ⊗ V
+	\end{tikzcd}
+\]
+
+The linear map~$α$ is given by~$α_𝕜(1) = λ 1 ⊗ 1$ for some scalar~$λ$ in~$𝕜$ because both~$𝕜$ and~$𝕜 ⊗ 𝕜$ are one-dimensional with basis elements~$1$ and~$1 ⊗ 1$ respectively.
+Let~$v$ be an arbitrary vector of~$V$ and let~$f$ be the unique linear map from~$𝕜$ to~$V$ with~$f(1) = v$.
+It follows from the commutativity of the above square diagram that
+\begin{align*}
+	\SwapAboveDisplaySkip
+	α_V(v)
+	&=
+	α_V( f(1) ) \\
+	&=
+	(f ⊗ f)( α_𝕜(1) ) \\
+	&=
+	(f ⊗ f)(λ 1 ⊗ 1) \\
+	&=
+	λ (f ⊗ f)(1 ⊗ 1) \\
+	&=
+	λ f(1) ⊗ f(1) \\
+	&=
+	λ v ⊗ v
+\end{align*}
+for every~$v ∈ V$.
+This shows that the linear map~$α_V$ is uniquely determined by the scalar~$λ$ via~$α_V(v) = λ v ⊗ v$ for every~$v ∈ V$.
+
+However, the map
+\[
+	V \to V ⊗ V \,,
+	\quad
+	v \mapsto λ v ⊗ v
+\]
+is linear if and only if either~$V = 0$, or~$λ = 0$, or if simultaneously~$\dim(V) = 1$ and~$𝕜 = 𝔽_2$.
+This can be seen as follows:
+\begin{itemize*}
+
+	\item
+		Suppose that~$V$ is at least two-dimensional.
+		There then exist two linearly independent vectors~$v_1$ and~$v_2$ in~$V$.
+		The vectors
+		\[
+			(v_1 + v_2) ⊗ (v_1 + v_2) = v_1 ⊗ v_1 + v_1 ⊗ v_2 + v_2 ⊗ v_1 + v_2 ⊗ v_2
+		\]
+		and~$v_1 ⊗ v_1 + v_2 ⊗ v_2$ are then distinct.
+		The map~$v \mapsto λ v ⊗ v$ is therefore not additive if~$λ$ is nonzero.
+
+	\item
+		Suppose that~$𝕜$ is not~$𝔽_2$.
+		There then exists a scalar~$μ$ in~$𝕜$ that is distinct to~$0$ and~$1$, and therefore satisfies~$μ^2 ≠ μ$.
+		If~$V$ is also nonzero, then there exists a nonzero vector~$v$ in~$V$.
+		The two vectors~$(μ v) ⊗ (μ v) = μ^2 v ⊗ v$ and~$μ v ⊗ v$ are then distinct.
+		The map~$v \mapsto λ v ⊗ v$ is therefore not homogeneous if~$λ$ is nonzero.
+
+\end{itemize*}
+
+This shows that the only natural transformation from~$F$ to~$G$ is given by the zero map in each of its coordinates (corresponding to the above case~$λ = 0$).
