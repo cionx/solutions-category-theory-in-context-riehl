@@ -1,0 +1,43 @@
+\subsection{}
+
+For every object~$(d, e, f)$ of the comma category~$F ↓ G$ let~$α_{(d, e, f)}$ be the morphism
+\[
+	f \colon F(d) \to G(e) \,.
+\]
+Then, since~$d = \dom((d, e, f))$ and~$e = \codom((d, e, f))$,~$α_{(d, e, f)}$ is a morphism from~$F(\dom((d, e, f)))$ to~$G(\codom((d, e, f)))$.
+Therefore,~$α$ is a transformation from~$F ∘ \dom$ to~$G ∘ \codom$.
+We claim that this transformation is natural.
+
+Indeed, we have for every morphism~$(h, k) \colon (d, e, f) \to (d', e', f')$ in~$F ↓ G$ the following commutative diagram:
+\[
+	\begin{tikzcd}
+		F(d)
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{F(h)}
+		&
+		G(e)
+		\arrow{d}[right]{G(k)}
+		\\
+		F(d')
+		\arrow{r}[above]{f'}
+		&
+		G(e')
+	\end{tikzcd}
+\]
+This diagram can be rewritten as follows:
+\[
+	\begin{tikzcd}
+		(F ∘ \dom)((d, e, f))
+		\arrow{r}[above]{α_{(d, e, f)}}
+		\arrow{d}[left]{(F ∘ \dom)((h, k))}
+		&
+		(G ∘ \codom)((d, e, f))
+		\arrow{d}[right]{(G ∘ \codom)((h, k))}
+		\\
+		(F ∘ \dom)((d', e', f'))
+		\arrow{r}[above]{α_{(d', e', f')}}
+		&
+		(G ∘ \codom)((d', e', f'))
+	\end{tikzcd}
+\]
+The commutativity of this last square diagram shows precisely that~$α$ is natural.
