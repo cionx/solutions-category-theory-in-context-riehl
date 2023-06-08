@@ -1,0 +1,45 @@
+\subsection{}
+
+Let~$G$ and~$H$ be two groups.
+We have already seen in Exercise~1.3.i (page~22 of the textbook) that a functor~$Φ \colon \Base G \to \Base H$ is the same a homomorphism of groups~$φ \colon G \to H$, via the assignments~$Φ(\ast_{\Base G}) = \ast_{\Base H}$ and~$Φ(g) = φ(g)$ for every~$g ∈ G$.
+
+Let~$Φ, Ψ \colon \Base G \to \Base H$ be two functors with corresponding homomorphisms of groups~$φ, ψ \colon G \to H$.
+A natural transformation~$α \colon Φ \To Ψ$ is a family~$(α_x)_{x ∈ \Base G}$ consisting of morphisms~$α_x \colon Φ(x) \to Ψ(x)$ for~$x ∈ \Base G$ such that the square diagram
+\[
+	\begin{tikzcd}
+		Φ(x)
+		\arrow{r}[above]{Φ(g)}
+		\arrow{d}[left]{α_x}
+		&
+		Φ(y)
+		\arrow{d}[right]{α_y}
+		\\
+		Ψ(x)
+		\arrow{r}[above]{Ψ(g)}
+		&
+		Ψ(y)
+	\end{tikzcd}
+\]
+commutes for every morphism~$g \colon x \to y$ in~$\Base G$.
+Given the specific shape of~$\Base G$, this means that the square diagram
+\[
+	\begin{tikzcd}
+		\ast
+		\arrow{r}[above]{φ(g)}
+		\arrow{d}[left]{α_\ast}
+		&
+		\ast
+		\arrow{d}[right]{α_\ast}
+		\\
+		\ast
+		\arrow{r}[above]{ψ(g)}
+		&
+		\ast
+	\end{tikzcd}
+\]
+needs to commute for every~$g ∈ G$.
+A natural transformation from~$Φ$ to~$Ψ$ is therefore \enquote{the same} as an element~$h$ of~$H$ such that~$h φ(g) = ψ(g) h$ for every~$g ∈ G$.
+In other words, the element~$h$ needs to satisfy~$ψ(g) = h φ(g) h^{-1}$ for every~$g ∈ G$.
+
+We see that the functors~$Φ$ and~$Ψ$ are naturally isomorphic if and only if the corresponding group homomorphisms~$φ$ and~$ψ$ are conjugated.
+More explicitly, natural transformations from~$Φ$ to~$Ψ$ corresponds to elements of~$H$ that realize the conjugation of~$φ$ and~$ψ$.
