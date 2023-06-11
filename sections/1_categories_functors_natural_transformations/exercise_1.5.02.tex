@@ -1,0 +1,165 @@
+\subsection{}
+
+We will show that the category~$Γ^{\op}$ is isomorphic to~$\Fin^∂$.
+As~$\Fin^∂$ is equivalent to~$\Fin_*$, this then also shows that~$Γ^{\op}$ is equivalent to~$\Fin_*$.
+(We have seen in Example~1.5.6 that~$\Set^∂$ is equivalent to~$\Set_*$.
+This equivalence restricts to an equivalence of categories between~$\Fin^∂$ and~$\Fin_*$.)
+
+To prove the claimed isomorphism between~$Γ^{\op}$ and~$\Fin^∂$, we will construct mutually inverse contravariant functors~$F$ and~$G$ between~$Γ$ and~$\Fin^∂$.
+The main observation is that a partially defined function~$f \colon T \to S$ is uniquely determined by its fibres~$f^{-1}(s)$, which are disjoint subsets of~$T$ indexed by~$S$.
+Such an indexed family of pairwise disjoint subsets has the same data as a morphism from~$S$ to~$T$ in~$Γ$.
+
+We first define~$F$ and~$G$ on objects:
+for every set~$S$ let~$F(S) ≔ S$ and~$G(S) ≔ S$.
+
+For every morphism~$θ \colon S \to T$ in~$Γ$ let~$F(θ)$ be the partially defined function from~$T$ to~$S$ given by
+\[
+	F(θ)(t) = s
+	\quad\text{if and only if}\quad
+	t ∈ θ(s)
+\]
+for all~$s ∈ S$,~$t ∈ T$.
+The partially defined function~$F(θ)$ is well-defined because the sets~$θ(s)$, where~$s$ ranges through~$S$, are pairwise disjoint.%
+\footnote{
+	The partially defined function~$F(θ)$ is a total function if and only if the set~$T$ is completely covered by the sets~$θ(s)$ with~$s ∈ S$.
+}
+
+For every partially defined function~$f \colon S \to T$ between sets~$S$ and~$T$ let~$G(f)$ be the induced function
+\[
+	G(f)
+	\colon
+	T \to \Power(S) \,,
+	\quad
+	t \mapsto f^{-1}(t) \,.
+\]
+The fibres~$f^{-1}(t)$, where~$t$ ranges through~$T$, are pairwise disjoint.
+The function~$G(f)$ is therefore a morphism from~$T$ to~$S$ in~$Γ$.
+
+We claim that~$F$ and~$G$ are mutually inverse contravariant functors.
+It remains to check the contravariant functorialities of~$F$ and~$G$, and that~$F$ and~$G$ are mutually inverse.
+
+We first check the functoriality of~$F$.
+
+Let~$S$ be a set, regarded as an object of~$Γ$, and let~$ι_S$ be the identity morphism of~$S$ in~$Γ$.
+In other words,~$ι_S$ is the function
+\[
+	ι_S
+	\colon
+	S \to \Power(S) \,,
+	\quad
+	s \mapsto \{ s \} \,.
+\]
+The resulting function~$F(ι_S) \colon S \to S$ is then given by~$F(ι_S)(s) = s$ for every~$s ∈ S$, whence~$F(ι_S)$ is the identity function on~$S$.
+This shows that the assignment~$F$ preserves identities.
+
+Let~$θ$ be a morphism in~$Γ$ from a set~$S$ to a set~$T$, and let~$σ$ be a morphism in~$Γ$ from~$T$ to a set~$U$.
+(Therefore,~$θ$ and~$σ$ are functions~$θ \colon S \to \Power(T)$ and~$σ \colon T \to \Power(U)$.)
+We have for all~$s ∈ S$,~$u ∈ U$ the sequence of equivalences
+\begin{align*}
+	{}&
+	F(σ θ)(u) = s
+	\\
+	\iff{}&
+	u ∈ (σ θ)(s)
+	\\
+	\iff{}&
+	u ∈ ⋃_{t ∈ θ(s)} σ(t)
+	\\
+	\iff{}&
+	\text{there exists some~$t ∈ θ(s)$ with~$u ∈ σ(t)$}
+	\\
+	\iff{}&
+	\text{there exists some~$t ∈ T$ with~$t ∈ θ(s)$ and~$u ∈ σ(t)$}
+	\\
+	\iff{}&
+	\text{there exists some~$t ∈ T$ with~$F(θ)(t) = s$ and~$F(σ)(u) = t$}
+	\\
+	\iff{}&
+	F(θ)( F(σ)(u) ) = s
+	\\
+	\iff{}&
+	(F(θ) ∘ F(σ))(u) = s \,.
+\end{align*}
+This shows that~$F(σ θ) = F(θ) ∘ F(σ)$.
+This means that the assignment~$F$ is contravariantly compatible with composition of morphisms.
+
+We have thus shown that~$F$ is a contravariant functor.
+We next check the contravariant functoriality of~$G$.
+
+Let~$S$ be a set and let~$\id_S$ be the identity function on~$S$.
+Then
+\[
+	G(\id_S)(s) = \id_S^{-1}(s) = \{ s \} = ι_S(s)
+\]
+for every~$s ∈ S$, where~$ι_S$ denotes the identity morphism of~$S$ in~$Γ$, and therefore~$G(\id_S) = ι_S$.
+This shows that the assignment~$G$ preserves identities.
+
+Let~$f \colon S \to T$ and~$g \colon T \to U$ be partially defined functions between sets~$S$,~$T$ and~$U$.
+We have for every~$u ∈ U$ the sequence of equalities
+\begin{align*}
+	G(g ∘ f)(u)
+	&=
+	(g ∘ f)^{-1}(u)
+	\\
+	&=
+	f^{-1}( g^{-1}(u) )
+	\\
+	&=
+	⋃_{t ∈ g^{-1}(u)} f^{-1}(t)
+	\\[0.2em]
+	&=
+	⋃_{t ∈ G(g)(u)} G(f)(t)
+	\\
+	&=
+	(G(f) ∘ G(g))(u) \,,
+\end{align*}
+and therefore the equality~$G(g ∘ f) = G(f) ∘ G(g)$.
+This shows that the assignment~$G$ is contravariantly compatible with composition of morphisms.
+
+We have thus shown that~$G$ is a contravariant functor.
+It remains to check that~$F$ and~$G$ are mutually inverse.
+
+We have for every set~$S$ the sequences of equalities~$G(F(S)) = G(S) = S$ and~$F(G(S)) = F(S) = S$, which means that~$F$ and~$G$ are mutually inverse on objects.
+
+Let~$θ$ be a morphism in~$Γ$ from a set~$S$ to a set~$T$.
+We have for all~$s ∈ S$,~$t ∈ T$ the sequence of equivalences
+\begin{align*}
+	\SwapAboveDisplaySkip
+	{}&
+	s ∈ (GF)(θ)(t)
+	\\
+	\iff{}&
+	s ∈ G(F(θ))(t)
+	\\
+	\iff{}&
+	s ∈ F(θ)^{-1}(t)
+	\\
+	\iff{}&
+	F(θ)(s) = t
+	\\
+	\iff{}&
+	s ∈ θ(t) \,.
+\end{align*}
+This shows that~$(GF)(θ) = θ$ for every morphism~$θ$ in~$Γ$.
+
+Let~$f \colon S \to T$ be a partially defined function between sets~$S$ and~$T$.
+We have for all~$s ∈ S$,~$t ∈ T$ the sequence of equivalences
+\begin{align*}
+	{}&
+	(FG)(f)(s) = t
+	\\
+	\iff{}&
+	F(G(f))(s) = t
+	\\
+	\iff{}&
+	s ∈ G(f)(t)
+	\\
+	\iff{}&
+	s ∈ f^{-1}(t)
+	\\
+	\iff{}&
+	f(s) = t \,.
+\end{align*}
+This shows that~$(FG)(f) = f$ for every morphism~$f$ in~$\Fin^∂$.
+
+We have thus shown that the two functors~$F$ and~$G$ are mutually inverse.
