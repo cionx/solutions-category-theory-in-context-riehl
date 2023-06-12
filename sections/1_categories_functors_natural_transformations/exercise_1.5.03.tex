@@ -1,0 +1,50 @@
+\subsection{}
+
+We denote the given isomorphisms by~$φ \colon a \to a'$ and~$ψ \colon b \to b'$.
+
+The commutativities of the four square diagrams are equivalent to the following four equations respectively:
+\[
+	ψ f φ^{-1} = f' \,,
+	\quad
+	ψ f = f' φ \,,
+	\quad
+	f φ^{-1} = ψ^{-1} f' \,,
+	\quad
+	f = ψ^{-1} f' φ \,.
+\]
+These four equations are equivalent because~$ψ$ and~$φ$ are isomorphisms:
+\[
+	\begin{tikzcd}[
+			column sep = tiny,
+			row sep = huge,
+			every arrow/.append style={Rightarrow}
+		]
+		{}
+		&
+		ψ f φ^{-1} = f'
+		\arrow[shift right]{dl}[above left]{(\ph) ∘ φ}
+		\arrow[shift left]{dr}[above right]{ψ^{-1} ∘ (\ph)}
+		&
+		{}
+		\\
+		ψ f = f' φ
+		\arrow[shift right]{ur}[below right]{(\ph) ∘ φ^{-1}}
+		\arrow[shift right]{dr}[below left]{ψ^{-1} ∘ (\ph)}
+		&
+		{}
+		&
+		f φ^{-1} = ψ^{-1} f'
+		\arrow[shift left]{ul}[below left]{ψ ∘ (\ph)}
+		\arrow[shift left]{dl}[below right]{(\ph) ∘ φ}
+		\\
+		{}
+		&
+		f = ψ^{-1} f' φ
+		\arrow[shift right]{ul}[above right]{ψ ∘ (\ph)}
+		\arrow[shift left]{ur}[above left]{(\ph) ∘ φ^{-1}}
+		&
+		{}
+	\end{tikzcd}
+\]
+I hence suffices to show for one of these four equations that there exists a unique morphism~$f' \colon a' \to b'$ satisfying this equation.
+We can use the first equation, as already explained in the textbook.
