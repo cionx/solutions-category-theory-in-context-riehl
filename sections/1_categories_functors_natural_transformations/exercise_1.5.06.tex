@@ -1,0 +1,93 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+We show the following result:
+
+\begin{proposition}
+	\label{composite of faithful full essentially surjective}
+	Let~$F \colon \cat{C} \to \cat{D}$ and~$G \colon \cat{D} \to \cat{E}$ be two functors.
+	\begin{enumerate}
+
+		\item
+			If both~$F$ and~$G$ are faithful, then their composite~$G F$ is again faithful.
+
+		\item
+			If both~$F$ and~$G$ are full, then their composite~$G F$ is again full.
+
+		\item
+			If both~$F$ and~$G$ are essentially surjective, then their composite~$G F$ is again essentially surjective.
+
+	\end{enumerate}
+\end{proposition}
+
+
+\begin{proof}
+	We observe for every two objects~$x$ and~$y$ in~$\cat{C}$ the following commutative diagram of sets and functions between these sets:
+	\[
+		\begin{tikzcd}[column sep = small]
+			\cat{C}(x, y)
+			\arrow{rr}[above]{GF}
+			\arrow{dr}[below left]{F}
+			&
+			{}
+			&
+			\cat{E}(GF x, GF y)
+			\\
+			{}
+			&
+			\cat{D}(F x, F y)
+			\arrow{ur}[below right]{G}
+			&
+			{}
+		\end{tikzcd}
+	\]
+	\begin{enumerate}
+
+		\item
+			Let~$x$ and~$y$ be any two objects of~$\cat{C}$.
+			The maps~$F \colon \cat{C}(x, y) \to \cat{D}(F x, F y)$ and~$G \colon \cat{D}(F x, F y) \to \cat{E}(GF x, GF y)$ are both injective, whence their composite~$GF \colon \cat{C}(x, y) \to \cat{E}(GF x, GF y)$ is again injective.
+
+		\item
+			Let~$x$ and~$y$ be any two objects of~$\cat{C}$.
+			The maps~$F \colon \cat{C}(x, y) \to \cat{D}(F x, F y)$ and~$G \colon \cat{D}(F x, F y) \to \cat{E}(GF x, GF y)$ are both surjective, whence their composite~$GF \colon \cat{C}(x, y) \to \cat{E}(GF x, GF y)$ is again surjective.
+
+		\item
+			For every category~$\cat{X}$ we denote by~$\cat{X} / {≅}$ the class of isomorphisms classes of objects of~$\cat{X}$.
+			We know that functors preserve isomorphisms, whence every functor~$H \colon \cat{X} \to \cat{Y}$ induces a well-defined function~$H_{\iso} \colon \cat{X} / {≅} \to \cat{Y} / {≅}$ given by~$H_{\iso}( \class{x} ) = \class{H x}$.
+
+			In the given situation, we have the following commutative diagram:
+			\[
+				\begin{tikzcd}[column sep = normal]
+					\cat{C} / {≅}
+					\arrow{rr}[above]{(GF)_{\iso}}
+					\arrow{dr}[below left]{F_{\iso}}
+					&
+					{}
+					&
+					\cat{E} / {≅}
+					\\
+					{}
+					&
+					\cat{D} / {≅}
+					\arrow{ur}[below right]{G_{\iso}}
+					&
+					{}
+				\end{tikzcd}
+			\]
+			The functions~$F_{\iso}$ and~$G_{\iso}$ are both surjective by assumption.
+			Their composite~$G_{\iso} ∘ F_{\iso} = (GF)_{\iso}$ is therefore again surjective.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
+
+
+
+\subsubsection{}
+
+According to Theorem~1.5.9, there exist functors~$F \colon \cat{C} \to \cat{D}$ and~$G \colon \cat{D} \to \cat{E}$ both of which are full, faithful, and essentially surjective.
+It follows from \cref{composite of faithful full essentially surjective} that their composite~$G F \colon \cat{C} \to \cat{E}$ is again full, faithful, and essentially surjective.
+Once again according to Theorem~1.5.9, this means that~$\cat{C}$ and~$\cat{D}$ are equivalent.
