@@ -1,0 +1,116 @@
+\subsection{}
+
+Let more specifically~$x$ be an object of~$\cat{G}$ and let~$G$ be the automorphism group of~$x$, i.e., the group~$\Aut_{\cat{C}}(x)$.
+Let~$F$ be the inclusion functor from~$\Base G$ to~$\cat{G}$, given on objects by~$F \ast = x$ and on morphisms by~$F g = g$ for every~$g ∈ G$.
+
+There exist for every object~$y$ of~$\cat{G}$ an isomorphism~$φ_y \colon x \to y$ in~$\cat{G}$ because~$\cat{G}$ is a connected groupoid.
+We choose~$φ_x$ as~$\id_x$.
+
+We define a functor~$F'$ from~$\cat{G}$ to~$\Base G$ as follows.
+On objects, we set~$F' y ≔ \ast$ for every object~$y$ of~$\cat{G}$ (the only possible choice).
+We define for every two objects~$y$ and~$z$ in~$\cat{G}$ the action of~$F'$ on the set~$\cat{G}(y, z)$ as
+\[
+	\cat{G}(y, z)
+	\xto{φ_z^{-1} ∘ (\ph) ∘ φ_y}
+	\cat{G}(x, x)
+	=
+	G
+	=
+	\Base G(\ast, \ast) \,.
+\]
+More explicitly,
+\[
+	F' f ≔ φ_z^{-1} f φ_y
+\]
+for every morphism~$f \colon y \to z$ in~$\cat{G}$.
+We need to check that the assignment~$F'$ is indeed functorial:
+\begin{itemize*}
+
+	\item
+		We have for every object~$y$ of~$\cat{G}$ the sequence of equalities
+		\[
+			F' \id_y
+			=
+			φ_y^{-1} \id_y φ_y
+			=
+			φ_y^{-1} φ_y
+			=
+			\id_x
+			=
+			\id_{\ast}
+			=
+			\id_{F' y} \,.
+		\]
+		This shows that~$F'$ preserves identity morphisms.
+
+	\item
+		We have for any two morphisms~$f_1 \colon y \to z$ and~$f_2 \colon z \to w$ in~$\cat{G}$ the sequence of equalities
+		\[
+			F' f_2 ∘ F' f_1
+			=
+			φ_w^{-1} f_2 φ_z ∘ φ_z^{-1} f_1 φ_y
+			=
+			φ_w^{-1} f_2 f_1 φ_y
+			=
+			F' (f_2 f_1) \,.
+		\]
+		This shows that~$F'$ preserves composition of morphisms.
+
+\end{itemize*}
+We have thus shown that the assignment~$F'$ is functorial.
+
+The composite~$F' F$ is the identity functor on~$\Base G$:
+we have for the single object~$\ast$ of~$\Base G$ the sequence of equalities
+\[
+	F' F \ast = F' x = \ast \,,
+\]
+and we have for every morphism~$g \colon \ast \to \ast$ in~$\Base G$ the sequence of equalities
+\[
+	F' F g
+	=
+	F' g
+	=
+	φ_x^{-1} g φ_x
+	=
+	\id_x^{-1} g \id_x
+	=
+	\id_x g \id_x
+	=
+	g \,.
+\]
+
+The composite~$F F'$ won’t be the identity functor on~$\cat{G}$ (unless~$x$ is the only object in~$\cat{G}$, in which case~$F$ is an isomorphism with inverse~$F'$), but it will be isomorphic to this identity functor.
+We claim more specifically that the family~$φ ≔ (φ_y)_y$, where~$y$ ranges over the objects of~$\cat{G}$, is a natural isomorphism from~$\Id_{\cat{G}}$ to~$F F'$.
+
+We already know that~$φ$ is an isomorphism in each component, and that~$φ_y$ goes from~$x = F F' y$ to~$y = \Id_{\cat{C}} y$ for every object~$y$ of~$\cat{G}$.
+It therefore only remains to check the naturality of~$φ$.
+To this end, we need to check that for every morphism~$f \colon y \to z$ in~$\cat{G}$ the following square diagram commutes:
+\[
+	\begin{tikzcd}
+		F F' y
+		\arrow{r}[above]{F F' f}
+		\arrow{d}[left]{φ_y}
+		&
+		F F' z
+		\arrow{d}[right]{φ_z}
+		\\
+		y
+		\arrow{r}[above]{f}
+		&
+		z
+	\end{tikzcd}
+\]
+This diagram commutes because
+\[
+	φ_z ∘ F F' f
+	=
+	φ_z ∘ F (φ_z^{-1} f φ_y)
+	=
+	φ_z ∘ (φ_z^{-1} f φ_y)
+	=
+	φ_z φ_z^{-1} f φ_y
+	=
+	f φ_y \,.
+\]
+
+This shows altogether that~$F'$ is an essential inverse to~$F$.
