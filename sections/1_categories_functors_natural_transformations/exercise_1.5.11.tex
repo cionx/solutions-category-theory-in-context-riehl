@@ -1,0 +1,115 @@
+\subsection{}
+
+
+
+\subsubsection*{The forgetful functor~$\Ab \to \Group$}
+
+Let~$F$ be the inclusion functor from~$\Ab$ to~$\Group$.
+
+The functor~$F$ is full and faithful because~$\Ab$ is a full subcategory of~$\Group$.
+The functor~$F$ is not essentially surjective because no non-abelian group is isomorphic to an abelian group.
+(And non-abelian groups do, in fact, exist.)
+
+We see in particular that~$F$ is not an equivalence of categories.
+
+
+
+\subsubsection*{The forgetful functor~$\Ring \to \Ab$}
+
+Let~$F$ be the forgetful functor from~$\Ring$ to~$\Ab$.
+
+The functor~$F$ is faithful.
+But it is not full because not every additive map between rings is a homomorphism of rings, as not every additive map between rings is multiplicative.
+
+The functor~$F$ is not essentially surjective because not every abelian group can be endowed with the structure of a unitary ring.
+Consider, for example, the abelian group~$ℚ / ℤ$.
+A ring structure on~$A$ would consist of a multiplication map
+\[
+	A ⊗_ℤ A \to A \,,
+	\quad
+	a ⊗ b \mapsto ab \,.
+\]
+But the group~$A ⊗_ℤ A$ is trivial.
+The only~\bilinear{$ℤ$} multiplication on~$A$ is therefore the zero multiplication, which is non-unital.
+
+We find in particular that the functor~$F$ is not an equivalence of categories.
+
+
+
+\subsubsection*{The functor~$(\ph)^× \colon \Ring \to \Group$}
+
+Let~$F$ be the functor~$(\ph)^× \colon \Ring \to \Group$ that assigns to each ring its group of invertible elements (also known as its group of units).
+
+The functor~$F$ is not faithful.
+To see this, let~$R$ be an integral domain, let~$a$ and~$b$ be two distinct elements of~$R$, and let~$φ, ψ \colon R[x] \to R$ be the two evaluation homomorphisms determined by~$φ(x) = a$ and~$ψ(x) = b$.
+The group~$R[x]^×$ is simply~$R^×$ because~$R$ is an integral domain, and both~$φ$ and~$ψ$ induce the identity homomorphism on~$R^×$.
+
+The functor~$F$ is also not full:
+while there exists no homomorphism of rings from~$𝔽_3$ to~$𝔽_5$, there nevertheless exists a homomorphism of groups from~$𝔽_3^× ≅ ℤ/2$ to~$𝔽_5^× ≅ ℤ/4$;
+even a non-trivial one.
+
+Regarding the essential surjectivity of~$F$, we need to examine if every group can occur as the group of units of some ring.
+This is not the case, as explained in \autocite{stackexchange_groups_of_units_of_rings}.
+
+The functor~$F$ is in particular not an equivalence of categories.
+
+
+
+\subsubsection*{The forgetful functor~$\Ring \to \Rng$}
+
+Let~$F$ be the forgetful functor from~$\Ring$ to~$\Rng$.
+
+The functor~$F$ is faithful because~$\Ring$ is a subcategory of~$\Rng$.
+The functor~$F$ is not full because there exists a homomorphism from the zero ring to~$ℤ$ in~$\Rng$, but not in~$\Ring$.
+
+The functor~$F$ is also not essentially surjective, because no non-unary ring is isomorphic to a unary ring.
+
+
+
+\subsubsection*{The forgetful functor~$\Field \to \Ring$}
+
+Let~$F$ be the forgetful functor from~$\Field$ to~$\Ring$.
+
+The functor~$F$ is full and faithful because~$\Field$ is a full subcategory of~$\Ring$.
+The functor~$F$ is not essentially surjective because every non-field ring, e.g.,~$ℤ$, is not isomorphic to a field.
+
+
+
+\subsubsection*{The forgetful functor~$\Mod_R \to \Ab$}
+
+Let~$F$ be the forgetful functor from~$\Mod_R$ to~$\Ab$.
+
+The functor~$F$ is faithful for every ring~$R$.
+Whether the functor~$F$ is full depends on the ring~$R$:
+\begin{itemize*}
+
+	\item
+		If~$R$ is a localization of~$ℤ$, then every additive map between~$R$-modules is already~\linear{$R$}.
+
+	\item
+		The functor~$F$ will typically not be full, because an additive map between~\modules{$R$} is not necessarily~\linear{$R$}.
+
+	\item
+		The author suspects that the functor~$F$ is full whenever the unique ring homomorphism~$ℤ \to R$ is an epimorphism, but doesn’t have a proof for this conjecture (nor a counterexample).
+
+\end{itemize*}
+
+The functor~$F$ is essentially surjective if and only if each abelian group can be endowed with an~\module{$R$} structure.
+This is the case if and only if the unique homomorphism rings from~$ℤ$ to~$R$ splits, i.e., if and only if there exists a homomorphism of rings from~$R$ to~$ℤ$:
+\begin{itemize*}
+
+	\item
+		Suppose that such a homomorphism of rings~$φ \colon R \to ℤ$ exists.
+		For every abelian group~$A$ we can then pull back the unique~\module{$ℤ$} structure on~$A$ along~$φ$ to an~\module{$R$} structure on~$A$.
+
+	\item
+		Suppose conversely that every abelian group~$A$ can be endowed with the structure of an~\module{$R$}.
+		This means that we have for every abelian group~$A$ a homomorphism of rings from~$R$ to~$\End_ℤ(A)$.
+		For~$A = ℤ$ we have~$\End_ℤ(A) = ℤ$, and therefore a homomorphism of rings from~$R$ to~$ℤ$.
+
+\end{itemize*}
+
+Moreover, there exists a homomorphism of rings from~$R$ to~$ℤ$ if and only if the ring~$R$ is of the form~$R ≅ R' ⋊ ℤ$ for some possibly non-unitary ring~$R'$.
+That is, if and only if~$R$ is the unitalization of~$R'$.
+
+The functor~$F$ won’t be an equivalence most of the time.

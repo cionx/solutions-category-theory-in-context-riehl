@@ -1,5 +1,6 @@
 \usepackage{customtex}
 \input{hyphenations.tex}
+\bibliography{bibliography/references.bib}
 
 
 % general layout options
@@ -35,6 +36,10 @@
 }
 
 % words
+\newcommand{\bilinear}[1]{#1\nobreakdash-bilinear}
+\newcommand{\linear}[1]{#1\nobreakdash-linear}
+\newcommand{\module}[1]{#1\nobreakdash-module}
+\newcommand{\modules}[1]{#1\nobreakdash-modules}
 \newcommand{\spaces}[1]{#1\nobreakdash-spaces}
 
 % categories
@@ -42,12 +47,16 @@
 \newcommand{\specificcatname}{\mathsf}
 \newcommand{\cat}{\genericcatname}
 % specific categories
+\newcommand{\Ab}{\specificcatname{Ab}}
 \newcommand{\Fin}{\specificcatname{Fin}}
 \newcommand{\Field}{\specificcatname{Field}}
 \newcommand{\Group}{\specificcatname{Group}}
+\newcommand{\Ring}{\specificcatname{Ring}}
+\newcommand{\Rng}{\specificcatname{Rng}}
 \newcommand{\Set}{\specificcatname{Set}}
 % categories depending on some other object
 \newcommand{\Base}{\specificcatname{B}}
+\newcommand{\Mod}{\specificcatname{Mod}}
 \newcommand{\Vect}{\specificcatname{Vect}}
 
 % functors
