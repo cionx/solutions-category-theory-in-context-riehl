@@ -1,0 +1,23 @@
+\subsection{}
+
+Let~$\cat{C}$ be a category and let~$t$ and~$t'$ be two terminal objects in~$\cat{C}$.
+There exists a unique morphism~$f$ from~$t$ to~$t'$ in~$\cat{C}$ because~$t'$ is terminal in~$\cat{C}$.
+We can see in at least two ways that~$f$ is an isomorphism:
+
+
+
+\subsubsection*{First argumentation}
+
+There exists a morphism~$g$ from~$t'$ to~$t$ in~$\cat{C}$ because~$t$ is terminal in~$\cat{C}$.
+The composite~$g f$ is a morphism from~$t$ to~$t$, and~$\id_t$ is also a morphism from~$t$ to~$t$.
+But we know that there exists only one morphism from~$t$ to~$t$ because~$t$ is terminal in~$\cat{C}$.
+We hence find that~$g f = \id_t$.
+We can see in the same way that also~$f g = \id_{t'}$.
+This then tells us that~$f$ is an isomorphism with inverse~$g$.
+
+
+
+\subsubsection*{Second argumentation}
+
+We observe that the induced map~$f_* \colon \cat{C}(c, t) \to \cat{C}(c, t')$ is bijective for every object~$c$ of~$\cat{C}$ because the sets~$\cat{C}(c, t)$ and~$\cat{C}(c, t')$ are both singletons.
+By Lemma~1.2,3, the morphism~$f$ is an isomorphism.
