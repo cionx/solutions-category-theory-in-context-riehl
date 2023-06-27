@@ -1,0 +1,58 @@
+\subsection{}
+
+We denote the category of~\coalgebras{$(\cat{C}, T)$} by~$\CoAlg(\cat{C}, T)$.
+Every morphism in~$\CoAlg(\cat{C}, T)$ is also a morphism in~$\cat{C}$.
+The composition of morphisms in~$\CoAlg(\cat{C}, T)$ is the composition of morphisms in~$\cat{C}$.
+For every coalgebra~$(c, γ)$, the identity morphism of~$(c, γ)$ in~$\CoAlg(\cat{C}, T)$ is the identity morphism of~$c$ in~$\cat{C}$, i.e.,~$\id_{(c, γ)} = \id_c$.
+
+Every algebra~$(c, γ)$ induces another coalgebra, namely~$(T c, T γ)$.
+Moreover,~$γ$ is a morphism of coalgebras from~$(c, γ)$ to~$(T c, T γ)$ by the commutativity of the following diagram:
+\[
+	\begin{tikzcd}
+		c
+		\arrow{r}[above]{γ}
+		\arrow{d}[left]{γ}
+		&
+		T c
+		\arrow{d}[right]{T γ}
+		\\
+		T c
+		\arrow{r}[above]{T γ}
+		&
+		T^2 c
+	\end{tikzcd}
+\]
+
+Suppose now that~$(c, γ)$ is a terminal coalgebra, i.e., a terminal object in the category~$\CoAlg(\cat{C}, T)$.
+We know that~$γ$ is a morphism of coalgebras from~$(c, γ)$ to~$(T c, T γ)$.
+We also know that there exists a (unique) morphism of coalgebras
+\[
+  δ \colon (T c, T γ) \to (c, γ)
+\]
+because the coalgebra~$(c, γ)$ is terminal.
+This means that~$δ$ is a morphism from~$T C$ to~$C$ in~$\cat{C}$, so that the following diagram commutes:
+\begin{equation}
+	\label{delta is a morphism of coalgebras}
+	\begin{tikzcd}
+		T c
+		\arrow{r}[above]{δ}
+		\arrow{d}[left]{T γ}
+		&
+		c
+		\arrow{d}[right]{γ}
+		\\
+		T^2 c
+		\arrow{r}[above]{T δ}
+		&
+		T c
+	\end{tikzcd}
+\end{equation}
+
+The composite~$δ γ$ is a morphism of coalgebras from~$(c, γ)$ to itself.
+As~$(c, γ)$ is terminal, this morphism must be the identity morphism of~$(c, γ)$.
+Therefore,~$δ γ = \id_{(c, γ)} = \id_c$.
+It further follows from the commutativity of the diagram~\eqref{delta is a morphism of coalgebras} that
+\[
+	γ δ = (T δ) (T γ) = T (δ γ) = T \id_c = \id_{T c} = \id_{(T c, T γ)} \,.
+\]
+This shows that~$γ$ and~$δ$ are actually mutually inverse isomorphisms, both in~$\cat{C}$ and in~$\CoAlg(\cat{C}, T)$.
