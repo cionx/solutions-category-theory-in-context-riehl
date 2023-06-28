@@ -1,0 +1,60 @@
+\subsection{}
+
+Let~$f \colon c \to d$ be a morphism in~$\cat{C}$.
+The morphism~$f$ in~$\cat{C}$ induces the morphism
+\[
+	F f \colon F c \to F d
+\]
+in~$\cat{D}$.
+It follows from the naturality of~$β$ that the resulting square diagram
+\[
+	\begin{tikzcd}
+		H F c
+		\arrow{r}[above]{H F f}
+		\arrow{d}[left]{β_{F c}}
+		&
+		H F d
+		\arrow{d}[right]{β_{F d}}
+		\\
+		K F c
+		\arrow{r}[above]{K F f}
+		&
+		K F d
+	\end{tikzcd}
+\]
+in~$\cat{E}$ commutes.
+By applying the functor~$L$ to this diagram, we get the commutative square diagram
+\[
+	\begin{tikzcd}
+		L H F c
+		\arrow{r}[above]{L H F f}
+		\arrow{d}[left]{L β_{F c}}
+		&
+		L H F d
+		\arrow{d}[right]{L β_{F d}}
+		\\
+		L K F c
+		\arrow{r}[above]{L K F f}
+		&
+		L K F d
+	\end{tikzcd}
+\]
+in~$\cat{F}$.
+We have~$L β_{F c} = (L β F)_c$ and similarly~$L β_{F d} = (L β F)_d$, and can therefore rewrite this commutative square diagram as follows:
+\[
+	\begin{tikzcd}
+		L H F c
+		\arrow{r}[above]{L H F f}
+		\arrow{d}[left]{(L β F)_c}
+		&
+		L H F d
+		\arrow{d}[right]{(L β F)_d}
+		\\
+		L K F c
+		\arrow{r}[above]{L K F f}
+		&
+		L K F d
+	\end{tikzcd}
+\]
+
+That this diagram commutes for every morphism~$f \colon c \to d$ in~$\cat{C}$ means precisely that the family~$L β F = (L β_c F)_c$ is a natural transformation from~$L H F$ to~$L K F$.
