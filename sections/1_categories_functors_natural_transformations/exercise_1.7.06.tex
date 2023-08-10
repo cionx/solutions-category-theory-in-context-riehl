@@ -1,0 +1,50 @@
+\subsection{}
+
+\begin{lemma}
+	\label{whiskering preserves natural isomorphisms}
+	Suppose that in the situation
+	\[
+			\begin{tikzcd}
+				\cat{C}
+				\arrow{r}[above]{F}
+				&
+				\cat{D}
+				\arrow[bend left = 40, r, "G", ""{name = U, below}]
+				\arrow[bend right = 40, r, swap, "H", ""{name = D, above}]
+				\arrow[Rightarrow, from = U, to = D, "α"]
+				&
+				\cat{E}
+				\arrow{r}[above]{J}
+				&
+				\cat{F}
+			\end{tikzcd}
+	\]
+	the natural transformation~$α$ is a natural isomorphism.
+	Then the whiskered natural transformation~$J α F$ is again a natural isomorphism.
+\end{lemma}
+
+\begin{proof}
+	The component~$(J α F)_c = J α_{F c}$ is an isomorphism for every object~$c$ of~$\cat{C}$ because each component of~$α$ is an isomorphism and the functor~$J$ preserves isomorphisms.
+\end{proof}
+
+The composites
+\[
+	\Id_{\cat{C}}
+	\xto{η}
+	G F
+	=
+	G \Id_{\cat{D}} F
+	\xto{G η' F}
+	G G' F' F
+\]
+and
+\[
+	F' F G G'
+	\xto{F' ε  G'}
+	F' \Id_{\cat{D}} G'
+	=
+	F' G'
+	\xto{ε'}
+	\Id_{\cat{E}}
+\]
+are again natural isomorphisms thanks to \cref{whiskering preserves natural isomorphisms}.

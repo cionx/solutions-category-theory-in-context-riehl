@@ -1,7 +1,54 @@
 \subsection{}
 
 \begin{lemma}[Whiskering and vertical composition]
-	\label{whiskering and vertical composition}
+	\label{two-sided whiskering and vertical composition}
+	In the situation
+	\[
+			\begin{tikzcd}
+				\cat{C}
+				\arrow{r}[above]{F}
+				&
+				\cat{D}
+				\arrow[bend left = 70, r, "G", ""{name = U1, below}]
+				\arrow[r, "H" description, ""{name = D1, above}, ""{name = U2, below}]
+				\arrow[bend right = 70, r, swap, "J", ""{name = D2, above}]
+				\arrow[Rightarrow, from = U1, to = D1, "α"]
+				\arrow[Rightarrow, from = U2, to = D2, "β"]
+				&
+				\cat{E}
+				\arrow{r}[above]{K}
+				&
+				\cat{F}
+			\end{tikzcd}
+	\]
+	we have the identity
+	\[
+		K (β ⋅ α) F
+		=
+		K β F ⋅ K α F \,.
+	\]
+\end{lemma}
+
+\begin{proof}
+	We have for every object~$c$ of~$\cat{C}$ the sequence of equalities
+	\begin{align*}
+		(K (β ⋅ α) F)_c
+		&=
+		K (β ⋅ α)_{F c} \\
+		&=
+		K (β_{F c} α_{F c}) \\
+		&=
+		(K β_{F c}) (K α_{F c}) \\
+		&=
+		(K β F)_c (K α F)_c \\
+		&=
+		((K β F) ⋅ (K α F))_c \,,
+	\end{align*}
+	and therefore altogether the equality~$K (β ⋅ α) F = (K β F) ⋅ (K α F)$.
+\end{proof}
+
+\begin{corollary}
+	\label{one-sided whiskering and vertical composition}
 	Let~$\cat{C}$,~$\cat{D}$ and~$\cat{E}$ be three categories.
 	\begin{enumerate}
 
@@ -42,28 +89,10 @@
 				\end{tikzcd}
 			\]
 			we have the equality~$(β ⋅ α) F = β F ⋅ α F$.
+		\qed
 
 	\end{enumerate}
-\end{lemma}
-
-\begin{proof}
-	In the first situation we have the sequence of equalities
-	\[
-		(K (β ⋅ α))_c
-		=
-		K (β ⋅ α)_c
-		=
-		K (β_c α_c)
-		=
-		(K β_c) (K α_c)
-		=
-		(K β)_c (K α)_c
-		=
-		(K β ⋅ K α)_c
-	\]
-	for every object~$c$ of~$\cat{C}$, and therefore overall the claimed equality of natural transformations~$K (β ⋅ α) = K β ⋅ K α$.
-	The second claim can be shown in the same way.
-\end{proof}
+\end{corollary}
 
 The diagram
 \[
@@ -107,7 +136,7 @@ The diagram
 		L H
 	\end{tikzcd}
 \]
-commutes by the definition of the horizontal composition of natural transformations (the four inner squares) and by \cref{whiskering and vertical composition} (the four outer parts).
+commutes by the definition of the horizontal composition of natural transformations (the four inner squares) and by \cref{one-sided whiskering and vertical composition} (the four outer parts).
 The overall natural transformation from $J F$ to~$L H$ in this diagram is given by $(δ * β) ⋅ (γ * α)$.
 But we also know that the diagram
 \[
