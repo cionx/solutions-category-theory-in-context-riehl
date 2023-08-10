@@ -1,0 +1,133 @@
+\subsection{}
+
+\begin{lemma}[Whiskering and vertical composition]
+	\label{whiskering and vertical composition}
+	Let~$\cat{C}$,~$\cat{D}$ and~$\cat{E}$ be three categories.
+	\begin{enumerate}
+
+		\item
+			In the situation
+			\[
+				\begin{tikzcd}
+					\cat{C}
+					\arrow[bend left = 70, r, "F", ""{name = U1, below}]
+					\arrow[r, "G" description, ""{name = D1, above}, ""{name = U2, below}]
+					\arrow[bend right = 70, r, swap, "H", ""{name = D2, above}]
+					\arrow[Rightarrow, from = U1, to = D1, "α"]
+					\arrow[Rightarrow, from = U2, to = D2, "β"]
+					&
+					\cat{D}
+					\arrow[r, "K"]
+					&
+					\cat{E}
+				\end{tikzcd}
+			\]
+			we have the equality~$K (β ⋅ α) = K β ⋅ K α$.
+
+		\item
+			In the situation
+			\[
+				\begin{tikzcd}
+					\cat{C}
+					\arrow[r, "F"]
+					&
+					\cat{D}
+					\arrow[bend left = 70, r, above, "G", ""{name = U1, below}]
+					\arrow[r, "H" description, ""{name = D1, above}, ""{name = U2, below}]
+					\arrow[bend right = 70, r, swap, "K", ""{name = D2, above}]
+					\arrow[Rightarrow, from = U1, to = D1, "α"]
+					\arrow[Rightarrow, from = U2, to = D2, "β"]
+					&
+					\cat{E}
+				\end{tikzcd}
+			\]
+			we have the equality~$(β ⋅ α) F = β F ⋅ α F$.
+
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	In the first situation we have the sequence of equalities
+	\[
+		(K (β ⋅ α))_c
+		=
+		K (β ⋅ α)_c
+		=
+		K (β_c α_c)
+		=
+		(K β_c) (K α_c)
+		=
+		(K β)_c (K α)_c
+		=
+		(K β ⋅ K α)_c
+	\]
+	for every object~$c$ of~$\cat{C}$, and therefore overall the claimed equality of natural transformations~$K (β ⋅ α) = K β ⋅ K α$.
+	The second claim can be shown in the same way.
+\end{proof}
+
+The diagram
+\[
+	\begin{tikzcd}[every arrow/.append style={Rightarrow}, row sep = huge]
+		J F
+		\arrow[bend left = 35]{rr}[above]{(δ ⋅ γ) F}
+		\arrow{r}[above]{γ F}
+		\arrow{d}[left]{J α}
+		\arrow{dr}[above right]{γ * α}
+		\arrow[bend right = 40]{dd}[left]{J (β ⋅ α)}
+		&
+		K F
+		\arrow{r}[above]{δ F}
+		\arrow{d}[right]{K α}
+		\arrow{dr}[above right]{δ * α}
+		&
+		L F
+		\arrow{d}[right]{L α}
+		\arrow[bend left = 40]{dd}[right]{L (β ⋅ α)}
+		\\
+		J G
+		\arrow{r}[above]{γ G}
+		\arrow{d}[left]{J β}
+		\arrow{dr}[above right]{γ * β}
+		&
+		K G
+		\arrow{r}[above]{δ G}
+		\arrow{d}[right]{K β}
+		\arrow{dr}[above right]{δ * β}
+		&
+		L G
+		\arrow{d}[right]{L β}
+		\\
+		J H
+		\arrow{r}[above]{γ H}
+		\arrow[bend right = 35]{rr}[below]{(δ ⋅ γ) H}
+		&
+		K H
+		\arrow{r}[above]{δ H}
+		&
+		L H
+	\end{tikzcd}
+\]
+commutes by the definition of the horizontal composition of natural transformations (the four inner squares) and by \cref{whiskering and vertical composition} (the four outer parts).
+The overall natural transformation from $J F$ to~$L H$ in this diagram is given by $(δ * β) ⋅ (γ * α)$.
+But we also know that the diagram
+\[
+	\begin{tikzcd}[every arrow/.append style={Rightarrow}, column sep = 6em, row sep = huge]
+		J F
+		\arrow{r}[above]{(δ ⋅ γ) F}
+		\arrow{dr}[above right]{(δ ⋅ γ) * (β ⋅ α)}
+		\arrow{d}[left]{J (β ⋅ α)}
+		&
+		L F
+		\arrow{d}[right]{L (β ⋅ α)}
+		\\
+		J H
+		\arrow{r}[above]{(δ ⋅ γ) H}
+		&
+		L H
+	\end{tikzcd}
+\]
+commutes by the definition of the horizontal composition of natural transformations, whence this natural transformation from~$J F$ to~$L H$ is also given by~$(δ ⋅ γ) * (β ⋅ α)$.
+Consequently,
+\[
+	(δ * β) ⋅ (γ * α) = (δ ⋅ γ) * (β ⋅ α) \,.
+\]
