@@ -1,0 +1,118 @@
+\subsection{}
+
+Let $\cat{C}$ be a category and let~$c$ be an object of~$\cat{C}$.
+Let~$\End(c)$ denote the collection of endomorphisms of~$c$ in~$\cat{C}$.
+For every two such endomorphisms~$f$ and~$g$, their composite~$gf$ is again an endomorphism of~$\cat{C}$.
+The composition of morphisms in~$\cat{C}$ therefore restricts to a binary operation on~$\End(c)$, making~$\End(c)$ into a magma.
+As composition of morphism in~$\cat{C}$ is associative, the restricted operation on~$\End(c)$ is again associative, upgrading~$\End(c)$ to a semigroup.
+The identity morphism~$\id_c$ acts as a neutral element in~$\End(c)$, further upgrading~$\End(c)$ to a monoid.
+
+Let now~$\cat{C}$ be a category and let~$\cat{D}$ be the functor category~$\cat{C}^{\cat{C}}$.
+It follows from the above argumentation that~$\End_{\cat{D}}(\id_c)$ is a monoid under vertical composition of natural transformations.
+It follows from the upcoming \lcnamecref{horizontal composition gives monoid structure} that~$\End_{\cat{D}}(\id_c)$ is also a monoid under horizontal composition of natural transformation (with neutral element given by~$\id_{\Id_{\cat{C}}}$, the identity natural transformation of the identity functor on~$\cat{C}$).
+These two monoid structures on~$\End_{\cat{D}}(\id_c)$ satisfy the interchange property from Lemma~1.7.7.
+It follows from the Eckmann--Hilton argument that both monoid structures agree and are commutative.
+
+
+\begin{proposition}[Assocativity and units for horizontal composition]
+	\label{horizontal composition gives monoid structure}
+	\leavevmode
+	\begin{enumerate}
+
+		\item
+			In the situation
+			\[
+				\begin{tikzcd}
+					\cat{C}
+					\arrow[bend left = 40, r, "F", ""{name = U1, below}]
+					\arrow[bend right = 40, r, "G", swap, ""{name = D1, above}]
+					\arrow[Rightarrow, from = U1, to = D1, "α"]
+					&
+					\cat{D}
+					\arrow[bend left = 40, r, "H", ""{name = U2, below}]
+					\arrow[bend right = 40, r, "J", swap, ""{name = D2, above}]
+					\arrow[Rightarrow, from = U2, to = D2, "β"]
+					&
+					\cat{E}
+					\arrow[bend left = 40, r, "K", ""{name = U3, below}]
+					\arrow[bend right = 40, r, "L", swap, ""{name = D3, above}]
+					\arrow[Rightarrow, from = U3, to = D3, "γ"]
+					&
+					\cat{F}
+				\end{tikzcd}
+			\]
+			we have the equality~$(γ * β) * α = γ * (β * α)$.
+
+		\item
+			We have for every natural transformation~$α \colon F \To G$ between two functors~$F, G \colon \cat{C} \to \cat{D}$ the equalities
+			\[
+				α * \id_{\Id_{\cat{C}}} = α
+				\quad\text{and}\quad
+				\id_{\Id_{\cat{D}}} * α = α \,.%
+				\footnote{
+					Note that~$α * \id_{\Id_{\cat{C}}}$ is a natural transformation from~$F \Id_{\cat{C}} = F$ to~$G \Id_{\cat{C}} = G$, and that similarly~$\id_{\Id_{\cat{D}}} * α$ is a natural transformation from~$\Id_{\cat{D}} F = F$ to~$\Id_{\cat{D}} G = G$.
+				}
+			\]
+
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	We prove both claims independent of one another.
+	\begin{enumerate}
+
+		\item
+			The horizontal composition~$γ * β$ is a natural transformation from~$K H$ to~$L J$, and the horizontal composition~$β * α$ is a natural transformation from~$H F$ to~$J G$.
+			We have therefore the sequence of equalities
+			\begin{align*}
+				(γ * β) * α
+				&=
+				(γ * β) G ⋅ K H α \\
+				&=
+				(γ J ⋅ K β) G ⋅ K H α \\
+				&=
+				γ J G ⋅ K β G ⋅ K H α \\
+				&=
+				γ J G ⋅ K (β G ⋅ H α) \\
+				&=
+				γ J G ⋅ K (β * α) \\
+				&=
+				γ * (β * α) \,.%
+				\footnotemark
+			\end{align*}
+			\footnotetext{
+				More generally, given functors~$F_i, G_i \colon \cat{C}_i \to \cat{C}_{i + 1}$ and natural transformations~$α_i \colon F_i \to G_i$ for~$i = 1, \dotsc, n$, we have the identity
+				\[
+					α_n * \dotsb * α_1
+					=
+					(α_n G_{n - 1} G_{n - 2} \dotsm G_1)
+					⋅ \dotsb
+					⋅ (F_n \dotsm F_3 α_2 G_1)
+					⋅ (F_n \dotsm F_3 F_2 α_1) \,.
+				\]
+			}
+
+		\item
+			We have the sequences of equalities
+			\begin{gather*}
+				α * \id_{\Id_{\cat{C}}}
+				=
+				α \Id_{\cat{C}} ⋅ F \id_{\Id_{\cat{C}}}
+				=
+				α ⋅ \id_F
+				=
+				α
+			\shortintertext{and}
+				\id_{\Id_{\cat{C}}} * α
+				=
+				\id_{\Id_{\cat{C}}} G ⋅ \Id_{\cat{C}} α
+				=
+				\id_G ⋅ α
+				=
+				α \,.
+			\end{gather*}
+			This shows the claimed equalities.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
