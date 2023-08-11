@@ -1,0 +1,33 @@
+\subsection{}
+
+The category~$𝕀$ consists of two objects, named~$0$ and~$1$, a morphism~$i$ from~$0$ to~$1$ and a morphism~$j$ from~$1$ to~$0$ (and the two identity morphisms).
+We have for every category~$\cat{C}$ a bijection given by
+\[
+	\Cat(𝕀, \cat{C})
+	\to
+	\{ \text{isomorphisms in~$\cat{C}$} \} \,,
+	\quad
+	F \mapsto F i \,.
+\]
+
+The category~$𝟙$ is the subcategory of~$𝕀$ that consists of the two objects and the morphism~$i$ (and the two identity morphisms).
+We have for every category~$\cat{C}$ a bijection given by
+\[
+	\Cat(𝟙, \cat{C})
+	\to
+	\{ \text{morphisms in~$\cat{C}$} \} \,,
+	\quad
+	F \mapsto F i \,.
+\]
+
+For every category~$\cat{C}$, the inclusion
+\[
+	\{ \text{isomorphisms in~$\cat{C}$} \}
+	⊆
+	\{ \text{morphisms in~$\cat{C}$} \}
+\]
+corresponds to the pullback map
+\[
+	I^* \colon \Cat(𝕀, \cat{C}) \to \Cat(𝟙, \cat{C})
+\]
+induced by the inclusion functor~$I \colon 𝟙 \to 𝕀$.
