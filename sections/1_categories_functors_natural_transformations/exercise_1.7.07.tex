@@ -1,0 +1,436 @@
+\subsection{}
+
+
+
+\subsubsection*{From a bifunctor $\cat{C} × \cat{D} \to \cat{E}$ to functor $\cat{C} \to \cat{E}^{\cat{D}}$}
+
+Let~$F \colon \cat{C} × \cat{D} \to \cat{E}$ be a bifunctor.
+
+We have for every object~$c$ of~$\cat{C}$ the associated inclusion functor
+\[
+	I_c
+	\colon
+	\cat{D} \to \cat{C} × \cat{D} \,,
+	\quad
+	d \mapsto (c, d) \,,
+	\quad
+	g \mapsto (\id_c, g) \,.
+\]
+The composite~$F ∘ I_c$ is again a functor.
+This composite is precisely~$F(c, \ph)$, whence we have found that~$F(c, \ph)$ is indeed a functor.
+
+To describe the action of~$F(c, \ph)$ on morphisms in~$\cat{C}$, let~$f \colon c \to c'$ be such a morphism.
+We have for every morphism~$g \colon d \to d'$ in~$\cat{D}$ the following commutative square diagram in~$\cat{C} × \cat{D}$:
+\[
+	\begin{tikzcd}[row sep = huge]
+		(c, d)
+		\arrow{r}[above]{(\id_c, g)}
+		\arrow{d}[left]{(f,  \id_d)}
+		\arrow[dashed]{dr}[above right]{(f, g)}
+		&
+		(c, d')
+		\arrow{d}[right]{(f, \id_{d'})}
+		\\
+		(c', d)
+		\arrow{r}[below]{(\id_{c'}, g)}
+		&
+		(c', d')
+	\end{tikzcd}
+\]
+By applying the functor~$F$ to this commutative square diagram, we arrive at the following commutative square diagram in~$\cat{E}$:
+\[
+	\begin{tikzcd}
+		F(c, d)
+		\arrow{r}[above]{F(\id_c, g)}
+		\arrow{d}[left]{F(f,  \id_d)}
+		&
+		F(c, d')
+		\arrow{d}[right]{F(f, \id_{d'})}
+		\\
+		F(c', d)
+		\arrow{r}[below]{F(\id_{c'}, g)}
+		&
+		F(c', d')
+	\end{tikzcd}
+\]
+Denoting~$F(f, \id_d)$ as~$F(f, \ph)_d$, we can rewrite this commutative diagram as follows:
+\[
+	\begin{tikzcd}
+		F(c, \ph)(d)
+		\arrow{r}[above]{F(c,  \ph)(g)}
+		\arrow{d}[left]{F(f, \ph)_d}
+		&
+		F(c, \ph)(d')
+		\arrow{d}[right]{F(f, \ph)_{d'}}
+		\\
+		F (c', \ph)(d)
+		\arrow{r}[below]{F (\id_{c'}, \ph)(g)}
+		&
+		F (c', \ph)(d')
+	\end{tikzcd}
+\]
+The commutativity of this square diagram tells us that the family
+\[
+	F(f, \ph) ≔ (F(f, \ph)_d)_{d ∈ \cat{D}}
+\]
+is a natural transformation from the functor~$F(c, \ph)$ to the functor~$F(c', \ph)$.
+
+It remains to show that~$F(f, \ph)$ is functorial in~$f$.
+More precisely, we need to show that
+\[
+	F(\id_c, \ph) = \id_{F(c, \ph)}
+\]
+for every object~$c$ of~$\cat{C}$, and that
+\[
+	F(f' f, \ph) = F(f', \ph) ⋅ F(f, \ph)
+\]
+for all composable morphisms~$f \colon c \to c'$ and~$f' \colon c' \to c''$ in~$\cat{C}$.
+The first equality holds true because
+\[
+	F(\id_c, \ph)_d
+	=
+	F (\id_c, \id_d)
+	=
+	\id_{F (c, d)}
+	=
+	\id_{F(c, \ph) d}
+	=
+	(\id_{F(c, \ph)})_d
+\]
+for every object~$d$ of~$\cat{D}$.
+The second equality holds true because
+\begin{align*}
+	F(f' f, \ph)_d
+	&=
+	F (f' f, \id_d) \\
+	&=
+	F (f' f, \id_d \id_d) \\
+	&=
+	F ( (f', \id_d) (f, \id_d) ) \\
+	&=
+	F(f', \id_d) F(f, \id_d) \\
+	&=
+	F(f', \ph)_d F(f, \ph)_d \\
+	&=
+	(F(f', \ph) ⋅ F(f, \ph))_d
+\end{align*}
+for every object~$d$ of~$\cat{D}$.
+
+
+We have overall shown that a bifunctor~$F \colon \cat{C} × \cat{D} \to \cat{E}$ results in a functor~$F' \colon \cat{C} \to \cat{E}^{\cat{D}}$ given on objects by~$F'(c) = F(c, \ph)$ and on morphisms by~$F'(f) = F(f, \ph)$.
+
+
+
+\subsubsection*{From a functor~$\cat{C} \to \cat{E}^{\cat{D}}$ to a bifunctor~$\cat{C} × \cat{D} \to \cat{E}$}
+
+Let now~$G$ be a functor from~$\cat{C}$ to~$\cat{E}^{\cat{D}}$.
+
+For every object~$(c, d)$ of~$\cat{C} × \cat{D}$ let
+\[
+	G' (c, d) ≔ G(c)(d) \,.
+\]
+We have for every morphism~$(f, g) \colon (c, d) \to (c', d')$ in~$\cat{C} × \cat{D}$ the induced natural transformation~$G(f) \colon G(c) \To G(c')$, and hence the following commutative square diagram:
+\[
+	\begin{tikzcd}
+		G(c)(d)
+		\arrow{r}[above]{G(c)(g)}
+		\arrow{d}[left]{G(f)_d}
+		&
+		G(c)(d')
+		\arrow{d}[right]{G(f)_{d'}}
+		\\
+		G(c')(d)
+		\arrow{r}[above]{G(c')(g)}
+		&
+		G(c')(d')
+	\end{tikzcd}
+\]
+We let~$G'(f, g)$ be the diagonal morphism in this diagram, which is a morphism in~$\cat{E}$ from~$G'(c, d)$ to~$G'(c', d')$.
+
+We claim that the assignment~$G'$ is a functor from~$\cat{C} × \cat{D}$ to~$\cat{E}$.
+It remains to show the functoriality of~$G'$.
+\begin{itemize}
+
+	\item
+		We have to show that~$G'(\id_{(c, d)}) = \id_{G'(c, d)}$ for every object~$(c, d)$ in~$\cat{C} × \cat{D}$.
+		We have~$\id_{(c, d)} = (\id_c, \id_d)$, whence the morphism~$G'(\id_{(c, d)})$ is defined as the diagonal morphism in the following diagram:
+		\[
+			\begin{tikzcd}
+				G(c)(d)
+				\arrow{r}[above]{G(c)(\id_d)}
+				\arrow{d}[left]{G(\id_c)_d}
+				&
+				G(c)(d)
+				\arrow{d}[right]{G(\id_c)_{d}}
+				\\
+				G(c)(d)
+				\arrow{r}[above]{G(c)(\id_d)}
+				&
+				G(c)(d)
+			\end{tikzcd}
+		\]
+		The functor value~$G(c')$ is itself a functor, from~$\cat{D}$ to~$\cat{E}$, whence
+		\[
+			G(c)(\id_d) = \id_{G(c)(d)} = \id_{G'(c, d)} \,.
+		\]
+		Similarly, the natural transformation~$G(\id_c)$ equals~$\id_{G(c)}$ by the functoriality of~$G$, whence
+		\[
+			G(\id_c)_d = (\id_{G(c)})_d = \id_{G(c)(d)} = \id_{G'(c, d)} \,.
+		\]
+		We can altogether rewrite the above square diagram as follows:
+		\[
+			\begin{tikzcd}
+				G'(c, d)
+				\arrow{r}[above]{\id_{G'(c,d)}}
+				\arrow{d}[left]{\id_{G'(c,d)}}
+				&
+				G'(c, d)
+				\arrow{d}[right]{\id_{G'(c,d)}}
+				\\
+				G'(c, d)
+				\arrow{r}[above]{\id_{G'(c,d)}}
+				&
+				G'(c, d)
+			\end{tikzcd}
+		\]
+		We see that the diagonal morphism in this diagram is~$\id_{G'(c, d)}$.
+
+	\item
+		We also need to show that~$G'((f', g') (f, g)) = G'(f', g') G'(f, g)$ for every two composable morphisms
+		\[
+			(f, g) \colon (c, d) \to (c', d')
+			\quad\text{and}\quad
+			(f', g') \colon (c', d') \to (c'', d'')
+		\]
+		in~$\cat{C} × \cat{D}$.
+		We consider the following commutative diagram:
+		\[
+			\begin{tikzcd}[column sep = huge, row sep = 5em]
+				G(c)(d)
+				\arrow{r}[above]{G(c)(g)}
+				\arrow{d}[left]{G(f)_d}
+				\arrow{dr}[above right]{G'(f, g)}
+				&
+				G(c)(d')
+				\arrow{r}[above]{G(c)(g')}
+				\arrow{d}[right]{G(f)_{d'}}
+				\arrow{dr}[above right]{G'(f, g')}
+				&
+				G(c)(d'')
+				\arrow{d}[right]{G(f)_{d''}}
+				\\
+				G(c')(d)
+				\arrow{r}[above]{G(c')(g)}
+				\arrow{d}[left]{G(f')_d}
+				\arrow{dr}[above right]{G'(f', g)}
+				&
+				G(c')(d')
+				\arrow{r}[above]{G(c')(g')}
+				\arrow{d}[right]{G(f')_{d'}}
+				\arrow{dr}[above right]{G'(f', g')}
+				&
+				G(c')(d'')
+				\arrow{d}[right]{G(f')_{d''}}
+				\\
+				G(c'')(d)
+				\arrow{r}[above]{G(c'')(g)}
+				&
+				G(c'')(d')
+				\arrow{r}[above]{G(c'')(g')}
+				&
+				G(c'')(d'')
+			\end{tikzcd}
+		\]
+		Leaving out the middle node of this diagram, we get the following commutative diagram:
+		\[
+			\begin{tikzcd}[row sep = 4em, column sep = 7.2em]
+				G(c)(d)
+				\arrow{r}[above]{G(c)(g') G(c)(g)}
+				\arrow{d}[left]{G(f')_d G(f)_d}
+				\arrow{dr}[description]{G'(f', g') G(f, g)}
+				&
+				G(c)(d'')
+				\arrow{d}[right]{G(f')_{d''} G(f)_{d''}}
+				\\
+				G(c'')(d)
+				\arrow{r}[below]{G(c'')(g') G(c'')(g)}
+				&
+				G(c'')(d'')
+			\end{tikzcd}
+		\]
+	
+		It follows from the functoriality of~$G(c)$ that the upper horizontal arrow can be simplified as $G(c)(g' g)$.
+		Similarly, the lower horizontal arrow can be simplified as $G(c'')(g' g)$.
+		The vertical arrow on the left-hand side can be rewritten as $(G(f') ⋅ G(f))_d$, and thus as~$G(f' f)_d$ by the functoriality of~$G$.
+		Similarly, the vertical arrow on the right-hand side can be rewritten as $G(f' f)_{d''}$.
+		We get overall the following commutative diagram:
+		\[
+			\begin{tikzcd}[row sep = 4em, column sep = 7em]
+				G(c)(d)
+				\arrow{r}[above]{G(c)(g' g)}
+				\arrow{d}[left]{G(f' f)_d}
+				\arrow{dr}[description]{G'(f', g') G(f, g)}
+				&
+				G(c)(d'')
+				\arrow{d}[right]{G(f' f)_{d''}}
+				\\
+				G(c'')(d)
+				\arrow{r}[below]{G(c'')(g' g)}
+				&
+				G(c'')(d'')
+			\end{tikzcd}
+		\]
+
+		The morphism~$G'((f', g')(f, g)) = G'(f' f, g' g)$ is defined as the diagonal morphism in precisely this commutative square diagram.
+		Consequently, this morphism agrees with the composite~$G'(f', g') G'(f, g)$.
+
+\end{itemize}
+
+
+
+\subsubsection*{The constructions are mutually inverse}
+
+It remains to show that the two constructions are mutually inverse.
+
+Let first~$F$ be a bifunctor from~$\cat{C} × \cat{D}$ to~$\cat{E}$, let~$F'$ be the induced functor from~$\cat{C}$ to~$\cat{E}^{\cat{D}}$, and let~$F''$ be the induced bifunctor from~$\cat{C} × \cat{D}$ to~$\cat{E}$.
+
+We have for every object~$(c, d)$ of~$\cat{C} × \cat{D}$ the sequence of equalities
+\[
+	F''(c, d)
+	=
+	F'(c)(d)
+	=
+	F(c, \ph)(d)
+	=
+	F(c, d) \,.
+\]
+For every morphism~$(f, g) \colon (c, d) \to (c', d')$ in~$\cat{C} × \cat{D}$, the morphism~$F''(f, g)$ is defined as the diagonal morphism in the following commutative square diagram:
+\[
+	\begin{tikzcd}
+		F'(c)(d)
+		\arrow{r}[above]{F'(c)(g)}
+		\arrow{d}[left]{F'(f)_d}
+		&
+		F'(c)(d')
+		\arrow{d}[right]{F'(f)_{d'}}
+		\\
+		F'(c')(d)
+		\arrow{r}[above]{F'(c')(g)}
+		&
+		F'(c')(d')
+	\end{tikzcd}
+\]
+Using the definition of~$F'$, this diagram can be rewritten as follows:
+\[
+	\begin{tikzcd}
+		F(c, d)
+		\arrow{r}[above]{F(\id_c, g)}
+		\arrow{d}[left]{F(f, \id_d)}
+		&
+		F(c, d')
+		\arrow{d}[right]{F(f, \id_{d'})}
+		\\
+		F(c', d)
+		\arrow{r}[above]{F(\id_{c'}, g)}
+		&
+		F(c', d')
+	\end{tikzcd}
+\]
+The diagonal morphism in this diagram is given by
+\[
+	F(f, \id_{d'}) F(\id_c, g)
+	=
+	F((f, \id_{d'}) (\id_c, g))
+	=
+	F(f \id_c, \id_{d'} g)
+	=
+	F(f, g) \,.
+\]
+This shows altogether that~$F''(f, g)$ equals~$F(f, g)$.
+
+Let now~$G$ be a functor from~$\cat{C}$ to~$\cat{E}^{\cat{D}}$.
+Let~$G'$ be the induced bifunctor from~$\cat{C} × \cat{D}$ to~$\cat{E}$, and let~$G''$ be the induced functor from~$\cat{C}$ to~$\cat{D}^{\cat{E}}$.
+We want to show that~$G'' = G$.
+To this end we need to show that the two functors~$G''$ and~$G$ agree both on objects and on morphisms.
+
+We first show that~$G''(c) = G(c)$ for every object~$c$ of~$\cat{C}$, i.e., that the two functors~$G$ and~$G''$ agree on objects.
+We need to show that the two functors~$G''(c)$ and~$G(c)$ from~$\cat{D}$ to~$\cat{E}$ agree both on objects and on morphisms.
+\begin{itemize}
+
+	\item
+		Let~$d$ be an arbitrary object of~$\cat{D}$.
+		We have the sequence of equalities
+		\[
+			G''(c)(d) = G'(c, d) = G(c)(d) \,.
+		\]
+		This tells us that~$G''(c)$ and~$G(c)$ agree on objects.
+
+	\item
+		Let~$g \colon d \to d'$ be a morphism in~$\cat{D}$.
+		The morphism~$G''(c)(g)$ is defined as~$G'(\id_c, g)$, which in turn is defined as the diagonal morphism in the following commutative diagram:
+		\[
+			\begin{tikzcd}
+				G(c)(d)
+				\arrow{r}[above]{G(c)(g)}
+				\arrow{d}[left]{G(\id_c)_d}
+				&
+				G(c)(d')
+				\arrow{d}[right]{G(\id_c)_{d'}}
+				\\
+				G(c)(d)
+				\arrow{r}[above]{G(c)(g)}
+				&
+				G(c)(d')
+			\end{tikzcd}
+		\]
+		We know from the functoriality of~$G$ that
+		\[
+			G(\id_c)_d
+			=
+			(\id_{G(c)})_d
+			=
+			\id_{G(c)(d)}
+		\]
+		It follows that the diagonal morphism in the above diagram is
+		\[
+			G(c)(g) G(\id_c)_d
+			=
+			G(c)(g) \id_{G(c)(d)}
+			=
+			G(c)(g) \,.
+		\]
+		This shows that~$G''(c)(g) = G(c)(g)$, so that~$G''(c)$ and~$G(c)$ agree on morphisms.
+
+\end{itemize}
+This shows altogether that the two functors~$G''$ and~$G$ agree on objects.
+
+We now show that the two functors~$G''$ and~$G$ agree on morphisms.
+To this end, let~$f \colon c \to c'$ be a morphism in~$\cat{C}$.
+We need to show that the two natural transformations~$G''(f)$ and~$G(f)$ from~$G''(c) = G(c)$ to~$G''(c') = G(c')$ are equal.
+We hence need to show that~$G''(f)_d = G(f)_d$ for every object~$d$ of~$\cat{D}$.
+The morphism~$G''(f)_d$ is defined as~$G'(f, \id_d)$, which in turn is defined as the diagonal morphism in the following commutative diagram:
+\[
+	\begin{tikzcd}
+		G(c)(d)
+		\arrow{r}[above]{G(c)(\id_d)}
+		\arrow{d}[left]{G(f)_d}
+		&
+		G(c)(d)
+		\arrow{d}[right]{G(f)_d}
+		\\
+		G(c')(d)
+		\arrow{r}[above]{G(c')(\id_d)}
+		&
+		G(c')(d)
+	\end{tikzcd}
+\]
+We know from the functoriality of~$G(c)$ that~$G(c)(\id_d) = \id_{G(c)(d)}$.
+The diagonal morphism in the above diagram is therefore given by
+\[
+	G(f)_d G(c)(\id_d)
+	=
+	G(f)_d \id_{G(c)(d)}
+	=
+	G(f)_d \,,
+\]
+as desired.
