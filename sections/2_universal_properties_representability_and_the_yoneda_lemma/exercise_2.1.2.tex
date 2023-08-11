@@ -1,0 +1,55 @@
+\subsection{}
+
+
+
+\subsubsection*{Representable functors preserve monomorphisms}
+
+There exists by assumption an object~$c$ of~$\cat{C}$ for which the two functors~$F$ and~$\cat{C}(c, \ph)$ are isomorphic.
+Let~$α$ be a natural isomorphism from~$\cat{C}(c, \ph)$ to~$F$.
+
+Let~$f \colon x \to y$ be a monomorphism in~$\cat{C}$.
+This entails that the induced map~$f_* \colon \cat{C}(c, x) \to \cat{C}(c, y)$ is injective.
+We thus have the commutative square diagram
+\[
+	\begin{tikzcd}
+		\cat{C}(c, x)
+		\arrow{r}[above]{f_*}
+		\arrow{d}[left]{α_x}
+		&
+		\cat{C}(c, y)
+		\arrow{d}[right]{α_y}
+		\\
+		F(x)
+		\arrow{r}[above]{F(f)}
+		&
+		F(y)
+	\end{tikzcd}
+\]
+in which both vertical arrows are bijections, and the upper horizontal arrow is injective.
+It follows that
+\[
+	F(f) = α_y f_* α_x^{-1}
+\]
+is a composite of injections, and therefore itself injective.
+This shows that the functor~$F$ preserves monomorphisms, as the monomorphisms in~$\Set$ are precisely those maps that are injective.
+
+
+
+\subsubsection*{A non-representable functor}
+
+For every group~$G$ let~$C(G)$ be its set of conjugacy classes.
+Every homomorphism of groups~$ϕ \colon G \to H$ induces a map~$C(ϕ) \colon C(G) \to C(H)$ that assigns to the conjugacy class of an element~$g$ the conjugacy class of the image element~$ϕ(g)$.
+The assignment~$C$ is a functor from~$\Group$ to~$\Set$.
+
+Let~$\symm_3$ be the symmetric group on three letters.
+This group contains two elements of order~$3$, which are conjugated to one another.
+Let~$ρ$ be one of these two elements.
+The other element is then~$ρ^2$.
+
+Let~$i$ be the inclusion homomorphism from~$ℤ / 3$ to~$\symm_3$ given by~$i(\class{1}) = ρ$.
+The group~$ℤ / 3$ is abelian, whence each element of~$ℤ / 3$ forms its own conjugacy class.
+The homomorphism~$i$ thus maps the two non-conjugated elements~$\class{1}$ and~$\class{2}$ of~$ℤ / 3$ onto the two conjugated elements~$ρ$ and~$ρ^2$ of~$\symm_3$.
+Consequently, the induced map~$C(i) \colon C(ℤ / 3) \to C(\symm_3)$ is not injective.
+
+This shows that the functor~$C$ does not preserve monomorphisms.
+It therefore cannot be representable.
