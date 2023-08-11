@@ -1,0 +1,34 @@
+\subsection{}
+
+We first observe that parts~(i) and~(ii) are equivalent:
+
+Let~$K$ be an essential inverse to~$H$.
+We have the sequence of isomorphisms
+\[
+	  F K
+	≅ G H K
+	≅ G \Id_{\cat{D}}
+	≅ G \,.
+\]
+We hence find that parts~(i) and~(ii) are interchangeable via
+\[
+	\cat{C} \onetoone \cat{D} \,,
+	\quad
+	F \onetoone G \,,
+	\quad
+	H \onetoone K \,.
+\]
+In the following, we prove part~(i).
+
+That~$G$ is representable tells us that there exists an object~$d$ of~$\cat{D}$ such that~$G ≅ \cat{D}(d, \ph)$.
+There exists an object~$c$ of~$\cat{C}$ with~$d ≅ H(c)$ because the functor~$H$ is an equivalence, and thus essentially surjective.
+It follows that
+\[
+	  F
+	≅ G H
+	≅ \cat{D}(d, \ph) H
+	≅ \cat{D}(d, H(\ph))
+	≅ \cat{D}(H(c), H(\ph))
+	≅ \cat{C}(c, \ph) \,.
+\]
+This shows that the functor~$F$ is represented by the object~$c$.
