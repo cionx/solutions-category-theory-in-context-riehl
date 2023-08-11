@@ -1,0 +1,40 @@
+\subsection{}
+
+We denote the given functors by
+\begin{alignat*}{3}
+	I_0
+	&\colon
+	𝟙 \to 𝟚 \,,
+	&\quad
+	0 &\mapsto 0 \,,
+	&\quad
+	\id_0 &\mapsto \id_0 \,,
+	\\
+	I_1
+	&\colon
+	𝟙 \to 𝟚 \,,
+	&\quad
+	0 &\mapsto 1 \,,
+	&\quad
+	\id_0 &\mapsto \id_1 \,,
+\end{alignat*}
+as well as
+\[
+	P
+	\colon
+	𝟚 \to 𝟙 \,,
+	\quad
+	0, 1 \mapsto 0 \,,
+	\quad
+	\id_0, \id_1, e \mapsto \id_0 \,,
+\]
+where~$e \colon 0 \to 1$ denotes the unique non-identity morphism in~$𝟚$.
+These functors induce morphisms in~$\Cat$, i.e., natural transformations,
+\begin{align*}
+	I_0^* &\colon \Cat(𝟚, \ph) \to \Cat(𝟙, \ph) \,,
+	\\
+	I_1^* &\colon \Cat(𝟚, \ph) \to \Cat(𝟙, \ph) \,,
+	\\
+	P^* &\colon \Cat(𝟙, \ph) \to \Cat(𝟚, \ph) \,.
+\end{align*}
+Under the canonical isomorphisms~$\Cat(𝟚, \ph) ≅ \Mor$ and~$\Cat(𝟙, \ph) ≅ \Ob$ the natural transformation~$I_0^*$ maps each morphism to its domain, the natural transformation~$I_1^*$ maps each morphism to its codomain, and the natural transformation~$P^*$ assigns to each object its identity morphism.
