@@ -1,0 +1,114 @@
+\subsection{}
+
+The set~$Ω$ consists of two elements, whence it admits~$2^2 = 4$ maps into itself.
+These maps are as follows:
+\begin{enumerate*}
+
+	\item
+		The identity map.
+
+	\item
+		The transposition that swaps~$⊤$ and~$⊥$.
+
+	\item
+		The constant map with value~$⊤$.
+
+	\item
+		The constant map with value~$⊥$.
+
+\end{enumerate*}
+We denote these maps by~$\id_Ω$,~$σ$,~$c_⊤$ and~$c_⊥$ respectively.
+
+The natural isomorphism between~$P(X)$ and~$\Set(X, Ω)$ is for every set~$X$ given as follows:
+\begin{itemize}
+
+	\item
+		For every function~$χ \colon X \to Ω$, the corresponding subset of~$X$ is the preimage~$χ^{-1}(⊤)$.
+
+	\item
+		For every subset~$A$ of~$X$, the corresponding function is its characteristic function
+		\[
+			χ_A
+			\colon
+			X \to Ω \,,
+			\quad
+			x
+			\mapsto
+			\begin{cases*}
+				⊤ & if~$x ∈ A$, \\
+				⊥ & if~$x ∉ A$.
+			\end{cases*}
+		\]
+
+\end{itemize}
+We denote this natural isomorphism from~$\Set(\ph, Ω)$ to~$P$ by~$α$.
+
+\begin{enumerate}
+
+	\item
+		The natural endomorphism~$\id_*$ of~$\Set(\ph, Ω)$ is~$\id_{\Set(\ph, Ω)}$.
+		The corresponding endomorphism of~$P$ is given by
+		\[
+			α \id_* α^{-1}
+			=
+			α \id_{\Set(\ph, Ω)} α^{-1}
+			=
+			α α^{-1}
+			=
+			\id_P \,.
+		\]
+		In other words, the identity map induces the identity endomorphism.
+
+	\item
+		The natural endomorphism of~$P$ induced by~$σ$ is given by~$α σ_* α^{-1}$, and its components are given by
+		\begin{align*}
+			\SwapAboveDisplaySkip
+			(α σ_* α^{-1})_X(A)
+			&=
+			α_X( (σ_*)_X( α_X^{-1}( A ) ) ) \\
+			&=
+			α_X( (σ_*)_X( χ_A ) ) \\
+			&=
+			α_X( σ χ_A ) \\
+			&=
+			(σ χ_A)^{-1}( ⊤ ) \\
+			&=
+			χ_A^{-1}( σ^{-1}( ⊤ ) ) \\
+			&=
+			χ_A^{-1}( ⊥ ) \\
+			&=
+			X ∖ A \,.
+		\end{align*}
+		In other words, it is given by taking complements.
+
+	\item
+		The natural endomorphism of~$P$ induced by~$c_⊤$ is given by~$α (c_⊤)_* α^{-1}$, and its components are given by
+		\begin{align*}
+			(α (c_⊤)_* α^{-1})_X(A)
+			&=
+			\dotsb \\
+			&=
+			χ_A^{-1}( c_⊤^{-1}( ⊤ ) ) \\
+			&=
+			χ_A^{-1}( Ω ) \\
+			&=
+			X \,.
+		\end{align*}
+		In other words, it is given by mapping each subset to the entire set.
+
+	\item
+		The natural endomorphism of~$P$ induced by~$c_⊥$ is given by~$α (c_⊥)_* α^{-1}$, and its components are given by
+		\begin{align*}
+			(α (c_⊥)_* α^{-1})_X(A)
+			&=
+			\dotsb \\
+			&=
+			χ_A^{-1}( c_⊥^{-1}( ⊥ ) ) \\
+			&=
+			χ_A^{-1}( ∅ ) \\
+			&=
+			∅ \,.
+		\end{align*}
+		In other words, it is given by mapping each subset to the empty set.
+
+\end{enumerate}
