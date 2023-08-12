@@ -1,0 +1,214 @@
+\subsection{}
+
+A dual version of the Yoneda lemma is as follows:
+\begin{quote}
+	\itshape
+	For every contravariant functor~$F \colon \cat{C} \to \Set$, whose domain~$\cat{C}$ is locally small, and every object~$c$ of~$\cat{C}$, the map
+	\[
+		Φ \colon \Hom( \cat{C}(\ph, c), F )
+		\to
+		F c \,,
+		\quad
+		α
+		\mapsto
+		α_c(\id_c)
+	\]
+	is bijective and natural in both~$c$ and~$F$.
+\end{quote}
+
+
+
+\subsubsection*{Injectivity of~$Φ$}
+
+To see that the map~$Φ$ is injective let~$α \colon \cat{C}(\ph, c) \To F$ be a natural isomorphism, let~$x$ be an arbitrary object of~$\cat{C}$ and let~$f$ be an arbitrary element of~$\cat{C}(\ph, c)(x)$.
+As~$\cat{C}(\ph, c)(x) = \cat{C}(x, c)$, this means that~$f$ is a morphism from~$x$ to~$c$ in~$\cat{C}$.
+It follows from the commutativity of the square diagram
+\[
+	\begin{tikzcd}
+		\cat{C}(c, c)
+		\arrow{r}[above]{f^*}
+		\arrow{d}[left]{α_c}
+		&
+		\cat{C}(x, c)
+		\arrow{d}[right]{α_x}
+		\\
+		F c
+		\arrow{r}[above]{F f}
+		&
+		F x
+	\end{tikzcd}
+\]
+that
+\[
+	α_x( f )
+	=
+	α_x( \id_c f )
+	=
+	α_x( f^*( \id_c ) )
+	=
+	(F f)( α_c( \id_c ) )
+	=
+	(F f)( Φ(α) ) \,.
+\]
+This shows that the entire natural transformation~$α$ is uniquely determined by the single element~$Φ(α)$.
+
+
+
+\subsubsection*{Surjectivity of~$Φ$}
+
+Let~$u$ be an arbitrary element of the set~$F c$.
+We consider for every object~$x$ of~$\cat{C}$ the map
+\[
+	α_x
+	\colon
+	\cat{C}(x, c) \to F x \,,
+	\quad
+	g \mapsto (F g)(u) \,.
+\]
+We claim that the family~$α ≔ (α_x)_{x ∈ \cat{C}}$ is a natural transformation from~$\cat{C}(\ph, c)$ to~$F$ with~$Φ(α) = u$.
+
+To see that~$α$ is a natural transformation from~$\cat{C}(\ph, c)$ to~$F$, we consider an arbitrary morphism~$f \colon x \to y$ in~$\cat{C}$ and the resulting commutative diagram:
+\[
+	\begin{tikzcd}
+		\cat{C}(y, c)
+		\arrow{r}[above]{f^*}
+		\arrow{d}[left]{α_y}
+		&
+		\cat{C}(x, c)
+		\arrow{d}[right]{α_x}
+		\\
+		F y
+		\arrow{r}[above]{F f}
+		&
+		F x
+	\end{tikzcd}
+\]
+This diagram commutes because
+\[
+	α_x( f^*( g ) )
+	=
+	α_x( g f )
+	=
+	F(g f)(u)
+	=
+	(F f)( (F g)( u ) )
+	=
+	(F f)( α_y( g ) )
+\]
+for every element~$g$ of~$\cat{C}(y, c)$, i.e., every morphism~$g \colon c \to y$ in~$\cat{C}$.
+This shows the naturality of~$α$.
+
+We also have~$Φ(α) = α_c(\id_c) = (F \id_c)(u) = \id_{F(c)}(u) = u$, as desired.
+
+
+
+\subsubsection*{Naturality in~$c$}
+
+We relabel the bijection~$Φ$ as~$Φ_c$, and want to show that~$Φ_c$ is natural in~$c$.
+
+Let~$f \colon c \to d$ be a morphism in~$\cat{C}$.
+We need to show that the square diagram
+\begin{equation}
+	\label{first naturality of contravariant yoneda}
+	\begin{tikzcd}
+		\Hom(\cat{C}(\ph, d), F)
+		\arrow{r}[above]{(f_*)^*}
+		\arrow{d}[left]{Φ_d}
+		&
+		\Hom(\cat{C}(\ph, c), F)
+		\arrow{d}[right]{Φ_c}
+		\\
+		F d
+		\arrow{r}[above]{F f}
+		&
+		F c
+	\end{tikzcd}
+\end{equation}
+commutes.
+To this end let~$α$ be an element in the top-left corner of this diagram, i.e., a natural transformation from~$\cat{C}(\ph, d)$ to~$F$.
+One path from the top-left corner to the bottom-right corner in the diagram~\eqref{first naturality of contravariant yoneda} equals
+\begin{align*}
+	Φ_c( (f_*)^*( α ) )
+	&=
+	Φ_c( α ⋅ f_* ) \\
+	&=
+	(α ⋅ f_*)_c( \id_c ) \\
+	&=
+	(α_c ∘ (f_*)_c)(\id_c) \\
+	&=
+	α_c( (f_*)_c( \id_c ) ) \\
+	&=
+	α_c( f \id_c ) \\
+	&=
+	α_c( f ) \,.
+\end{align*}
+For the other path from the top-left corner to the bottom-right corner we observe that the diagram
+\[
+	\begin{tikzcd}
+		\cat{C}(d, d)
+		\arrow{r}[above]{f^*}
+		\arrow{d}[left]{α_d}
+		&
+		\cat{C}(c, d)
+		\arrow{d}[right]{α_c}
+		\\
+		F d
+		\arrow{r}[above]{F f}
+		&
+		F c
+	\end{tikzcd}
+\]
+commutes by the naturality of~$α$, whence
+\[
+	(F f)( Φ_d( α ) )
+	=
+	(F f)( α_d(\id_d) )
+	=
+	α_c( f^*( \id_d ) )
+	=
+	α_c( \id_d f )
+	=
+	α_c( f ) \,.
+\]
+This shows the commutativity of the diagram~\eqref{first naturality of contravariant yoneda}.
+
+
+
+\subsubsection*{Naturality in~$F$}
+
+We relabel the bijection~$Φ$ as~$Φ_F$, and want to show that~$Φ_F$ is natural in~$F$.
+
+Let~$F$ and~$G$ be two contravariant functors from~$\cat{C}$ to~$\Set$, and let~$β \colon F \To G$ be a natural transformation.
+We need to show that the square diagram
+\[
+	\begin{tikzcd}
+		\Hom(\cat{C}(\ph, c), F)
+		\arrow{r}[above]{β_*}
+		\arrow{d}[left]{Φ_F}
+		&
+		\Hom(\cat{C}(\ph, c), G)
+		\arrow{d}[right]{Φ_G}
+		\\
+		F c
+		\arrow{r}[above]{β_c}
+		&
+		G c
+	\end{tikzcd}
+\]
+commutes.
+To this end let~$α$ be an element of the top-left corner of this diagram, i.e., let~$α$ be a natural transformation from~$\cat{C}(\ph, c)$ to~$F$.
+The sequence of equalities
+\[
+	Φ_G( β_*( α ) )
+	=
+	Φ_G( β ⋅ α )
+	=
+	(β ⋅ α)_c( \id_c )
+	=
+	(β_c α_c)( \id_c )
+	=
+	β_c( α_c( \id_c ) )
+	=
+	β_c( Φ_F( α ) )
+\]
+tells us that the above diagram indeed commutes.
