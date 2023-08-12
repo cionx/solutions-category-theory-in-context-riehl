@@ -13,7 +13,16 @@
 	numbers       = noenddot
 }
 
+% load a modified version of Libertinus Math that has a stylistic set for blackboard bold versions of greek letters (only ω so far)
+\setmathfont[version=bbgreek, StylisticSet=1]{LibertinusMath-Regular-Extended.otf}
+\newcommand{\bbomega}{\text{\mathversion{bbgreek}$ω$}}
 
+% make よ usable
+% taken from https://tex.stackexchange.com/questions/171611/how-to-write-a-single-hiragana-character-in-latex
+\newfontfamily\japanesefont{IPAMincho}[Script=Kana, Scale=MatchUppercase, ScaleAgain=0.95]
+\usepackage{newunicodechar}
+\newunicodechar{よ}{\text{\hspace{-0.08em}\japanesefont よ}} % \! is -0.16667em
+% I originally groked this solution together for the solution to Leinster’s Basic Category Theory, and copied it from there
 
 % settings for numbering of sectioning commands
 % and for their inclusion in the table of contents

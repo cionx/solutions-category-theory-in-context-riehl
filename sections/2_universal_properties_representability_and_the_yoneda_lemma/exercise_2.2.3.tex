@@ -1,0 +1,163 @@
+\subsection{}
+
+The functor category~$\cat{C} ≔ \Set^{(\bbomega^{\op})}$ can be regarded as the category of contravariant functors from~$\bbomega$ to~$\Set$.
+This category can (up to isomorphism) more explicitly be described as follows:
+\begin{itemize}
+
+	\item
+		The objects of~$\cat{C}$ are diagrams of the form
+		\[
+			\begin{tikzcd}
+				A_0
+				&
+				A_1
+				\arrow{l}[above]{a_0}
+				&
+				A_2
+				\arrow{l}[above]{a_1}
+				&
+				A_3
+				\arrow{l}[above]{a_2}
+				&
+				\arrow{l}
+				\dotsb
+			\end{tikzcd}
+		\]
+		consisting of sets and maps between them.
+
+	\item
+		A morphism from an object~$((A_n)_n, (a_n)_n)$ to an object~$((B_n)_n, (b_n)_n)$ is a family~$(f_n)_n$ of maps~$f_n \colon A_n \to B_n$ such that the following diagram commutes:
+		\[
+			\begin{tikzcd}
+				A_0
+				\arrow{d}[left]{f_0}
+				&
+				A_1
+				\arrow{l}[above]{a_0}
+				\arrow{d}[left]{f_1}
+				&
+				A_2
+				\arrow{l}[above]{a_1}
+				\arrow{d}[left]{f_2}
+				&
+				A_3
+				\arrow{l}[above]{a_2}
+				\arrow{d}[left]{f_3}
+				&
+				\arrow{l}
+				\dotsb
+				\\
+				B_0
+				&
+				B_1
+				\arrow{l}[above]{b_0}
+				&
+				B_2
+				\arrow{l}[above]{b_1}
+				&
+				B_3
+				\arrow{l}[above]{b_2}
+				&
+				\arrow{l}
+				\dotsb
+			\end{tikzcd}
+		\]
+
+\end{itemize}
+
+For every object~$n$ of~$\bbomega$, the object~$よ(n)$ consists of~$n + 1$ many singleton sets, followed by empty sets:%
+\footnote{
+	We denote the Yoneda embedding by~$よ$ instead of~$y$.
+}
+\[
+		\{ \ast \}
+		\from
+		\{ \ast \}
+		\from
+		\dotsb
+		\from
+		\{ \ast \}
+		\from
+		∅
+		\from
+		∅
+		\from
+		\dotsb
+\]
+We know that in~$\bbomega$ there exists a unique morphism from~$n$ to~$m$ if~$n ≤ m$, and no morphism if~$n > m$.
+It suffices to show that the same holds true for the induced diagrams~$よ(n)$ and~$よ(m)$.
+\begin{itemize}
+
+	\item
+		Suppose that~$n ≤ m$.
+		Then there exists precisely one sequence of maps~$(f_n)_n$ that makes the following diagram commute:
+		\[
+			\begin{tikzcd}[column sep = small]
+				よ(n)
+				\colon
+				&
+				\{ \ast \}
+				\arrow{d}[left]{f_0}
+				&
+				⋯
+				\arrow{l}
+				\arrow[phantom]{d}[description]{⋰}
+				&
+				\{ \ast \}
+				\arrow{l}
+				\arrow{d}[left]{f_n}
+				&
+				∅
+				\arrow{l}
+				\arrow{d}[left]{f_{n + 1}}
+				&
+				⋯
+				\arrow{l}
+				\arrow[phantom]{d}[description]{⋰}
+				&
+				∅
+				\arrow{l}
+				\arrow{d}[left]{f_m}
+				&
+				∅
+				\arrow{l}
+				\arrow{d}[left]{f_{m + 1}}
+				&
+				⋯
+				\arrow{l}
+				\\
+				よ(m)
+				\colon
+				&
+				\{ \ast \}
+				&
+				⋯
+				\arrow{l}
+				&
+				\{ \ast \}
+				\arrow{l}
+				&
+				\{ \ast \}
+				\arrow{l}
+				&
+				⋯
+				\arrow{l}
+				&
+				\{ \ast \}
+				\arrow{l}
+				&
+				∅
+				\arrow{l}
+				&
+				⋯
+				\arrow{l}
+			\end{tikzcd}
+		\]
+		Indeed, the maps~$f_0, \dotsc, f_n$ are necessarily the identity maps on the singleton set, and~$f_k$ for~$k > n$ is necessarily the empty map.
+
+	\item
+		Suppose now that~$n > m$.
+		A morphism~$f \colon よ(n) \to よ(m)$ contains a map~$f_{m + 1} \colon \{ \ast \} \to ∅$, but such a map does not exist.
+		Consequently, no morphism from~$よ(n)$ to~$よ(m)$ exists.
+
+\end{itemize}
