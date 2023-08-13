@@ -1,0 +1,29 @@
+\subsection{}
+
+The evaluation map is given by
+\[
+	\ev
+	\colon
+	B^A × A \to B \,,
+	\quad
+	(f, a) \mapsto f(a) \,,
+\]
+and it has the following universal property:
+\begin{quote}
+	\itshape
+	For every set~$C$ and every map~$f \colon C × A \to B$, there exists a unique map~$φ \colon C \to B^A$ such that~$f(c, a) = \ev(φ(c), a)$ for all~$(c, a) ∈ C × A$, i.e., such that the following diagram commutes:
+	\[
+		\begin{tikzcd}
+			C × A
+			\arrow{r}[above]{f}
+			\arrow{d}[left]{φ × \id_A}
+			&
+			B
+			\\
+			B^A × A
+			\arrow{ur}[below right]{\ev}
+			&
+			{}
+		\end{tikzcd}
+	\]
+\end{quote}
