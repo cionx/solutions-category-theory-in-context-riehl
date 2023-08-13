@@ -1,0 +1,93 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+We observe that for every bilinear map~$β \colon 𝕜 × V \to W$ we have the equality
+\[
+	β(λ, v) = β(1, λ v) \,.
+\]
+for all~$λ ∈ 𝕜$,~$v ∈ V$.
+This implies that~$β$ is uniquely determined by the linear map
+\[
+	V \to W \,,
+	\quad
+	v \mapsto β(1, v) \,.
+\]
+
+Suppose conversely that we are given an arbitrary linear map~$g \colon V \to W$.
+The map
+\[
+	𝕜 × V \to W \,,
+	\quad
+	(λ, v) \mapsto λ g(v)
+\]
+is then bilinear.
+
+The above two constructions are mutually inverse, and give an isomorphism of vector spaces
+\[
+	\Bil(𝕜, V; W)
+	≅
+	\Vect_𝕜(V, W)
+\]
+that is natural in both~$V$ and~$W$.
+It follows that we have the sequence of isomorphisms
+\[
+	\Vect_𝕜(𝕜 ⊗_𝕜 V, W)
+	≅
+	\Bil(𝕜, V; W)
+	≅
+	\Vect_𝕜(V, W)
+\]
+that is natural in both~$V$ and~$W$.
+The isomorphism of functors
+\[
+	\Vect_𝕜(k ⊗_𝕜 V, \ph)
+	≅
+	\Vect_𝕜(V, \ph)
+\]
+tells us that~$k ⊗_𝕜 V ≅ V$.
+
+
+
+\subsubsection{}
+
+We have the sequence isomorphisms
+\begin{align*}
+	\Vect_𝕜(U ⊗_𝕜 (V ⊗_𝕜 W), X)
+	&≅
+	\Bil(U, V ⊗_𝕜 W; X) \\
+	&≅
+	\Vect_𝕜(U, \Vect_𝕜(V ⊗_𝕜 W, X)) \\
+	&≅
+	\Vect_𝕜(U, \Bil(V, W; X)) \\
+	&≅
+	\Vect_𝕜(U, \Vect_𝕜(V, \Vect_𝕜(W, X))) \\
+	&≅
+	\Tril(U, V, W; X)
+\end{align*}
+and similarly
+\begin{align*}
+	\Vect_𝕜((U ⊗_𝕜 V) ⊗_𝕜 W, X)
+	&≅
+	\Bil(U ⊗_𝕜 V, W; X) \\
+	&≅
+	\Vect_𝕜(U ⊗_𝕜 V, \Vect_𝕜(W, X)) \\
+	&≅
+	\Bil(U, V; \Vect_𝕜(W, X)) \\
+	&≅
+	\Vect_𝕜(U, \Vect_𝕜(V, \Vect_𝕜(W, X))) \\
+	&≅
+	\Tril(U, V, W; X) \,.
+\end{align*}
+All these isomorphisms are natural in~$U$,~$V$,~$W$ and~$X$.
+The isomorphism of functors
+\begin{align*}
+	\Vect_𝕜(U ⊗_𝕜 (V ⊗_𝕜 W), \ph)
+	&≅
+	\Tril(U, V, W; \ph) \\
+	&≅
+	\Vect_𝕜((U ⊗_𝕜 V) ⊗_𝕜 W, \ph)
+\end{align*}
+tells us that~$U ⊗_𝕜 (V ⊗_𝕜 W) ≅ (U ⊗_𝕜 V) ⊗_𝕜 W$.
