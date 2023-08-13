@@ -1,0 +1,94 @@
+\subsection{}
+
+\begin{remark}
+	The formulation of the question is slightly misleading:
+	an \enquote{endomorphism of the category of spaces} is a functor~$\Top \to \Top$, and there are many such functors (e.g., constant functors).
+	But the question then asks for something else:
+	a non-identity natural endomorphism for an arbitrary topological space.
+\end{remark}
+
+
+
+\subsubsection*{First solution}
+
+Suppose that we are given for every topological space~$X$ a continuous map
+\[
+	f_X \colon X \to X
+\]
+that is natural in~$X$.
+More explicitly, this means that for every continuous map~$g \colon X \to Y$ the following square diagram has to commute:
+\[
+	\begin{tikzcd}
+		X
+		\arrow{r}[above]{f_X}
+		\arrow{d}[left]{g}
+		&
+		X
+		\arrow{d}[right]{g}
+		\\
+		Y
+		\arrow{r}[above]{f_Y}
+		&
+		Y
+	\end{tikzcd}
+\]
+
+Let~$X$ be an arbitrary topological space, and for every element~$x$ of~$X$ let~$g_x$ be the map from~$\{ \ast \}$ to~$X$ that picks out the element~$x$, i.e.,
+\[
+	g_x
+	\colon
+	\{ \ast \} \to X \,,
+	\quad
+	\ast \mapsto x \,.
+\]
+The map~$g_x$ is continuous, whence the diagram
+\[
+	\begin{tikzcd}
+		\{ \ast \}
+		\arrow{r}[above]{\id_{\{ \ast \}}}
+		\arrow{d}[left]{g_x}
+		&
+		\{ \ast \}
+		\arrow{d}[right]{g_x}
+		\\
+		X
+		\arrow{r}[above]{f_X}
+		&
+		X
+	\end{tikzcd}
+\]
+commutes.
+This commutativity means that
+\[
+	f_X(x)
+	=
+	f_X( g_x( \ast ) )
+	=
+	g_x( \ast )
+	=
+	x \,.
+\]
+As these equalities hold for every element~$x$ of~$X$, we find that~$f_X$ is the identity map on~$X$.
+
+The answer to the initial question is therefore \enquote{no}:
+there is no non-identity solution.
+
+
+
+\subsubsection*{Second solution}
+
+The question at hand is whether the identity functor of~$\Top$ admits a non-trivial endomorphism.
+Suppose such an endomorphism~$α$ were to exist.
+
+Let~$U$ be the forgetful functor from~$\Top$ to~$\Set$.
+The whiskered natural transformation~$U α$ from~$U \Id_{\Top} = U$ to~$U \Id_{\Top} = U$ is again non-identity because the functor~$U$ is faithful.
+More explicitly, there exists some object~$X$ of~$\Top$ for which~$α_X ≠ \id_X$, and then also~$(U α)_X = U α_X ≠ U \id_X = \id_{U X}$.
+
+This shows that every non-identity endomorphism of the identity functor~$\Id_{\Top}$ induces a non-identity endomorphism of the forgetful functor~$U$.
+
+But~$U$ is represented by the singleton space~$\{ \ast \}$.
+Therefore, because the Yoneda embedding is full and faithful, endomorphisms of~$U$ are in one-to-one correspondence with endomorphisms of~$\{ \ast \}$.
+
+But~$\{ \ast \}$ admits only the identity endomorphism.
+Consequently,~$U$ admits only the identity endomorphism.
+Even consequentlier,~$\Id_{\Top}$ admits only the identity endomorphism.
