@@ -1,0 +1,71 @@
+\subsection{}
+
+Let~$\cat{C}$ be a category and let~$c$ be an object of~$\cat{C}$.
+
+One terminal object of~$\cat{C} / c$ is given by~$(c, \id_c)$.
+Indeed, for every object~$(x, f)$ of~$\cat{C} / c$ there exists a unique morphism from~$x$ to~$c$ that makes the diagram
+\[
+	\begin{tikzcd}[column sep = normal]
+		x
+		\arrow[dashed]{rr}
+		\arrow{dr}[below left]{f}
+		&
+		{}
+		&
+		c
+		\arrow{dl}[below right]{\id_c}
+		\\
+		{}
+		&
+		c
+		&
+		{}
+	\end{tikzcd}
+\]
+commute, namely the morphism~$f$.
+
+It follows that an object~$(x, f)$ of~$\cat{C} / c$ is terminal in~$\cat{C} / c$ if and only if it is isomorphic to the object~$(c, \id_c)$.
+This is the case if and only if there exists morphisms~$φ \colon (x, f) \to (c, \id_c)$ and~$ψ \colon (c, \id_c) \to (x, f)$ in~$\cat{C} / c$ such that~$ψ φ = \id_{(c, \id_c)}$ and~$φ ψ = \id_{(x, f)}$.
+This means that~$φ$ and~$ψ$ are morphisms in~$\cat{C}$, namely~$φ \colon x \to c$ and~$ψ \colon c \to x$, such that the diagrams
+\[
+	\begin{tikzcd}[column sep = normal]
+		x
+		\arrow{rr}[above]{φ}
+		\arrow{dr}[below left]{f}
+		&
+		{}
+		&
+		c
+		\arrow{dl}[below right]{\id_c}
+		\\
+		{}
+		&
+		c
+		&
+		{}
+	\end{tikzcd}
+	\qquad\text{and}\qquad
+	\begin{tikzcd}[column sep = normal]
+		c
+		\arrow{rr}[above]{ψ}
+		\arrow{dr}[below left]{\id_c}
+		&
+		{}
+		&
+		x
+		\arrow{dl}[below right]{f}
+		\\
+		{}
+		&
+		c
+		&
+		{}
+	\end{tikzcd}
+\]
+commute, and such that~$φ ψ = \id_c$ and~$ψ φ = \id_x$ in~$\cat{C}$.
+The commutativity of the first diagram is equivalent to the condition~$φ = f$, and the commutativity of the second diagram is equivalent to the condition~$f ψ = \id_c$.
+We find that~$φ$ must be equal to~$f$ and that~$ψ$ must be a two-sided inverse to~$f$.
+Consequently, such morphisms~$φ$ and~$ψ$ exist if and only if~$f$ is an isomorphism in~$\cat{C}$.
+
+This shows that the terminal objects in~$\cat{C} / c$ are precisely those objects~$(x, f)$ for which the morphism~$f$ in~$\cat{C}$ is an isomorphism in~$\cat{C}$.
+Therefore, roughly speaking, the terminal objects in~$\cat{C} / c$ are the ways in which the object~$c$ is isomorphic to another object of~$\cat{C}$.
