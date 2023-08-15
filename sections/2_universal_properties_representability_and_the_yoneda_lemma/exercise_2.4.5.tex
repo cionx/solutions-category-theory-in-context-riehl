@@ -1,0 +1,40 @@
+\subsection{}
+
+The objects of~$\Elements F$ are pairs~$(X, ≤)$ consisting of a set~$X$ together with a preorder~$≤$ on~$X$.
+In other words, the objects of~$\Elements F$ are preordered sets.
+
+A morphism~$f \colon (X, ≤_X) \to (Y, ≤_Y)$ is a map~$f \colon X \to Y$ such that~$≤_X$ is the pullback of~$≤_Y$ along~$f$.
+In other words, the preorders~$≤_X$ and~$≤_Y$ and the map~$f$ need to satisfy the compatibility condition
+\[
+	x ≤_X x'
+	\iff
+	f(x) ≤_Y f(x')
+\]
+for all~$x, x' ∈ X$.
+(This entails that the map~$f$ is increasing with~$≤_X$ and~$≤_Y$, but the actual condition is stronger than that.)
+
+The functor~$F$ is not representable.
+
+To see this, we note that for every preorder~$≤$ on a set~$X$ we have an associated equivalence relation~$∼$ given by
+\[
+	x ∼ x' \iff (\text{$x ≤ x'$ and~$x' ≤ x$}) \,.
+\]
+We call the number of equivalence classes of this equivalence relation the \defemph{order size} of~$≤$, and denote it by~$\size(X, ≤)$, or simply by~$\size(X)$.
+
+The order size of a preorder tells how many elements can be at most distinguished by the preorder.
+Consequently, if a preorder on a set~$X$ is the pullback of a preorder on a set~$Y$ via a map~$f \colon X \to Y$, then
+\[
+	\size(X) ≤ \size(Y) \,.
+\]
+Note that this entails that if~$X$ is a subset of~$Y$ together with the restricted preorder, then~$\size(X) ≤ \size(Y)$.
+
+It follows that if the functor~$F$ is representable, then the order size of \emph{every} preordered set would be bound by that of the representing object:
+\[
+	\size(X) ≤ \size(R)
+\]
+for every preordered set~$X$ and the representing preordered set~$R$.
+To show that the functor~$F$ is not representable, it therefore suffices to show that for every order size~$κ$ (which is a cardinal number) there exists a preordered set whose order size is strictly larger than~$κ$.
+
+We can consider for every set~$X$ the discrete preorder on~$X$, for which no two distinct elements are comparable.
+The order size of~$X$ is then its cardinality.
+As there are sets of arbitrarily large cardinality, we find that there are preordered sets of arbitrarily large order size.
