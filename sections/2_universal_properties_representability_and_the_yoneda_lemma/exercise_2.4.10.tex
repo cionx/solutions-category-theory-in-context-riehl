@@ -1,0 +1,41 @@
+\subsection{}
+
+For the functor~$\cat{C}(A, \ph) × \cat{C}(B, \ph)$ to be representable, we would need an object~$C$ of~$\cat{C}$ such that
+\[
+	\cat{C}(C, \ph) ≅ \cat{C}(A, \ph) × \cat{C}(B, \ph) \,.
+\]
+We can also characterize such an isomorphism in terms of its universal element~$(i, j) ∈ \cat{C}(A, C) × \cat{C}(B, C)$:
+we would need an object~$C$ of~$\cat{C}$ together with two morphisms
+\[
+	i \colon A \to C \,,
+	\quad
+	j \colon B \to C
+\]
+such that for every object~$X$ of~$\cat{C}$ and every two morphisms~$f \colon A \to X$ and~$g \colon B \to X$ there exists a unique morphism~$h \colon C \to X$ with~$f = h i$ and~$g = h j$.
+In terms of a diagram:
+\[
+	\begin{tikzcd}[column sep = normal]
+		A
+		\arrow{dr}[above right]{i}
+		\arrow[bend right]{ddr}[below left]{f}
+		&
+		{}
+		&
+		B
+		\arrow{dl}[above left]{j}
+		\arrow[bend left]{ddl}[below right]{g}
+		\\[-0.5em]
+		{}
+		&
+		C
+		\arrow[dashed]{d}[right]{h}
+		&
+		{}
+		\\[1em]
+		{}
+		&
+		X
+		&
+		{}
+	\end{tikzcd}
+\]
