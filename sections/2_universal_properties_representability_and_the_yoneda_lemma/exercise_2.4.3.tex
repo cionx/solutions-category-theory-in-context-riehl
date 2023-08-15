@@ -1,0 +1,29 @@
+\subsection{}
+
+Let~$F$ be a contravariant functor from a category~$\cat{C}$ to the category~$\Set$.
+We may regard~$F$ as a covariant functor~$G$ from~$\cat{C}^{\op}$ to~$\Set$.
+We then have the sequence of equivalences
+\begin{align*}
+	{}&
+	\text{the contravariant functor~$F$ is representable}
+	\\
+	\iff{}&
+	\text{the covariant functor~$G$ is representable}
+	\\
+	\iff{}&
+	\text{the category~$\Elements G$ admits an initial object}
+	\\
+	\iff{}&
+	\text{the category~$(\Elements F)^{\op}$ admits an initial object}
+	\\
+	\iff{}&
+	\text{the category~$\Elements F$ admits a terminal object} \,.
+\end{align*}
+For the second to last equivalence we used that~$\Elements F$ is defined as~$(\Elements G)^{\op}$.
+
+One can refine the above argumentation to get the following result:
+\begin{quote}
+	\itshape
+	Let~$F$ be a contravariant functor from a category~$\cat{C}$ to~$\Set$.
+	An element~$x$ of a set~$F c$, where~$c$ is some object of~$\cat{C}$, is a universal element for~$F$ if and only if~$(c, x)$ is terminal in~$\Elements F$.
+\end{quote}
