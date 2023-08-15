@@ -1,0 +1,184 @@
+\subsection{}
+
+We will use the following observations:
+
+\begin{lemma}
+	\label{lemma for constructing a functor between categories of elements}
+	Let~$\cat{C}$ be a category and let~$(\cat{D}, Π)$ and~$(\cat{D}', Π')$ be two categories over~$\cat{C}$, i.e., two objects of~$\CAT / \cat{C}$, for which the functor~$Π'$ is faithful.
+	For every object~$d$ of~$\cat{D}$ let~$F d$ be an object of~$\cat{D}'$, and for every morphism~$f \colon d \to d'$ in~$\cat{D}$ let~$F f$ be a morphism in~$\cat{D}'$ from~$F d$ to~$F d'$.
+	If the diagram
+	\begin{equation}
+		\label{auxiliary diagram for functoriality between categories of elements}
+		\begin{tikzcd}[column sep = normal]
+			\cat{D}
+			\arrow{rr}[above]{F}
+			\arrow{dr}[below left]{Π}
+			&
+			{}
+			&
+			\cat{D}'
+			\arrow{dl}[below right]{Π'}
+			\\
+			{}
+			&
+			\cat{C}
+			&
+			{}
+		\end{tikzcd}
+	\end{equation}
+	commutes, then~$F$ is a functor, and more specifically a morphism from~$(\cat{D}, Π)$ to~$(\cat{D}', Π')$ in~$\CAT / \cat{C}$.
+\end{lemma}
+
+\begin{proof}
+	It remains to show the functoriality of~$F$.
+	We hence need to show that
+	\[
+		F \id_d = \id_{F d}
+		\quad\text{and}\quad
+		F (g f) = (F g) (F f)
+	\]
+	for every object~$d$ of~$\cat{D}$, and for every two composable morphisms~$f \colon d \to d'$ and~$g \colon d' \to d''$ in~$\cat{D}$.
+	As~$Π'$ is faithful, these two conditions are equivalent to the conditions
+	\[
+		Π' F \id_d = Π' \id_{F d}
+		\quad\text{and}\quad
+		Π' F (g f) = Π' ((F g) (F f)) \,.
+	\]
+	By the functoriality of~$Π'$ we can rewrite (the right-hand sides of) these two equations as follows:
+	\[
+		Π' F \id_d = \id_{Π' F d}
+		\quad\text{and}\quad
+		Π' F (g f) = (Π' F g) (Π' F f) \,.
+	\]
+	By the commutativity of the diagram~\eqref{auxiliary diagram for functoriality between categories of elements} we can simplify these equations to
+	\[
+		Π \id_d = \id_{Π d}
+		\quad\text{and}\quad
+		Π (g f) = (Π g) (Π f)) \,.
+	\]
+	These final equations are satisfied by the functoriality of~$Π$.
+\end{proof}
+
+Let~$\cat{C}$ be a category.
+For every functor~$F$ from~$\cat{C}$ to~$\Set$ we denote its category of elements by~$\Elements F$, and the forgetful functor from~$\Elements F$ to~$\cat{C}$ by~$Π_F$.
+The pair~$(\Elements F, Π_F)$ is an object of the category~$\CAT / \cat{C}$.
+
+Let~$F, G \colon \cat{C} \to \Set$ be two functors and let~$α \colon F \To G$ be a natural transformation.
+The natural transformation~$α$ induces a functor
+\[
+	\Elements α \colon \Elements F \to \Elements G
+\]
+as follows:
+\begin{itemize}
+
+	\item
+		Let~$(c, x)$ be an object of~$\Elements F$.
+		This means that~$c$ is an object of~$\cat{C}$ and~$x$ is an element of the set~$F c$.
+		The component~$α_c$ of the transformation~$α$ is a map from~$F c$ to~$G c$, whence
+		\[
+			\bigl( \Elements α \bigr) (c, x) ≔ (c, α_c(x))
+		\]
+		is an object of~$\Elements G$.
+
+	\item
+		Let~$f \colon (c, x) \to (c', x')$ be a morphism in~$\Elements F$.
+		This means that~$f$ is a morphism in~$\cat{C}$ from~$c$ to~$c'$ with~$(F f)(x) = x'$.
+		We have the following commutative square diagram by the naturality of~$α$:
+		\[
+			\begin{tikzcd}
+				F c
+				\arrow{r}[above]{F f}
+				\arrow{d}[left]{α_c}
+				&
+				F c'
+				\arrow{d}[right]{α_{c'}}
+				\\
+				G c
+				\arrow{r}[above]{G f}
+				&
+				G c'
+			\end{tikzcd}
+		\]
+		The commutativity of this diagram tells us that
+		\[
+			(G f)(α_c(x)) = α_{c'}(x) \,,
+		\]
+		whence~$f$ is a morphism from~$(c, α_c(x))$ to~$(c', α_{c'}(x))$.
+		In other words,~$f$ is a morphism from~$(\Elements α) (c, x)$ to~$(\Elements α) (c', x')$.
+		We therefore define
+		\[
+			\bigl( \Elements α \bigr)((c, x) \xto{f} (c', x'))
+			≔ ( (c, α_c(x)) \xto{f} (c', α_{c'}(x')) ) \,.
+		\]
+		For simplicity, we will simply write
+		\[
+			\bigl( \Elements α \bigr)(f) = f \,,
+		\]
+		not keeping track of the change in domain and codomain.
+		This greatly improves readability, at the minor cost of some rigour.
+
+	\item
+		The diagram
+		\begin{equation}
+			\begin{tikzcd}[column sep = normal]
+				\Elements F
+				\arrow{rr}[above]{\Elements α}
+				\arrow{dr}[below left]{Π_F}
+				&
+				{}
+				&
+				\Elements G
+				\arrow{dl}[below right]{Π_G}
+				\\
+				{}
+				&
+				\cat{C}
+				&
+				{}
+			\end{tikzcd}
+		\end{equation}
+		commutes, whence it follows from \cref{lemma for constructing a functor between categories of elements} that~$\Elements α$ is a functor from~$\Elements F$ to~$\Elements G$.
+\end{itemize}
+
+It remains to show that the induced functor~$\Elements α$ is \emph{itself} functorial in~$α$.
+\begin{itemize}
+
+	\item
+		We need to show that~$\Elements \id_F = \Id_{\bigl( \Elements F \bigr)}$.
+		This holds true because
+		\[
+			\bigl( \Elements \id_F \bigr) (c, x)
+			= (c, (\id_F)_c(x))
+			= (c, \id_{F c}(x))
+			= (c, x) \,,
+		\]
+		for every object~$(c, x)$ of~$\Elements F$, as well as
+		\[
+			\bigl( \Elements \id_F \bigr)(f) = f
+		\]
+		for every morphism~$f$ in~$\Elements F$.
+
+	\item
+		We need to show that~$\Elements (β ⋅ α) = (\Elements β) (\Elements α)$ for every two composable natural transformations~$α \colon F \To G$ and~$β \colon G \To H$.%
+		This holds true because
+		\begin{align*}
+			\bigl( \Elements β \bigr) \bigl( \Elements α \bigr) (c, x)
+			&= \bigl( \Elements β \bigr) (c, α_c(x)) \\
+			&= (c, β_c(α_c(x))) \\
+			&= (c, (β ⋅ α)_c(x)) \\
+			&= \bigl( \Elements (β ⋅ α) \bigr) (c, x)
+		\end{align*}
+		for every object~$(c, x)$ of~$\Elements F$, as well as
+		\[
+			\bigl( \Elements β \bigr) \bigl( \Elements α \bigr) f
+			= \bigl( \Elements β \bigr) f
+			= f
+			= \bigl( \Elements (β ⋅ α) \bigr) f
+		\]
+		for every morphism~$f$ in~$\Elements F$.
+
+\end{itemize}
+
+We have overall extended the construction~$\Elements$ to a functor from the functor category~$\Set^{\cat{C}}$ to the slice category~$\CAT / \cat{C}$.
+This entails that isomorphic objects of~$\Set^{\cat{C}}$ are mapped to isomorphic objects of~$\CAT / \cat{C}$.
+More explicitly, if~$F, G \colon \cat{C} \to \Set$ are two isomorphic functors, then the two categories~$\Elements F$ and~$\Elements G$ are isomorphic over~$\cat{C}$.
