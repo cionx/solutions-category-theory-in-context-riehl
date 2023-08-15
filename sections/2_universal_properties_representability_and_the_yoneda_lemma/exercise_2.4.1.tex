@@ -1,0 +1,80 @@
+\subsection{}
+
+Let~$S$ be the singleton category consisting of only a single object~$s$ and its identity morphism.
+Let~$C$ be the functor from~$S$ to~$\Set$ corresponding to the singleton set~$\{ \ast \}$, i.e., the unique functor with~$C s = \{ \ast \}$.
+The comma category~$C ↓ F$ looks as follows:
+\begin{itemize*}
+
+	\item
+		The objects of~$C ↓ F$ are triples of the form~$(s, c, ξ)$ consisting of the unique object~$s$ of~$S$, an object~$c$ of~$\cat{C}$, and a map~$f$ from the set~$C s = \{ \ast \}$ to the set~$F c$.
+
+	\item
+		A morphism in~$\ast ↓ F$ from an object~$(s, c, ξ)$ to an object~$(s, c', ξ')$ is a pair~$(f_0, f_1)$ of morphisms~$f_0 \colon s \to s$ in~$S$ and~$f \colon c \to c'$ in~$\cat{C}$ that makes the following diagram commute:
+		\[
+			\begin{tikzcd}
+				\{ \ast \}
+				\arrow{r}[above]{ξ}
+				\arrow{d}[left]{C f_0}
+				&
+				F c
+				\arrow{d}[right]{F f_1}
+				\\
+				\{ \ast \}
+				\arrow{r}[above]{ξ'}
+				&
+				F c'
+			\end{tikzcd}
+		\]
+
+\end{itemize*}
+
+The category~$S$ has a single object and single morphism.
+This allows us to simplify the comma category~$C ↓ F$ by replacing it with the following isomorphic category~$\cat{D}$:
+\begin{itemize*}
+
+	\item
+		The objects of~$\cat{D}$ are pairs~$(c, ξ)$ consisting of an object~$c$ of~$\cat{C}$ and a map~$ξ \colon \{ \ast \} \to F c$.
+
+	\item
+		A morphism in~$\cat{D}$ from another object~$(c, ξ)$ to an object~$(c', ξ')$ is a morphism~$f \colon c \to c'$ in~$\cat{C}$ that makes the following diagram commute:
+		\begin{equation}
+			\label{morphisms in the category isomorphic to the comma category}
+			\begin{tikzcd}
+				\{ \ast \}
+				\arrow{r}[above]{ξ}
+				\arrow{d}[left]{\id_{\{ \ast \}}}
+				&
+				F c
+				\arrow{d}[right]{F f}
+				\\
+				\{ \ast \}
+				\arrow{r}[above]{ξ'}
+				&
+				F c'
+			\end{tikzcd}
+		\end{equation}
+
+\end{itemize*}
+
+A map~$ξ \colon \{ \ast \} \to F c$ is the same as an element of~$F c$, namely the element~$ξ(\ast)$.
+The commutativity of the square diagram~\eqref{morphisms in the category isomorphic to the comma category} is then equivalent to the condition~$(F f)(x) = x'$ for the respective elements~$x = ξ(\ast)$ and~$x' = ξ'(\ast)$.
+The category~$\cat{D}$ can therefore be replaced by the following isomorphic category~$\cat{E}$:
+\begin{itemize*}
+
+	\item
+		The objects of~$\cat{E}$ are pairs~$(c, x)$ consisting of an object~$c$ of~$\cat{C}$ and an element~$x$ of the associated set~$F c$.
+
+	\item
+		A morphism in~$\cat{E}$ from an object~$(c, x)$ to another object~$(c', x')$ is a morphism~$f \colon c \to c'$ in~$\cat{C}$ such that~$(F f)(x) = x'$.
+
+\end{itemize*}
+The category~$\cat{E}$ is precisely the category of elements~$\Elements F$, so that overall
+\[
+	\ast ↓ F
+	≅
+	\cat{D}
+	≅
+	\cat{E}
+	=
+	\Elements F \,.
+\]

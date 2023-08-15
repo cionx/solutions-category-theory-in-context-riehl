@@ -13,6 +13,7 @@
 	numbers       = noenddot
 }
 
+
 % load a modified version of Libertinus Math that has a stylistic set for blackboard bold versions of greek letters (only ω so far)
 \setmathfont[version=bbgreek, StylisticSet=1]{LibertinusMath-Regular-Extended.otf}
 \newcommand{\bbomega}{\text{\mathversion{bbgreek}$ω$}}
@@ -23,6 +24,7 @@
 \usepackage{newunicodechar}
 \newunicodechar{よ}{\text{\hspace{-0.08em}\japanesefont よ}} % \! is -0.16667em
 % I originally groked this solution together for the solution to Leinster’s Basic Category Theory, and copied it from there
+
 
 % settings for numbering of sectioning commands
 % and for their inclusion in the table of contents
@@ -71,6 +73,7 @@
 % categories depending on some other object
 \newcommand{\Base}{\specificcatname{B}}
 \newcommand{\CoAlg}{\specificcatname{CoAlg}}
+\newcommand{\Elements}{{\textstyle ∫}}
 \newcommand{\Mod}{\specificcatname{Mod}}
 \newcommand{\Vect}{\specificcatname{Vect}}
 
