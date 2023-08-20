@@ -1,0 +1,117 @@
+\subsection{}
+
+Given an object~$c$ of~$\cat{C}$, an element of the set~$\Cone(c, F)$ is a family~$(λ_j)_{j ∈ J}$ consisting of morphisms~$λ_j \colon c \to F j$.
+These morphisms are subject to the commutativity of the triangular diagram
+\[
+	\begin{tikzcd}[column sep = normal]
+		{}
+		&
+		c
+		\arrow{dl}[above left]{λ_j}
+		\arrow{dr}[above right]{λ_k}
+		&
+		{}
+		\\
+		F j
+		\arrow{rr}[above]{F u}
+		&
+		{}
+		&
+		F k
+	\end{tikzcd}
+\]
+for every morphism~$u \colon j \to k$ in the index category~$J$.
+
+An element~$α$ of the set~$\Hom(Δ(c), F)$ is a natural transformation from~$Δ(c)$ to~$F$.
+More explicitly,~$α = (α_j)_{j ∈ J}$ if a family of morphisms~$α_j \colon Δ(c) j \to F j$ such that the square diagram
+\[
+	\begin{tikzcd}
+		Δ(c) j
+		\arrow{r}[above]{Δ(c) u}
+		\arrow{d}[left]{α_j}
+		&
+		Δ(c) k
+		\arrow{d}[right]{α_k}
+		\\
+		F j
+		\arrow{r}[above]{F u}
+		&
+		F k
+	\end{tikzcd}
+\]
+commutes for every morphism~$u \colon j \to k$ in the index category~$J$.
+But we know that~$Δ(c) j = c$ for every object~$j$ of~$\cat{J}$, and that~$Δ(c) u = \id_c$ for every morphism~$u$ in~$J$.
+The above square diagram can therefore be simplified as follows:
+\[
+	\begin{tikzcd}
+		c
+		\arrow{r}[above]{\id_c}
+		\arrow{d}[left]{α_j}
+		&
+		c
+		\arrow{d}[right]{α_k}
+		\\
+		F j
+		\arrow{r}[above]{F u}
+		&
+		F k
+	\end{tikzcd}
+\]
+The commutativity of this diagram if equivalent to the commutativity of the following triangular diagram:
+\[
+	\begin{tikzcd}[column sep = normal]
+		{}
+		&
+		c
+		\arrow{dl}[above left]{α_{j ∈ J}}
+		\arrow{dr}[above right]{α_{k ∈ J}}
+		&
+		{}
+		\\
+		F j
+		\arrow{rr}[above]{F u}
+		&
+		{}
+		&
+		F k
+	\end{tikzcd}
+\]
+
+We find that~$α$ is a natural transformation from~$Δ(c)$ to~$F$ if and only if it is a cone on~$F$ with vertex~$c$.
+
+It remains to check the naturality of this equality in~$c$.
+In other words, we need to check that for every morphism~$f \colon c \to d$ in~$\cat{C}$ the following square diagram commutes:
+\[
+	\begin{tikzcd}
+		\Cone(d, F)
+		\arrow{r}[above]{f^*}
+		\arrow[equal]{d}
+		&
+		\Cone(c, F)
+		\arrow[equal]{d}
+		\\
+		\Hom(Δ(d), F)
+		\arrow{r}[above]{Δ(f)^*}
+		&
+		\Hom(Δ(c), F)
+	\end{tikzcd}
+\]
+The map~$f^*$ is given by
+\[
+	f^*( (λ_j)_j ) = (λ_j f)_j \,.
+\]
+The map~$Δ(f)^*$ is given on every natural transformation~$α = (α_j)_j$ by the components
+\[
+	Δ(f)^*(α)_j
+	=
+	(α ⋅ Δ(f))_j
+	=
+	α_j Δ(f)_j
+	=
+	α_j f \,,
+\]
+so that in total
+\[
+	Δ(f)^*( (α_j)_j ) = (α_j f)_j \,.
+\]
+We see that both maps coincide, as required.
