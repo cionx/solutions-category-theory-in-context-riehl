@@ -1,0 +1,69 @@
+\subsection{}
+
+A cone over~$F$ is a pair~$(c, (λ_j)_{j ∈ J})$ consisting of an object~$c$ of~$\cat{C}$ and a morphism~$λ_j \colon c \to F j$ for every object~$j$ of~$\cat{C}$, subject to the commutativity of the triangular diagram
+\[
+	\begin{tikzcd}[column sep = normal]
+		{}
+		&
+		c
+		\arrow{dl}[above left]{λ_j}
+		\arrow{dr}[above right]{λ_k}
+		&
+		{}
+		\\
+		F j
+		\arrow{rr}[above]{F u}
+		&
+		{}
+		&
+		F k
+	\end{tikzcd}
+\]
+for every morphism~$u \colon j \to k$ in the index category~$J$.
+For every morphism~$f \colon c \to d$ in~$\cat{C}$ we can thus consider the map
+\[
+	f^*
+	\colon
+	\Cone(d, F) \to \Cone(c, F) \,,
+	\quad
+	(d, (μ_j)_{j ∈ J}) \mapsto (c, (μ_j f)_{j ∈ J}) \,.
+\]
+This map is well-defined since in the diagram
+\[
+	\begin{tikzcd}[column sep = normal]
+		{}
+		&
+		c
+		\arrow{d}[right]{f}
+		\arrow[bend right]{ddl}[above left]{μ_j f}
+		\arrow[bend left]{ddr}[above right]{μ_k f}
+		&
+		{}
+		\\
+		{}
+		&
+		d
+		\arrow{dl}[above left]{μ_j}
+		\arrow{dr}[above right]{μ_k}
+		&
+		{}
+		\\
+		F j
+		\arrow{rr}[above]{F u}
+		&
+		{}
+		&
+		F k
+	\end{tikzcd}
+\]
+the outer triangle commutes if the lower inner triangle commutes.
+
+The action of~$\Cone(F, \ph)$ on morphisms is similarly given by
+\[
+	f_*
+	\colon
+	\Cone(F, c) \to \Cone(F, d) \,,
+	\quad
+	(c, (λ_j)_{j ∈ J}) \mapsto (c, (f λ_j)_{j ∈ J})
+\]
+for every morphism~$f \colon c \to d$ in~$\cat{C}$.
