@@ -1,0 +1,179 @@
+\subsection{}
+
+We label the objects and morphisms in the given diagram as follows:
+\[
+	\begin{tikzcd}[sep = huge]
+		c
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{h}
+		&
+		c'
+		\arrow{r}[above]{f'}
+		\arrow{d}[left]{h'}
+		\arrow[phantom]{dr}[description, pos = 0.2]{\ulcorner}
+		&
+		c''
+		\arrow{d}[left]{h''}
+		\\
+		d
+		\arrow{r}[above]{g}
+		&
+		d'
+		\arrow{r}[above]{g'}
+		&
+		d''
+	\end{tikzcd}
+\]
+We provide a diagram to keep track of the auxiliary morphisms that will be introduced in our argumentations:
+\[
+	\begin{tikzcd}[sep = huge]
+		x
+		\arrow[dashed]{dr}[above right]{k}
+		\arrow[dashed, bend right]{ddr}[below left]{l}
+		\arrow[dashed, bend left = 20]{drr}[below left]{m}
+		\arrow[dashed, bend right = 15, crossing over]{ddrr}[pos = 0.8, above right]{p}
+		\arrow[dashed, bend left = 25]{drrr}[above right]{q}
+		&
+		{}
+		&
+		{}
+		&
+		{}
+		\\
+		{}
+		&
+		c
+		\arrow{r}[above, pos = 0.4]{f}
+		\arrow{d}[left, near end]{h}
+		&
+		c'
+		\arrow{r}[above]{f'}
+		\arrow{d}[left]{h'}
+		\arrow[phantom]{dr}[description, pos = 0.2]{\ulcorner}
+		&
+		c''
+		\arrow{d}[left]{h''}
+		\\
+		{}
+		&
+		d
+		\arrow{r}[below]{g}
+		&
+		d'
+		\arrow{r}[below]{g'}
+		&
+		d''
+	\end{tikzcd}
+\]
+
+Suppose first that the left-hand square diagram is a pullback square.
+We then have for every object~$x$ of~$\cat{C}$ the sequence of bijections
+\begin{align*}
+	{}&
+	\{ k \suchthat k \colon x \textto c \}
+	\\
+	≅{}&
+	\left\{
+		(l, m)
+		\suchthat*
+		\begin{tabular}{l}
+			$l \colon x \to d$ and~$m \colon x \to c'$ \\
+			with~$g l = h' m$
+		\end{tabular}
+	\right\}
+	\\
+	≅{}&
+	\left\{
+		(l, p, q)
+		\suchthat*
+		\begin{tabular}{l}
+			$l \colon x \to d$,~$p \colon x \to d'$ and~$q \colon x \to c''$ \\
+			with~$g' p = h'' q$ and~$g l = p$
+		\end{tabular}
+	\right\}
+	\\
+	≅{}&
+	\left\{
+		(l, q)
+		\suchthat*
+		\begin{tabular}{l}
+			$l \colon x \to d$ and~$q \colon x \to c''$ \\
+			with~$g' g l = h'' q$
+		\end{tabular}
+	\right\}
+\end{align*}
+given by
+\[
+	k
+	\mapsto
+	(h k, f k)
+	\mapsto
+	(h k, h' f k, f' f k)
+	\mapsto
+	(h k, f' f k) \,.
+\]
+This bijection tells us that the outer rectangular diagram is a pullback square.
+
+Suppose now conversely that the outer rectangular diagram is a pullback square.
+We then have for every object~$x$ of~$\cat{C}$ the sequence of bijections
+\begin{align*}
+	{}&
+	\{ k \suchthat k \colon x \textto c \}
+	\\
+	≅{}&
+	\left\{
+		(l, q)
+		\suchthat*
+		\begin{tabular}{l}
+			$l \colon x \to d$ and~$q \colon x \to c''$ \\
+			with~$g' g l = h'' q$
+		\end{tabular}
+	\right\}
+	\\
+	≅{}&
+	\left\{
+		(l, p, q)
+		\suchthat*
+		\begin{tabular}{l}
+			$l \colon x \to d$,~$p \colon x \to d'$ and~$q \colon x \to c''$ \\
+			with~$g' p = h'' q$ and~$p = g l$
+		\end{tabular}
+	\right\}
+	\\
+	≅{}&
+	\left\{
+		(l, m)
+		\suchthat*
+		\begin{tabular}{l}
+			$l \colon x \to d$ and~$m \colon x \to c'$ \\
+			with~$g' h' m = h'' f' m$ and~$h' m = g l$
+		\end{tabular}
+	\right\}
+	\\
+	={}&
+	\left\{
+		(l, m)
+		\suchthat*
+		\begin{tabular}{l}
+			$l \colon x \to d$ and~$m \colon x \to c'$ \\
+			with~$h' m = g l$
+		\end{tabular}
+	\right\}
+\end{align*}
+given by
+\[
+	k
+	\mapsto
+	(h k, f' f k)
+	\mapsto
+	(h k, g h k, f' f k)
+	\mapsto
+	(h k, m)
+\]
+where~$m$ is the unique morphism from~$x$ to~$c'$ with~$h' m = g h k$ and~$f' m = f' f k$.
+The morphism~$f k$ satisfies these defining equations of~$m$, whence~$m = f k$.
+The above bijections are thus overall given by
+\[
+	k \mapsto (h k, f k) \,.
+\]
+This overall bijection tells us that the left-hand square diagram is a pullback square.
