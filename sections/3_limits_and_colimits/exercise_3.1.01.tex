@@ -1,6 +1,10 @@
 \subsection{}
 
-A cone over~$F$ is a pair~$(c, (λ_j)_{j ∈ J})$ consisting of an object~$c$ of~$\cat{C}$ and a morphism~$λ_j \colon c \to F j$ for every object~$j$ of~$\cat{C}$, subject to the commutativity of the triangular diagram
+
+
+\subsubsection*{The action of~$\Cone(\ph, F)$ on morphisms}
+
+A cone over~$F$ with summit~$c$, where~$c$ is some object in~$\cat{C}$, is a family~$(λ_j)_{j ∈ \cat{J}}$ of morphism~$λ_j \colon c \to F j$ subject to the commutativity of the triangular diagram
 \[
 	\begin{tikzcd}[column sep = normal]
 		{}
@@ -19,14 +23,14 @@ A cone over~$F$ is a pair~$(c, (λ_j)_{j ∈ J})$ consisting of an object~$c$ of
 		F k
 	\end{tikzcd}
 \]
-for every morphism~$u \colon j \to k$ in the index category~$J$.
-For every morphism~$f \colon c \to d$ in~$\cat{C}$ we can thus consider the map
+for every morphism~$u \colon j \to k$ in~$\cat{J}$.
+For every morphism~$f \colon c \to d$ in~$\cat{C}$ we have therefore the induced map
 \[
 	f^*
 	\colon
 	\Cone(d, F) \to \Cone(c, F) \,,
 	\quad
-	(d, (μ_j)_{j ∈ J}) \mapsto (c, (μ_j f)_{j ∈ J}) \,.
+	(μ_j)_{j ∈ \cat{J}} \mapsto (μ_j f)_{j ∈ \cat{J}} \,.
 \]
 This map is well-defined since in the diagram
 \[
@@ -58,12 +62,16 @@ This map is well-defined since in the diagram
 \]
 the outer triangle commutes if the lower inner triangle commutes.
 
+
+
+\subsubsection*{The action of~$\Cone(F, \ph)$ on morphisms}
+
 The action of~$\Cone(F, \ph)$ on morphisms is similarly given by
 \[
 	f_*
 	\colon
 	\Cone(F, c) \to \Cone(F, d) \,,
 	\quad
-	(c, (λ_j)_{j ∈ J}) \mapsto (c, (f λ_j)_{j ∈ J})
+	(λ_j)_{j ∈ \cat{J}} \mapsto (f λ_j)_{j ∈ \cat{J}}
 \]
 for every morphism~$f \colon c \to d$ in~$\cat{C}$.
