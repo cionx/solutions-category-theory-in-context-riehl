@@ -1,0 +1,130 @@
+\subsection{}
+
+
+
+\subsubsection*{Cones over~$F$}
+
+The category~$\Cones(F)$ of cones over~$F$ is defined as a category of elements of the contravariant functor~$\Cone(\ph, F)$.
+This category therefore looks as follows:
+\begin{itemize*}
+
+	\item
+		The objects of~$\Cones(F)$ are pairs~$(c, (λ_j)_j)$ consisting of an object~$c$ of~$\cat{C}$ and a cone~$(λ_j)_j$ over~$F$ with summit~$c$.
+		This means that each~$λ_j$ is a morphism from~$c$ to~$F j$, subject to the commutativity of the triangular diagram
+		\[
+			\begin{tikzcd}[column sep = normal]
+				{}
+				&
+				c
+				\arrow{dl}[above left]{λ_j}
+				\arrow{dr}[above right]{λ_k}
+				&
+				{}
+				\\
+				F j
+				\arrow{rr}[above]{F u}
+				&
+				{}
+				&
+				F k
+			\end{tikzcd}
+		\]
+		for every morphism~$u \colon j \to k$ in~$\cat{J}$.
+
+	\item
+		A morphism in~$\Cones(F)$ from a cone~$(c, (λ_j)_j)$ to a cone~$(d, (μ_j)_j)$ is a morphism~$f \colon c \to d$ in~$\cat{C}$ such that the triangular diagram
+		\[
+			\begin{tikzcd}[column sep = normal]
+				c
+				\arrow{rr}[above]{f}
+				\arrow{dr}[below left]{λ_j}
+				&
+				{}
+				&
+				d
+				\arrow{dl}[below right]{μ_j}
+				\\
+				{}
+				&
+				F j
+				&
+				{}
+			\end{tikzcd}
+		\]
+		commutes for every object~$j$ of~$\cat{J}$.
+		In other words, we need to have for the induced map
+		\[
+			f^*
+			\colon
+			\Cone(d, F) \to \Cone(c, F) \,,
+			\quad
+			(μ_j)_j \mapsto (μ_j f)_j
+		\]
+		the equality~$λ = f^*(μ)$.
+
+\end{itemize*}
+
+The category~$Δ ↓ F$, on the other hand, looks as follows:
+\begin{itemize*}
+
+	\item
+		The objects of~$Δ ↓ F$ are pairs~$(c, α)$ consisting of an object~$c$ of~$\cat{C}$ and a natural transformation~$α \colon Δ(c) \To F$.
+
+	\item
+		A morphism in~$Δ ↓ F$ from an object~$(c, α)$ to an object~$(d, β)$ is a morphism~$f \colon c \to d$ in~$\cat{C}$ such that the following triangular diagram commutes:
+		\[
+			\begin{tikzcd}[column sep = normal]
+				Δ(c)
+				\arrow{rr}[above]{Δ(f)}
+				\arrow{dr}[below left]{α}
+				&
+				{}
+				&
+				Δ(d)
+				\arrow{dl}[below right]{β}
+				\\
+				{}
+				&
+				F
+				&
+				{}
+			\end{tikzcd}
+		\]
+		That is, we need to have the equality~$α = Δ(f)^*(β)$.
+
+\end{itemize*}
+We have already seen in our solution to the previous exercise (Exercise~3.1.ii) that objects of~$\Cones(F)$ are the same as objects of~$Δ ↓ F$, as a family~$λ = (λ_j)_j$ is a cone over~$F$ with summit~$c$ if and only if~$λ$ is a natural transformation from~$Δ(c)$ to~$F$.
+
+Let~$(c, λ)$ and~$(d, μ)$ be two objects of the two categories, and let~$f \colon c \to d$ be a morphism in~$\cat{C}$.
+We have also seen in our solution to the previous exercise that the two induced maps
+\[
+	f^* \colon \Cone(d, F) \to \Cone(c, F)
+\]
+and
+\[
+	Δ(f)^* \colon \Hom(Δ(d), F) \to \Hom(Δ(c), F)
+\]
+are equal.
+We have consequently the sequence of equivalences
+\begin{align*}
+	{}&
+	\text{$f$ is a morphism from~$(c, λ)$ to~$(d, μ)$ in~$\Cones(F)$}
+	\\
+	\iff{}&
+	λ = f^*(μ)
+	\\
+	\iff{}&
+	λ = Δ(f)^*(μ)
+	\\
+	\iff{}&
+	\text{$f$ is a morphism from~$(c, λ)$ to~$(d, μ)$ in~$Δ ↓ F$} \,.
+\end{align*}
+This shows that not only are the objects of~$\Cones(F)$ and~$Δ ↓ F$ equal, but also their morphisms.
+
+Consequently, the categories~$\Cones(F)$ and~$Δ ↓ F$ are equal.
+
+
+
+\subsubsection*{Cocones under~$F$}
+
+We can show in the same way that the category of cocones under~$F$ is equal to the comma category~$F ↓ Δ$.
