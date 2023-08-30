@@ -1,0 +1,162 @@
+\subsection{}
+
+
+
+\subsubsection*{Cones and initial objects}
+
+Let~$i$ be the initial object of~$\cat{J}$.
+There exists for every object~$j$ of~$\cat{C}$ a unique morphism~$u_j$ from~$i$ to~$j$ in~$\cat{J}$.
+Let~$ι_j ≔ F u_j$ for every~$j ∈ \cat{J}$, which is a morphism in~$\cat{C}$ from~$F i$ to~$F j$.
+We claim that~$ι$ is a limit cone over~$F$ with summit~$F i$.
+
+We first need to check that~$ι$ is a cone over~$F$ with summit~$F i$.
+To this end, we need to check that for every morphism~$v \colon j \to k$ in~$\cat{J}$ the following triangular diagram commutes:
+\begin{equation}
+	\label{original diagram for initial limit cone}
+	\begin{tikzcd}[column sep = normal]
+		{}
+		&
+		F i
+		\arrow{dl}[above left]{ι_j}
+		\arrow{dr}[above right]{ι_k}
+		&
+		{}
+		\\
+		F j
+		\arrow{rr}[above]{F v}
+		&
+		{}
+		&
+		F k
+	\end{tikzcd}
+\end{equation}
+Given that~$ι_j = F u_j$ and~$ι_k = F u_k$, this diagram is the image of the diagram
+\[
+	\begin{tikzcd}[column sep = normal]
+		{}
+		&
+		i
+		\arrow{dl}[above left]{u_j}
+		\arrow{dr}[above right]{u_k}
+		&
+		{}
+		\\
+		j
+		\arrow{rr}[above]{v}
+		&
+		{}
+		&
+		k
+	\end{tikzcd}
+\]
+under the functor~$F$.
+This original diagram in~$\cat{J}$ commutes because there exists \emph{exactly one} morphism from~$i$ to~$k$ in~$\cat{J}$.
+It follows from the functoriality of~$F$ that the original diagram~\eqref{original diagram for initial limit cone} commutes.
+This shows that~$ι$ is a cone over~$F$ with summit~$F i$.
+
+We now need to check that~$ι$ is the universal cone over~$F$.
+We need to show that for every other cone~$λ$ over~$F$, with cone~$c$, there exists a unique morphism~$f$ from~$c$ to~$F i$ in~$\cat{C}$ that is a morphism of cones from~$λ$ to~$ι$.
+\begin{itemize*}
+
+	\item
+		We start with the uniqueness.
+		Let~$f$ be a morphism of cones from~$λ$ to~$ι$, i.e., a morphism from~$c$ to~$F i$ for which the triangular diagram
+		\[
+			\begin{tikzcd}[column sep = normal]
+				c
+				\arrow{rr}[above]{f}
+				\arrow{dr}[below left]{λ_j}
+				&
+				{}
+				&
+				F i
+				\arrow{dl}[below right]{ι_j}
+				\\
+				{}
+				&
+				F j
+				&
+				{}
+			\end{tikzcd}
+		\]
+		commutes for every object~$j$ of~$\cat{J}$.
+		We consider the case~$j = i$.
+		The unique morphism~$u_i$ from~$i$ to~$i$ in~$\cat{J}$ is necessarily the identity morphism~$\id_i$.
+		Consequently,
+		\[
+			ι_i = F u_i = F \id_i = \id_{F i} \,,
+		\]
+		and thus
+		\[
+			f = \id_{F i} f = ι_i f = λ_i \,.
+		\]
+
+	\item
+		For the existence, we now need to check that the morphism~$λ_i$, which goes from~$c$ to~$F i$, is a morphism of cones from~$λ$ to~$ι$.
+		To this end, we need to check that the diagram
+		\[
+			\begin{tikzcd}[column sep = normal]
+				c
+				\arrow{rr}[above]{λ_i}
+				\arrow{dr}[below left]{λ_j}
+				&
+				{}
+				&
+				F i
+				\arrow{dl}[below right]{ι_j}
+				\\
+				{}
+				&
+				F j
+				&
+				{}
+			\end{tikzcd}
+		\]
+		commutes for every~$j ∈ \cat{J}$.
+		This diagram can be rearranged as follows:
+		\[
+			\begin{tikzcd}[column sep = normal]
+				{}
+				&
+				c
+				\arrow{dl}[above left]{λ_i}
+				\arrow{dr}[above right]{λ_j}
+				&
+				{}
+				\\
+				F i
+				\arrow{rr}[above]{F u_j}
+				&
+				{}
+				&
+				F j
+			\end{tikzcd}
+		\]
+		The commutativity of this diagram follows from~$λ$ being a cone over~$F$.
+
+\end{itemize*}
+
+We have thus proven the following:
+\begin{quote}
+	\itshape
+	Let~$\cat{J}$ be a category with initial object~$i$, let~$\cat{C}$ be another category and let~$F \colon \cat{J} \to \cat{C}$ be a diagram of shape~$\cat{J}$ in~$\cat{C}$.
+	For every object~$j$ of~$\cat{J}$ let~$u_j$ be the unique morphism from~$i$ to~$j$.
+	The family~$(F u_j)_{j ∈ \cat{J}}$ is a limit cone over~$F$ with summit~$F i$.
+\end{quote}
+
+
+\subsubsection*{Cocones and terminal objects}
+
+We can dualize the above result:
+
+\begin{quote}
+	\itshape
+	Let~$\cat{J}$ be a category with terminal object~$t$, let~$\cat{C}$ be another category and let~$F \colon \cat{J} \to \cat{C}$ be a diagram of shape~$\cat{J}$ in~$\cat{C}$.
+	For every object~$j$ of~$\cat{J}$ let~$v_j$ be the unique morphism from~$j$ to~$t$.
+	The family~$(F v_j)_{j ∈ \cat{J}}$ is a colimit cone under~$F$ with nadir~$F t$.
+\end{quote}
+
+Let now~$α$ be a successor ordinal.
+This means that~$α$ is the successor of some other ordinal~$β$.
+The ordinal~$β$ is an element of~$α$, and in fact is the unique terminal object of the corresponding category~$\bbgreek{α}$.
+Given a diagram~$F$ in a category~$\cat{C}$ of shape~$\bbgreek{α}$, its colimit is thus given by~$F β$.
