@@ -1,0 +1,13 @@
+\subsection{}
+
+Let~$\cat{C}$ be a category such that for any two objects~$c$ and~$d$ of~$\cat{C}$ there exists a morphism from~$c$ to~$d$ in~$\cat{C}$.
+Let~$(c_j)_{j ∈ J}$ be a family of objects in a category~$\cat{C}$ that admits a coproduct~$∐_{j ∈ J} c_j$, with structure morphisms~$i_k \colon c_k \to ∐_{j ∈ J} c_j$ for~$k ∈ J$.
+
+Let us fix an index~$k ∈ J$.
+For every index~$l ∈ J$ there exists some morphism~$r_l$ from~$c_l$ to~$c_k$ in~$\cat{C}$, and we may choose~$r_k$ as~$\id_{c_k}$.
+There exists by assumption a unique morphism~$r$ from~$∐_{j ∈ \cat{J}} c_j$ to~$c_k$ with~$r i_l = r_l$ for every index~$l ∈ J$.
+This entails that
+\[
+	r i_k = r_k = \id_{c_k} \,,
+\]
+which tells us that~$i_k$ is a split monomorphism.
