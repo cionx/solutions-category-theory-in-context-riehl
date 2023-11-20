@@ -7,8 +7,13 @@
 We denote the object of~$c / \cat{C}$ as pairs~$(f, x)$, where~$x$ is an object of~$\cat{C}$ and~$f$ is a morphism from~$c$ to~$x$ in~$\cat{C}$.
 
 We first need to explain how the composition of morphisms in~$c / \cat{C}$ is supposed to work.
-
-Given two morphisms~$φ \colon (f, x) \to (g, y)$ and~$ψ \colon (g, y) \to (h, z)$ in~$c / \cat{C}$, we have the following commutative diagram:
+Given two such morphisms
+\[
+	φ \colon (f, x) \to (g, y)
+	\quad\text{and}\quad
+	ψ \colon (g, y) \to (h, z)
+\]
+in~$c / \cat{C}$, we have the following commutative diagram:
 \[
 	\begin{tikzcd}
 		{}
@@ -29,7 +34,7 @@ Given two morphisms~$φ \colon (f, x) \to (g, y)$ and~$ψ \colon (g, y) \to (h, 
 		z
 	\end{tikzcd}
 \]
-By leaving out the middle arrow of this diagram, we arrive at the following commutative diagram:
+By leaving the node~$y$ out of this diagram, we arrive at the following commutative diagram:
 \[
 	\begin{tikzcd}
 		{}
@@ -49,9 +54,9 @@ By leaving out the middle arrow of this diagram, we arrive at the following comm
 	\end{tikzcd}
 \]
 The commutativity of this diagram tells us that the composite~$ψ φ$ (taken in~$\cat{C}$) is a morphism from~$(f, x)$ to~$(h, z)$ in~$c / \cat{C}$.
-This allows us to define the composition of~$φ$ and~$ψ$ in~$c / \cat{C}$ as their composition in~$\cat{C}$.
+This observation allows us to define the composite of~$φ$ and~$ψ$ in~$c / \cat{C}$ as their composite in~$\cat{C}$.
 
-The associativity of the composition in~$c / \cat{C}$ then follows from the associativity of the composition in~$\cat{C}$.
+The associativity of composition of morphisms in~$c / \cat{C}$ follows from the associativity of composition of morphisms in~$\cat{C}$.
 
 We have for every object~$(f, x)$ in~$c / \cat{C}$ the following commutative diagram:
 \[
@@ -73,15 +78,17 @@ We have for every object~$(f, x)$ in~$c / \cat{C}$ the following commutative dia
 	\end{tikzcd}
 \]
 The commutativity of this diagram tells us that~$\id_x$ is a morphism from~$(f, x)$ to~$(f, x)$ in~$c / \cat{C}$.
-We have for every morphism~$φ \colon (f, x) \to (g, y)$ the equalities
+We have for every morphism~$φ \colon (f, x) \to (g, y)$ in~$c / \cat{C}$ the equalities
 \[
-	φ 1_x = φ \,, \quad 1_y φ = φ
+	φ 1_x = φ \,,
+	\quad\text{and}\quad
+	1_y φ = φ
 \]
 in~$\cat{C}$, and therefore also in~$c / \cat{C}$.
 
 We have thus shown that the identity morphism of~$x$ in~$\cat{C}$ serves as the identity morphism of~$(f, x)$ in~$c / \cat{C}$.%
 \footnote{
-	We should actually ensure that~\spaces{$\Hom$} in~$c / \cat{C}$ are pairwise disjoint, but we don’t care about this for now -- we could just apply the usual construction of replacing every morphism~$φ \colon (f, x) \to (g, y)$ by its triple~$(φ, (f, x), (g, y))$ to ensure that technical condition.
+	We should actually ensure that~\spaces{$\Hom$} in~$c / \cat{C}$ are pairwise disjoint, but we don’t care about this for now -- we could just apply the usual construction of replacing every morphism~$φ \colon (f, x) \to (g, y)$ by its triple~$(φ, (f, x), (g, y))$ to ensure this technical requirement.
 }
 
 
