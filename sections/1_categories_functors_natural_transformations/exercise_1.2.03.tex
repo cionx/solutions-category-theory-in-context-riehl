@@ -4,7 +4,7 @@ We prove (i) and (ii) by providing two proofs for each statement.
 
 
 
-\subsubsection*{Proving (i), first proof}
+\subsubsection*{Statement (i), first proof}
 
 Let~$h_1, h_2 \colon c \to x$ be two morphisms with~$gf h_1 = gf h_2$.
 Then~$f h_1 = f h_2$ because~$g$ is a monomorphism, and then furthermore~$h_1 = h_2$ because~$f$ is a monomorphism.
@@ -12,7 +12,7 @@ This shows that the composite~$g f$ is again a monomorphism.
 
 
 
-\subsubsection*{Proving (i), second proof}
+\subsubsection*{Statement (i), second proof}
 
 Let~$c$ be an arbitrary object of~$\cat{C}$.
 By assumption, both maps
@@ -24,16 +24,16 @@ By assumption, both maps
 are injective.
 It follows that their composite~$g_* f_*$ is again injective.
 But we have the identity~$g_* f_* = (g f)_*$.
-We have thus explained why the map
+We have thus found that the map
 \[
 	(g f)_* \colon \cat{C}(c, x) \to \cat{C}(c, z)
 \]
 is injective for every object~$c$ of~$\cat{C}$.
-This then tells us that the composite~$g f$ is a monomorphism.
+This tells us that the composite~$g f$ is again a monomorphism.
 
 
 
-\subsubsection*{Proving (ii), first proof}
+\subsubsection*{Statement (ii), first proof}
 
 Let~$h_1, h_2 \colon c \to x$ be two morphisms with~$f h_1 = f h_2$.
 Then also~$g f h_1 = g f h_2$, and thus~$h_1 = h_2$ because~$g f$ is a monomorphism.
@@ -41,7 +41,7 @@ This shows that~$f$ is a monomorphism.
 
 
 
-\subsubsection*{Proving (ii), second proof}
+\subsubsection*{Statement (ii), second proof}
 
 Let~$c$ be an arbitrary object of~$\cat{C}$.
 By assumption, the induced map
@@ -68,16 +68,16 @@ We first observe for every morphism~$f \colon x \to y$ in~$\cat{C}$ the followin
 	\text{$f \colon x \textto y$ is an epimorphism in~$\cat{C}$}
 	\\
 	\iff{}&
-	\text{for all~$g_1, g_2 \colon c \textto x$ in~$\cat{C}$,~$g_1 f = g_2 f$ implies~$g_1 = g_2$}
+	\text{for all~$g_1, g_2 \colon y \textto c$ in~$\cat{C}$,~$g_1 f = g_2 f$ implies~$g_1 = g_2$}
 	\\
 	\iff{}&
-	\text{for all~$g_1, g_2 \colon c \textto x$ in~$\cat{C}$,~$(g_1 f)^{\op} = (g_2 f)^{\op}$ implies~$g_1^{\op} = g_2^{\op}$}
+	\text{for all~$g_1, g_2 \colon y \textto c$ in~$\cat{C}$,~$(g_1 f)^{\op} = (g_2 f)^{\op}$ implies~$g_1^{\op} = g_2^{\op}$}
 	\\
 	\iff{}&
-	\text{for all~$g_1, g_2 \colon c \textto x$ in~$\cat{C}$,~$f^{\op} g_1^{\op} = f^{\op} g_2^{\op}$ implies~$g_1^{\op} = g_2^{\op}$}
+	\text{for all~$g_1, g_2 \colon y \textto c$ in~$\cat{C}$,~$f^{\op} g_1^{\op} = f^{\op} g_2^{\op}$ implies~$g_1^{\op} = g_2^{\op}$}
 	\\
 	\iff{}&
-	\text{for all~$g'_1, g'_2 \colon x \textto c$ in~$\cat{C}^{\op}$,~$f^{\op} g'_1 = f^{\op} g'_2$ implies~$g'_1 = g'_2$}
+	\text{for all~$g'_1, g'_2 \colon c \textto y$ in~$\cat{C}^{\op}$,~$f^{\op} g'_1 = f^{\op} g'_2$ implies~$g'_1 = g'_2$}
 	\\
 	\iff{}&
 	\text{$f^{\op} \colon y \textto x$ is a monomorphism in~$\cat{C}^{\op}$} \,.
@@ -98,17 +98,16 @@ Thanks to this observation and part~(i) of the lemma (i.e,~Lemma~1.2.11), we can
 	\text{$(g f)^{\op} \colon z \textto x$ is a monomorphism in~$\cat{C}^{\op}$}
 	\\
 	\iff{}&
-	\text{$g f \colon x \textto z$ is a monomorphism in~$\cat{C}^{\op}$}
+	\text{$g f \colon x \textto z$ is an epimorphism in~$\cat{C}^{\op}$}
 \end{align*}
-This proves part~(i').
+This proves statement~(i').
 
 
 
 \subsubsection*{Concluding~(ii')}
 
-By using part~(ii) of the lemma and once the previous observation (together with the fact that~$(\ph)^{\op\op} = (\ph)$) we get the following sequence of equivalences:
+By using part~(ii) of the lemma and once again the above observation, we get the following sequence of equivalences:
 \begin{align*}
-	\SwapAboveDisplaySkip
 	{}&
 	\text{$gf \colon x \textto z$ is an epimorphism in~$\cat{C}$}
 	\\
@@ -124,13 +123,13 @@ By using part~(ii) of the lemma and once the previous observation (together with
 	\iff{}&
 	\text{$g \colon y \textto z$ is an epimorphism in~$\cat{C}$} \,.
 \end{align*}
-This proves part~(ii').
+This proves statement~(ii').
 
 
 
-\subsubsection{Monomorphisms form a subcategory}
+\subsubsection*{Monomorphisms form a subcategory}
 
-A class of morphism~$M$ in~$\cat{C}$ form a subcategory of~$\cat{C}$ if and only if the following conditions are satisfied:
+A class of morphism~$M$ in~$\cat{C}$ forms a subcategory of~$\cat{C}$ if and only if the following two conditions are satisfied:
 \begin{enumerate*}
 
 	\item
@@ -140,7 +139,7 @@ A class of morphism~$M$ in~$\cat{C}$ form a subcategory of~$\cat{C}$ if and only
 		For every morphism~$f \colon x \to y$ belonging to~$M$, both~$\id_x$ and~$\id_y$ again belong to~$M$.
 
 \end{enumerate*}
-In the case of a full subcategory (i.e., a subcategory that contains all objects of~$\cat{C}$), the second condition can be simplified as follows:
+In the case  that~$M$ is supposed to define a full subcategory of~$\cat{C}$ (i.e., a subcategory that contains all objects of~$\cat{C}$), the second condition can be simplified as follows:
 \begin{enumerate*}
 
 	\item[2’.]
@@ -148,6 +147,6 @@ In the case of a full subcategory (i.e., a subcategory that contains all objects
 
 \end{enumerate*}
 
-We have already seen in Lemma~1.2.11 (and proven in the previous parts of this exercise) that the classes of monomorphisms and epimorphisms are closed under composition.
+We have already seen in Lemma~1.2.11 (and proven in the previous parts of this exercise) that the classes of monomorphisms and epimorphisms are both closed under composition.
 Identity morphisms are isomorphisms, therefore both split monomorphisms and also split epimorphisms, and therefore both monomorphisms and epimorphisms.
 Consequently, both the class of monomorphisms and the class of epimorphisms define full subcategories of~$\cat{C}$.

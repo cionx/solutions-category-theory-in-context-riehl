@@ -1,12 +1,13 @@
 \subsection{}
 
-The exercise tasks us with proving that two categories are isomorphic, even though the book has yet to introduce the notion of an isomorphism of categories.
-We will construct in the following a contravariant functor from~$\cat{C} / c$ to~$c / \cat{C}$ that is bijective on objects and on morphisms.
-
 Let~$c$ be an object in a category~$\cat{C}$.
 
-The objects of the slice category~$\cat{C} / c$ are the pairs~$(x, f)$ consisting of another object~$x$ of~$\cat{C}$ and a morphism~$f \colon c \to x$ in~$\cat{C}$.
-Similarly, the objects of the slice category~$c / \cat{C}^{\op}$ are the pairs~$(x, f')$ consisting of another object~$x$ of~$\cat{C}^{\op}$ and a morphism~$f' \colon x \to c$ in~$\cat{C}^{\op}$.
+The exercise tasks us with proving that two categories are isomorphic, even though the book has yet to introduce the notion of an isomorphism of categories.
+(We haven’t even introduced functors yet.)
+We will construct in the following a contravariant functor from~$\cat{C} / c$ to~$c / \cat{C}^{\op}$ that is bijective on objects and on morphisms.
+
+The objects of the slice category~$\cat{C} / c$ are the pairs~$(x, f)$ consisting of another object~$x$ of~$\cat{C}$ and a morphism~$f \colon x \to c$ in~$\cat{C}$.
+Similarly, the objects of the slice category~$c / \cat{C}^{\op}$ are the pairs~$(x, f')$ consisting of another object~$x$ of~$\cat{C}^{\op}$ and a morphism~$f' \colon c \to x$ in~$\cat{C}^{\op}$.
 The two categories~$\cat{C}$ and~$\cat{C}^{\op}$ have the same objects, and we know that morphisms in~$\cat{C}^{\op}$ correspond bijectively to morphisms in~$\cat{C}$ via the mapping~$(f \colon x \to y) \mapsto (f^{\op} \colon y \to x)$.
 It follows that this bijection restricts to a bijection between the objects of~$\cat{C} / c$ on the one hand and the objects of~$c / \cat{C}^{\op}$ on the other hand.
 More explicitly, this bijection is given by
@@ -17,7 +18,7 @@ More explicitly, this bijection is given by
 \]
 
 Let~$(x, f)$ and~$(y, g)$ be two objects of~$\cat{C}/ c$.
-A morphism from~$(x, f)$ to~$(y, g)$ in~$\cat{C} / c$ is a morphism~$φ$ from~$x$ to~$y$ in~$\cat{C}$ for which the following diagram commutes:
+A morphism from~$(x, f)$ to~$(y, g)$ in~$\cat{C} / c$ is a morphism~$φ \colon x \to y$ in the category~$\cat{C}$ for which the following diagram commutes:
 \[
 	\begin{tikzcd}[column sep = normal]
 		x
@@ -36,7 +37,7 @@ A morphism from~$(x, f)$ to~$(y, g)$ in~$\cat{C} / c$ is a morphism~$φ$ from~$x
 		{}
 	\end{tikzcd}
 \]
-Similarly, a morphism from~$(y, g^{\op})$ to~$(x, f^{\op})$ in~$c / \cat{C}^{\op}$ is a morphism~$φ'$ from~$y$ to~$x$ in~$\cat{C}^{\op}$ for which the following diagram commutes:
+Similarly, a morphism from~$(y, g^{\op})$ to~$(x, f^{\op})$ in the category~$c / \cat{C}^{\op}$ is a morphism~$φ' \colon y \to x$ in~$\cat{C}^{\op}$ for which the following diagram commutes:
 \[
 	\begin{tikzcd}[column sep = normal]
 		{}
@@ -55,8 +56,9 @@ Similarly, a morphism from~$(y, g^{\op})$ to~$(x, f^{\op})$ in~$c / \cat{C}^{\op
 		x
 	\end{tikzcd}
 \]
-We have thus for every morphism~$φ \colon x \to y$ in~$\cat{C}$ the sequence of equivalences
+We have therefore for every morphism~$φ \colon x \to y$ in~$\cat{C}$ the sequence of equivalences
 \begin{align*}
+	\SwapAboveDisplaySkip
 	{}&
 	\text{$φ$ is a morphism from~$(x, f)$ to~$(y, g)$ in~$\cat{C} / c$}
 	\\
@@ -136,5 +138,5 @@ We also have for any two composable morphisms~$φ \colon (x, f) \to (y, g)$ and~
 which shows that~$D$ contravariantly preserves composition.
 
 Regarding the second part of this exercise:
-By using the contravariant isomorphism~$D$, one could actually define~$\cat{C} / c$ as~$(c / \cat{C}^{\op})^{\op}$.
+by using the contravariant isomorphism~$D$, one could actually define~$\cat{C} / c$ as~$(c / \cat{C}^{\op})^{\op}$.
 This would then allow us to deduce part~(ii) of Exercise~1.1.iii from the previous part~(i).

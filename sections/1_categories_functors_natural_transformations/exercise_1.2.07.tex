@@ -1,11 +1,25 @@
 \subsection{}
 
+Let~$A$ be a subset of a poset~$(\cat{P}, ≤)$.
+
+
+
+\subsubsection*{Definition of the supremum}
+
 An element~$s$ of~$\cat{P}$ is a supremum of~$A$ if and only if for every element~$x$ of~$\cat{P}$ the following condition holds:~%
 $x ≥ s$ if and only if~$x ≥ a$ for every~$a ∈ A$.
 In categorical terms, this condition means that for every object~$x$ of~$\cat{P}$, there exists a morphism~$s \to x$ if and only if there exists a morphism~$a \to x$ for every object~$a$ contained in~$A$.
 
-Dually, an object~$i$ of~$\cat{P}$ is an infimum of~$A$ if and only if for every object~$x$ of~$\cat{P}$, there exists a morphism~$x \to i$ if and only if there exists a morphism~$x \to a$ for every object~$x$ of~$A$.
+
+
+\subsubsection*{Definition of the infimum}
+
+Dually, an object~$i$ of~$\cat{P}$ is an infimum of~$A$ if and only if for every object~$x$ of~$\cat{P}$, there exists a morphism~$x \to i$ if and only if there exists a morphism~$x \to a$ for every object~$a$ of~$A$.
 That is,~$i$ is an infimum of~$A$ in~$\cat{P}$ if and only if it is a supremum of~$A$ in~$\cat{P}^{\op}$.
+
+
+
+\subsubsection*{Uniqueness of the supremum}
 
 Let now~$s_1$ and~$s_2$ be two suprema of~$A$.
 There exists a morphism~$s_1 \to s_1$, namely the identity morphism.
@@ -14,11 +28,16 @@ As~$s_2$ is a supremum of~$A$, it follows that there exists a morphism~$f \colon
 By switching the roles of~$s_1$ and~$s_2$ we also find that there exists a morphism~$g \colon s_2 \to s_1$.
 
 The composite~$f g$ is a morphism~$s_2 \to s_2$, and has therefore the same domain and codomain as the identity morphism~$\id_{s_2}$.
-For any two objects~$x$ and~$y$ in~$\cat{P}$ there exists at most morphism~$x \to y$, whence it follows that~$f g = \id_{s_2}$.
+For any two objects~$x$ and~$y$ in~$\cat{P}$ there exists at most one morphism from~$x$ to~$y$, whence it follows that~$f g = \id_{s_2}$.
 We find in the same way that also~$g f = \id_{s_1}$.
+
 This shows that~$f$ is an isomorphism with inverse~$g$.
 But any two isomorphic objects of~$\cat{P}$ are already equal (because the relation~$≤$ on~$\cat{P}$ is antisymmetric).
 We hence find that~$s_1 = s_2$.
 
+
+
+\subsubsection*{Uniqueness of the infimum}
+
 Suppose that~$i_1$ and~$i_2$ are two infima of~$A$.
-This is equivalent to~$i_1$ and~$i_2$ being suprema of~$A$ in~$\cat{P}^{\op}$, whence~$i_1 = i_2$.
+This means that~$i_1$ and~$i_2$ are suprema of~$A$ in~$\cat{P}^{\op}$, whence~$i_1 = i_2$.

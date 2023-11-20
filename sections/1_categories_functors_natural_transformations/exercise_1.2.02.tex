@@ -14,15 +14,13 @@ It follows for every object~$c$ of~$\cat{C}$ for the two induced functions
 \]
 that
 \[
-	(f_* ∘ g_*)(φ)
-	=
 	f_*( g_*(φ) )
 	=
-	f_*(g ∘ φ)
+	f_*(g φ)
 	=
-	f ∘ g ∘ φ
+	f g φ
 	=
-	\id_y ∘ φ
+	\id_y φ
 	=
 	φ
 \]
@@ -37,18 +35,17 @@ By choosing~$c$ as~$y$, we can see that the map
 	\colon
 	\cat{C}(y, x) \to \cat{C}(y, y) \,,
 	\quad
-	g \mapsto f ∘ g
+	g \mapsto f g
 \]
 is surjective.
-This surjectivity entails that there exists an element~$g$ of~$\cat{C}(y, x)$ -- that is, a morphism~$g$ from~$y$ to~$x$ in~$\cat{C}$ -- such that~$f ∘ g = \id_y$.
+This surjectivity entails that there exists an element~$g$ of~$\cat{C}(y, x)$ -- that is, a morphism~$g \colon y \to x$ in~$\cat{C}$ -- such that~$f g = \id_y$.
 The existence of this morphism~$g$ tells us that~$f$ is split epimorphism.
 
 
 
 \subsubsection{}
 
-We have the following chain of equivalences:
-
+We have the following sequence of equivalences:
 \begin{align*}
 	{}&
 	\text{$f \colon x \textto y$ is a split monomorphism in~$\cat{C}$}
@@ -69,40 +66,37 @@ We have the following chain of equivalences:
 	\text{$f^{\op} \colon y \textto x$ is a split epimorphism in~$\cat{C}^{\op}$}
 	\\
 	\iff{}&
-	\text{$f^{\op}_* \colon \cat{C}^{\op}(c, y) \textto \cat{C}^{\op}(c, x)$ is surjective for every object~$c$ of~$\cat{C}^{\op}$}
+	\text{$(f^{\op})_* \colon \cat{C}^{\op}(c, y) \textto \cat{C}^{\op}(c, x)$ is surjective for every object~$c$ of~$\cat{C}^{\op}$}
 	\\
 	\iff{}&
-	\left\{
-		\begin{tabular}{@{}l}
-			for every object~$c$ of~$\cat{C}^{\op}$ and every morphism~$φ' \colon c \textto x$ in~$\cat{C}^{\op}$ \\
-			there exists a morphism~$g' \colon c \textto y$ in~$\cat{C}^{\op}$ with~$φ' = f^{\op} ∘ g'$
-		\end{tabular}
-	\right.
-	\\
-	\iff{}&
-	\left\{
-		\begin{tabular}{@{}l}
-			for every object~$c$ of~$\cat{C}$ and every morphism~$φ \colon x \textto c$ in~$\cat{C}$ \\
-			there exists a morphism~$g \colon y \textto c$ in~$\cat{C}$ with~$φ^{\op} = f^{\op} ∘ g^{\op}$
-		\end{tabular}
-	\right.
-	\\
-	\iff{}&
-	\left\{
-		\begin{tabular}{@{}l}
-			for every object~$c$ of~$\cat{C}$ and every morphism~$φ \colon x \textto c$ in~$\cat{C}$ \\
-			there exists a morphism~$g \colon y \textto c$ in~$\cat{C}$ with~$φ^{\op} = (g ∘ f)^{\op}$
-		\end{tabular}
-	\right.
-	\\
-	\iff{}&
-	\left\{
-		\begin{tabular}{@{}l}
-			for every object~$c$ of~$\cat{C}$ and every morphism~$φ \colon x \textto c$ in~$\cat{C}$ \\
-			there exists a morphism~$g \colon y \textto c$ in~$\cat{C}$ with~$φ = g ∘ f$
-		\end{tabular}
-	\right.
-	\\
-	\iff{}&
-	\text{$f^* \colon \cat{C}(y, c) \textto \cat{C}(x, c)$ is surjective for every object~$c$ of~$\cat{C}$} \,.
+	\text{$(f^{\op})_* \colon \cat{C}^{\op}(c, y) \textto \cat{C}^{\op}(c, x)$ is surjective for every object~$c$ of~$\cat{C}$} \,.
 \end{align*}
+We observe that the diagram
+\[
+	\begin{tikzcd}
+		\cat{C}(y, c)
+		\arrow{r}[above]{f^*}
+		\arrow{d}[left]{(\ph)^{\op}}
+		&
+		\cat{C}(x, c)
+		\arrow{d}[right]{(\ph)^{\op}}
+		\\
+		\cat{C}^{\op}(c, y)
+		\arrow{r}[above]{(f^{\op})_*}
+		&
+		\cat{C}^{\op}(c, x)
+	\end{tikzcd}
+\]
+commutes because
+\[
+	f^*(h)^{\op}
+	=
+	(h f)^{\op}
+	=
+	f^{\op} h^{\op}
+	=
+	(f^{\op})_*( h^{\op} )
+\]
+for every element~$h$ of~$\cat{C}(y, c)$.
+Both vertical arrows in this diagram are bijections.
+Consequently, the upper horizontal arrow is surjective if and only if the lower horizontal arrow is surjective.
