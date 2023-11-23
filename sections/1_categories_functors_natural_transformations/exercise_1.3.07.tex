@@ -1,56 +1,137 @@
 \subsection{}
 
 Let~$\cat{C}$ be a category and let~$c$ be an arbitrary object of~$\cat{C}$.
-Let~$𝟙$ be the category consisting of a single object~$\ast$ and only the morphism~$\id_{\ast}$.
-
-Let~$F_c$ be the constant functor from~$𝟙$ to~$\cat{C}$ corresponding to the object~$c$, i.e., the functor
+Let~$𝟙$ be the singleton category consisting of a single object~$\ast$ and only the morphism~$\id_{\ast}$.
+Let~$F$ be the constant functor from~$𝟙$ to~$\cat{C}$ corresponding to the object~$c$, i.e., the functor
 \[
-	F_c \colon 𝟙 \to \cat{C} \,,
+	F \colon 𝟙 \to \cat{C} \,,
 	\quad
 	\ast \mapsto c \,,
 	\quad
 	\id_{\ast} \mapsto \id_c \,.
 \]
-We can construct the slice category~$\cat{C} / c$ as the comma category~$\Id_{\cat{C}} ↓ F_c$, and the slice category~$c / \cat{C}$ as the comma category~$F_c ↓ \Id_{\cat{C}}$.
 
-The domain functor~$(\Id_{\cat{C}} ↓ F_c) \to \cat{C}$ corresponds to the functor~$\cat{C} / c \to \cat{C}$ given by
+The comma category~$\Id_{\cat{C}} ↓ F$ looks as follows:
+\begin{itemize}
+
+	\item
+		The objects of~$\Id_{\cat{C}} ↓ F$ are triples~$(x, \ast, f)$ consisting of an object~$x$ of~$\cat{C}$ and a morphism~$f \colon \Id_{\cat{C}}(x) \to F(\ast)$, i.e., a morphism~$f \colon x \to c$.
+
+	\item
+		A morphism from~$(x, \ast, f)$ to~$(y, \ast, g)$ is a pair~$(φ, \id_\ast)$ consisting of a morphism~$φ \colon x \to y$ in~$\cat{C}$ such that the following diagram commutes:
+		\[
+			\begin{tikzcd}
+				\Id_{\cat{C}}(x)
+				\arrow{r}[above]{f}
+				\arrow{d}[left]{\Id_{\cat{C}}(φ)}
+				&
+				F(\ast)
+				\arrow{d}[right]{F(\id_\ast)}
+				\\
+				\Id_{\cat{C}}(y)
+				\arrow{r}[below]{g}
+				&
+				F(\ast)
+			\end{tikzcd}
+		\]
+		This diagram can be simplified as follows:
+		\[
+			\begin{tikzcd}
+				x
+				\arrow{r}[above]{f}
+				\arrow{d}[left]{φ}
+				&
+				c
+				\arrow{d}[right]{\id_c}
+				\\
+				y
+				\arrow{r}[below]{g}
+				&
+				c
+			\end{tikzcd}
+		\]
+		A further simplification yields the following diagram:
+		\[
+			\begin{tikzcd}
+				x
+				\arrow{rr}[above]{φ}
+				\arrow{dr}[below left]{f}
+				&
+				{}
+				&
+				y
+				\arrow{dl}[below right]{g}
+				\\
+				{}
+				&
+				c
+				&
+				{}
+			\end{tikzcd}
+		\]
+
+	\item
+		The composite of two morphisms
+		\[
+			(φ, \id_\ast) \colon (x, \ast, f) \to (y, \ast, g) \,,
+			\quad
+			(ψ, \id_\ast) \colon (y, \ast, g) \to (z, \ast, h)
+		\]
+		is given by
+		\[
+			(ψ, \id_\ast) ⋅ (φ, \id_\ast)
+			=
+			(ψ φ, \id_\ast \id_\ast)
+			=
+			(ψ φ, \id_\ast) \,.
+		\]
+\end{itemize}
+We find that the comma category~$\Id_{\cat{C}} ↓ F$ is isomorphic to the slice category~$\cat{C} / c$ via
 \[
-	\left(
-		\begin{tikzcd}
-			x
-			\arrow{d}
-			\\
-			c
-		\end{tikzcd}
-	\right)
-	\mapsto
-	x \,,
-	\qquad
-	\left(
-		\begin{tikzcd}[column sep = normal]
-			x
-			\arrow{rr}[above]{f}
-			\arrow{dr}
-			&
-			{}
-			&
-			y
-			\arrow{dl}
-			\\
-			{}
-			&
-			c
-			&
-			{}
-		\end{tikzcd}
-	\right)
-	\mapsto
-	\Bigl( x \xto{f} y \Bigr) \,.
+	(x, \ast, f) \mapsto (x, f) \,,
+	\quad
+	(φ, \id_\ast) \mapsto φ \,.
 \]
-The codomain functor~$(\Id_{\cat{C}} ↓ F_c) \to 𝟙$ corresponds to the constant functor~$\cat{C} / c \to 𝟙$.
+We can show similarly that the slice category~$c / \cat{C}$ is isomorphic to the comma category~$F ↓ \Id_{\cat{C}}$.
 
-The domain functor~$(F_c ↓ \Id_{\cat{C}}) \to 𝟙$ corresponds to the constant functor~$c / \cat{C} \to 𝟙$.
-The codomain functor~$(F_c ↓ \Id_{\cat{C}}) \to \cat{C}$ corresponds to the functor~$c / \cat{C} \to \cat{C}$ given by
+The domain functor~$(\Id_{\cat{C}} ↓ F) \to \cat{C}$ corresponds to the functor~$\cat{C} / c \to \cat{C}$ given by
+\[
+	\left(
+		\begin{tikzcd}
+			x
+			\arrow{d}
+			\\
+			c
+		\end{tikzcd}
+	\right)
+	\mapsto
+	x \,,
+	\qquad
+	\left(
+		\begin{tikzcd}[column sep = normal]
+			x
+			\arrow{rr}[above]{φ}
+			\arrow{dr}
+			&
+			{}
+			&
+			y
+			\arrow{dl}
+			\\
+			{}
+			&
+			c
+			&
+			{}
+		\end{tikzcd}
+	\right)
+	\mapsto
+	\Bigl( x \xto{φ} y \Bigr) \,.
+\]
+The codomain functor~$(\Id_{\cat{C}} ↓ F) \to 𝟙$ corresponds to the constant functor~$\cat{C} / c \to 𝟙$.
+
+The domain functor~$(F ↓ \Id_{\cat{C}}) \to 𝟙$ corresponds to the constant functor~$c / \cat{C} \to 𝟙$.
+The codomain functor~$(F ↓ \Id_{\cat{C}}) \to \cat{C}$ corresponds to the functor~$c / \cat{C} \to \cat{C}$ given by
 \[
 	\left(
 		\begin{tikzcd}
@@ -74,7 +155,7 @@ The codomain functor~$(F_c ↓ \Id_{\cat{C}}) \to \cat{C}$ corresponds to the fu
 			{}
 			\\
 			x
-			\arrow{rr}[above]{f}
+			\arrow{rr}[above]{φ}
 			&
 			{}
 			&
@@ -82,5 +163,5 @@ The codomain functor~$(F_c ↓ \Id_{\cat{C}}) \to \cat{C}$ corresponds to the fu
 		\end{tikzcd}
 	\right)
 	\mapsto
-	\Bigl( x \xto{f} y \Bigr) \,.
+	\Bigl( x \xto{φ} y \Bigr) \,.
 \]

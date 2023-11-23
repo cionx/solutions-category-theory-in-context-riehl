@@ -4,7 +4,7 @@ Let~$\cat{C}$ be a category and let~$c$ be an object of~$\cat{C}$.
 
 
 
-\subsubsection*{The construction~$\cat{C}(c, \ph)$}
+\subsubsection*{The covariant functor~$\cat{C}(c, \ph)$}
 
 We need to show that~$\cat{C}(c, \ph)$ is compatible with identities and composition of morphisms.
 \begin{itemize*}
@@ -17,7 +17,7 @@ We need to show that~$\cat{C}(c, \ph)$ is compatible with identities and composi
 		\]
 		is the identity map of the set~$\cat{C}(c, x)$ since
 		\[
-			(\id_x)_*(h) = \id_x ∘ h = h = \id_{\cat{C}(c, x)}(h)
+			(\id_x)_*(h) = \id_x ⋅ h = h = \id_{\cat{C}(c, x)}(h)
 		\]
 		for every~$h ∈ \cat{C}(c, x)$.
 
@@ -35,7 +35,7 @@ We have altogether shown that~$\cat{C}(c, \ph)$ is a covariant functor from~$\ca
 
 
 
-\subsubsection*{The construction~$\cat{C}(\ph, c)$}
+\subsubsection*{The contravariant functor~$\cat{C}(\ph, c)$}
 
 We proceed dually to the contravariant case.
 
@@ -49,7 +49,7 @@ We proceed dually to the contravariant case.
 		\]
 		is the identity map of the set~$\cat{C}(x, c)$ since
 		\[
-			(\id_x)^*(h) = h ∘ \id_x = h = \id_{\cat{C}(x, c)}(h)
+			(\id_x)^*(h) = h ⋅ \id_x = h = \id_{\cat{C}(x, c)}(h)
 		\]
 		for every~$h ∈ \cat{C}(x, c)$.
 
@@ -59,7 +59,7 @@ We proceed dually to the contravariant case.
 		\[
 			(g f)^*(h) = h (g f) = (h g) f = f^*(h g) = f^*( g^*(h) )
 		\]
-		for every~$h ∈ \cat{C}(z, c)$, and therefore the equality~$(g f)^* = g^* f^*$.
+		for every~$h ∈ \cat{C}(z, c)$, and therefore the equality~$(g f)^* = f^* g^*$.
 
 \end{itemize*}
 

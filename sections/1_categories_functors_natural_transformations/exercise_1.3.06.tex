@@ -11,8 +11,6 @@ Let
 	(h', k') \colon (d', e', f') \to (d'', e'', f'')
 \]
 be two morphisms in~$F ↓ G$ that ought to be composable.
-We define their composite~$(h', k') ∘ (h, k)$ as~$(h' ∘ h, k' ∘ k)$.
-This is indeed a morphism from~$(d, e, f)$ to~$(d'', e'', f'')$:
 We have by assumptions on the pairs~$(h, k)$ and~$(h', k')$ the following two commutative square diagrams:
 \[
 	\begin{tikzcd}
@@ -43,7 +41,7 @@ We have by assumptions on the pairs~$(h, k)$ and~$(h', k')$ the following two co
 		G(e'')
 	\end{tikzcd}
 \]
-By combining these two diagrams, with the first diagram above the second one, we arrive at the following commutative diagram:
+By combining these two diagrams, with the first diagram above the second, we arrive at the following commutative diagram:
 \[
 	\begin{tikzcd}
 		F(d)
@@ -71,10 +69,10 @@ By leaving out the center row of this diagram we arrive at the following commuta
 	\begin{tikzcd}
 		F(d)
 		\arrow{r}[above]{f}
-		\arrow{d}[left]{F(h') ∘ F(h)}
+		\arrow{d}[left]{F(h') F(h)}
 		&
 		G(e)
-		\arrow{d}[right]{G(k') ∘ G(k)}
+		\arrow{d}[right]{G(k') G(k)}
 		\\
 		F(d'')
 		\arrow{r}[above]{f''}
@@ -87,10 +85,10 @@ This diagram can equivalently be rewritten as follows:
 	\begin{tikzcd}
 		F(d)
 		\arrow{r}[above]{f}
-		\arrow{d}[left]{F(h' ∘ h)}
+		\arrow{d}[left]{F(h' h)}
 		&
 		G(e)
-		\arrow{d}[right]{G(k' ∘ k)}
+		\arrow{d}[right]{G(k' k)}
 		\\
 		F(d'')
 		\arrow{r}[above]{f''}
@@ -98,9 +96,11 @@ This diagram can equivalently be rewritten as follows:
 		G(e'')
 	\end{tikzcd}
 \]
-The commutativity of this square diagram tells us that the pair~$(h' ∘ h, k' ∘ k)$ is indeed a morphism from~$(d, e, f)$ to~$(d'', e'', f'')$ in~$F ↓ G$.
+The commutativity of this square diagram tells us that the pair~$(h' h, k' k)$ is a morphism from~$(d, e, f)$ to~$(d'', e'', f'')$ in~$F ↓ G$.
+We define the composite~$(h', k') ⋅ (h, k)$ as~$(h' h, k' k)$.
+In other words, the composition of morphisms in~$F ↓ G$ is componentwise.
 
-The associativity of the composition of morphisms in the proposed category~$F ↓ G$ follows component-wise from the associativity of the compositions of morphisms in~$\cat{D}$ and~$\cat{E}$.
+The associativity of the composition of morphisms in the proposed category~$F ↓ G$ follows componentwise from the associativity of the compositions of morphisms in~$\cat{D}$ and~$\cat{E}$.
 
 It remains to prove the existence of identity morphisms in~$F ↓ G$.
 
@@ -137,20 +137,23 @@ This diagram can equivalently be rewritten as follows:
 	\end{tikzcd}
 \]
 The commutativity of this diagram tells us that the pair~$(\id_d, \id_e)$ is a morphism from~$(d, e, f)$ to~$(d, e, f)$ in~$F ↓ G$.
-
-We have for every morphism~$(h, k) \colon (d, e, f) \to (d', e', f')$ in~$F ↓ G$ the two sequences of equalities
+We have for every morphism
 \[
-	(\id_{d'}, \id_{e'}) ∘ (h, k)
+	(h, k) \colon (d, e, f) \to (d', e', f')
+\]
+in~$F ↓ G$ the two sequences of equalities
+\[
+	(\id_{d'}, \id_{e'}) ⋅ (h, k)
 	=
-	(\id_{d'} ∘ h, \id_{e'} ∘ k)
+	(\id_{d'} ⋅ h, \id_{e'} ⋅ k)
 	=
 	(h, k)
 \]
 and
 \[
-	(h, k) ∘ (\id_d, \id_e)
+	(h, k) ⋅ (\id_d, \id_e)
 	=
-	(h ∘ \id_d, k ∘ \id_e)
+	(h ⋅ \id_d, k ⋅ \id_e)
 	=
 	(h, k) \,.
 \]
@@ -163,8 +166,8 @@ We have altogether constructed a category~$F ↓ G$.
 \subsubsection*{The functors~$\dom$ and~$\codom$}
 
 We define the \enquote{domain functor}~$\dom \colon F ↓ G \to \cat{D}$~as~$\dom((d, e, f)) = d$ on objects and as~$\dom((h, k)) = h$ on morphisms.
-Similarly, we define the \enquote{codomain functor}~$\codom \colon F ↓ G \to \cat{E}$ as~$\codom((d, e, f)) = d$ on objects and as~$\codom((h, k)) = k$ on morphisms.
-The actions of~$\dom$ and of~$\codom$ can more graphically be depicted as follows:
+Similarly, we define the \enquote{codomain functor}~$\codom \colon F ↓ G \to \cat{E}$ as~$\codom((d, e, f)) = e$ on objects and as~$\codom((h, k)) = k$ on morphisms.
+The actions of~$\dom$ and~$\codom$ can more graphically be depicted as follows:
 \[
 	\begin{tikzcd}
 		d
@@ -195,4 +198,4 @@ The actions of~$\dom$ and of~$\codom$ can more graphically be depicted as follow
 	\end{tikzcd}
 \]
 
-The assignments~$\dom$ and~$\codom$ are indeed functors because both identities in~$F ↓ G$ and composition of morphisms in~$F ↓ G$ works component-wise.
+The assignments~$\dom$ and~$\codom$ are indeed functors because identities in~$F ↓ G$ and composition of morphisms in~$F ↓ G$ work componentwise.

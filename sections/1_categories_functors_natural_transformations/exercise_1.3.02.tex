@@ -14,9 +14,9 @@ such that
 	\label{conditions for functor between preorders}
 		F_{p, p}(\id_p) = \id_{f(p)}
 		\quad\text{and}\quad
-		F_{p_1, p_3}(β α) = F_{p_2, p_3}(β) ∘ F_{p_1, p_2}(α)
+		F_{p_1, p_3}(ψ φ) = F_{p_2, p_3}(ψ) ⋅ F_{p_1, p_2}(φ)
 \end{equation}
-for all~$p, p_1, p_2, p_3 ∈ \cat{P}$ and all morphisms~$α \colon p_1 \to p_2$ and~$β \colon p_2 \to p_3$.
+for every object~$p$ in~$\cat{P}$ and all morphisms~$φ \colon p_1 \to p_2$ and~$ψ \colon p_2 \to p_3$ in~$\cat{P}$.
 
 We make two observations regarding the above data and conditions.
 \begin{enumerate*}
@@ -26,15 +26,15 @@ We make two observations regarding the above data and conditions.
 		The equalities~\eqref{conditions for functor between preorders} are therefore automatically satisfied.
 
 	\item
-		The existence of a function~$F_{p_1, 1_2} \colon \cat{P}(p_1, p_2) \to \cat{Q}(f(p_1), f(p_2))$ is equivalent to the implication
+		The existence of a function~$F_{p_1, p_2} \colon \cat{P}(p_1, p_2) \to \cat{Q}(f(p_1), f(p_2))$ is equivalent to the implication
 		\[
 			\cat{P}(p_1, p_2) ≠ ∅ \implies \cat{Q}(f(p_1), f(p_2)) ≠ ∅ \,,
 		\]
-		which -- by constructions of~$\cat{P}$ and~$\cat{Q}$ -- is furthermore equivalent to the implication
+		which is furthermore equivalent to the implication
 		\[
 			p_1 ≤ p_2 \implies f(p_1) ≤ f(p_2) \,.
 		\]
 		The existence of the functions~$F_{p_1, p_2}$ for all~$p_1, p_2 ∈ P$ is therefore equivalent to~$f$ being isotone (i.e., weakly increasing).
 
 \end{enumerate*}
-Together, these two observations show that a functor from~$\cat{P}$ to~$\cat{Q}$ is \enquote{the same} as an isotone function from~$\cat{P}$ to~$\cat{Q}$.
+We find altogether that a functor~$F$ from~$\cat{P}$ to~$\cat{Q}$ is \enquote{the same} as an isotone function~$f$ from~$P$ to~$Q$.

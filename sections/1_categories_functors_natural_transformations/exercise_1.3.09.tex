@@ -56,9 +56,85 @@ We use in following without proof that a homomorphism of groups is an epimorphis
 		This entails that~$\Commutator$ extends to a functor from~$\Group_{\epi}$ to~$\Group$.
 
 	\item
-		An epimorphism of groups~$φ \colon G \to H$ does not necessarily induce a map from~$\Aut(G)$ to~$\Aut(H)$.
-		An automorphism~$ψ$ of~$G$ descends to an endomorphism of~$H$ if and only if~$ψ(\ker(φ)) ⊆ \ker(φ)$.
-		(However, it is not clear to the author of these answers that there couldn’t exist another functor from~$\Group_{\epi}$ from~$\Group$ that assigns to each group its automorphism group.)
+		An epimorphism of groups~$φ \colon G \to H$ does not necessarily induce a map from~$\Aut(G)$ to~$\Aut(H)$:
+		an automorphism~$ψ$ of~$G$ descends to an endomorphism of~$H$ if and only if~$ψ(\ker(φ)) ⊆ \ker(φ)$.
+
+		There nevertheless exists a functor from~$\Group_{\epi}$ to~$\Group$ that assigns to each group its automorphism group.
+		This is due to the following observation:
+
+		\begin{claim}[\cite{stackexchange_extending_functor_from_isos_to_epis}]
+			\label{extend functors from isomorphisms to epimorphisms}
+			Every functor from~$\Group_{\iso}$ to~$\Group$ can be extended to a functor from~$\Group_{\epi}$ to~$\Group$.
+		\end{claim}
+
+		This observation in turn relies on the following observation:
+
+		\begin{claim}
+			\label{when the composite of epis is an iso}
+			Let~$φ \colon G \to H$ and~$ψ \colon H \to K$ be two epimorphisms of groups.
+			The composite~$ψ φ$ is an isomorphism if and only if both~$φ$ and~$ψ$ are isomorphisms.
+		\end{claim}
+
+		\begin{proof}
+			If both~$φ$ and~$ψ$ are isomorphisms then their composite~$ψ φ$ is again an isomorphism.
+
+			Suppose conversely that~$ψ φ$ is an isomorphism.
+			This entails that~$ψ φ$ is a monomorphism, whence~$φ$ is a monomorphism.
+			As~$φ$ is both a monomorphism and an epimorphism in~$\Group$, it is an isomorphism.
+			It follows that~$ψ = ψ φ ⋅ φ^{-1}$ is a composite of isomorphisms and therefore also an isomorphism.
+		\end{proof}
+
+		\begin{proof}[Proof of \cref{extend functors from isomorphisms to epimorphisms}]
+			Let~$F$ be a functor from~$\Group_{\iso}$ to~$\Group$.
+			We define an extension~$F'$ of~$F$ by letting~$F'(φ)$ be the trivial homomorphism from~$F(G)$ to~$F(H)$ for every epimorphism~$φ \colon G \to H$ that is not an isomorphism.
+			We need to prove that the assignment~$F'$ is functorial.
+			More specifically, we need to check that~$F'$ is compatible with both identities and composition.
+			\begin{itemize}
+
+				\item
+					Let~$G$ be any group.
+					The identity homomorphism~$\id_G$ is an isomorphism, so we have
+					\[
+						F'(\id_G)
+						=
+						F(\id_G)
+						=
+						\id_{F(G)}
+						=
+						\id_{F'(G)}
+					\]
+					by the functoriality of~$F$.
+
+				\item
+					Let~$φ \colon G \to H$ and~$ψ \colon H \to K$ be two epimorphisms of groups.
+					We need to show that~$F'(ψ φ) = F'(ψ) F'(φ)$.
+					We distinguish between two cases:
+					\begin{casedistinction}
+
+						\item
+							Suppose that both~$φ$ and~$ψ$ are isomorphisms.
+							Then their composite~$ψ φ$ is again an isomorphism, whence
+							\[
+								F'(ψ φ)
+								=
+								F(ψ φ)
+								=
+								F(ψ) F(φ)
+								=
+								F'(ψ) F'(φ)
+							\]
+							by the functoriality of~$F$.
+
+						\item
+							Suppose that either~$φ$ or~$ψ$ is not an isomorphism.
+							By definition of~$F'$, either~$F'(φ)$ or~$F'(ψ)$ is trivial. The composite~$F'(ψ) F'(φ)$ is therefore again trivial.
+							It also follows from \cref{when the composite of epis is an iso} that~$ψ φ$ is not an isomorphism, whence~$F'(ψ φ)$ is trivial.
+							This shows that~$F'(ψ φ) = F'(ψ) F'(φ)$, as both sides are trivial with the same domain and same codomain.
+						\qedhere
+
+					\end{casedistinction}
+			\end{itemize}
+		\end{proof}
 
 \end{itemize}
 
@@ -81,7 +157,7 @@ We use in following without proof that a homomorphism of groups is an epimorphis
 				\\
 				ℤ / 2
 				\arrow{ur}
-				\arrow{rr}[above]{\id_{ℤ / 2}}
+				\arrow{rr}[above]{\id}
 				&
 				{}
 				&
@@ -100,7 +176,7 @@ We use in following without proof that a homomorphism of groups is an epimorphis
 				\\
 				\Gcenter(ℤ / 2)
 				\arrow{ur}
-				\arrow{rr}[above]{\Gcenter(\id_{ℤ / 2})}
+				\arrow{rr}[above]{\id}
 				&
 				{}
 				&
@@ -119,21 +195,22 @@ We use in following without proof that a homomorphism of groups is an epimorphis
 				\\
 				ℤ / 2
 				\arrow{ur}
-				\arrow{rr}[above]{\id_{ℤ / 2}}
+				\arrow{rr}[above]{\id}
 				&
 				{}
 				&
 				ℤ / 2
 			\end{tikzcd}
 		\]
-		The commutativity of this diagram would mean that the identity morphism of~$ℤ / 2$ is the trivial homomorphism.
+		The commutativity of this diagram would mean that the identity homomorphism of~$ℤ / 2$ is trivial.
 		But this is not the case!
 
 	\item
-		$\Commutator$ extends to a functor from~$\Group$ to~$\Group$ in the usual way.
+		The construction~$\Commutator$ extends to a functor from~$\Group$ to~$\Group$ in the usual way:
+		every homomorphism of groups~$φ \colon G \to H$ satisfies~$φ(\Commutator(G)) ⊆ \Commutator(H)$, and therefore restricts to a homomorphism~$\Commutator(φ)$ from~$\Commutator(G)$ to~$\Commutator(H)$.
 
 	\item
-		If~$\Aut$ were to extend to a functor from~$\Group$ to~$\Group$, then it would also extend to a functor from~$\Group_{\epi}$ to~$\Group$.
-		This would contradict the previous part of this exercise.
+		It can be shown that~$\Aut$ cannot be extended to a functor from~$\Group$ to~$\Group$.
+		We refer to \cite{stackexchange_aut_cannot_be_extended_functorialy} for more details on this claim.
 
 \end{itemize}
