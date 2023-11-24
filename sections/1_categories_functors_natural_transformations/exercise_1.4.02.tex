@@ -21,7 +21,7 @@ A natural transformation~$α \colon Φ \To Ψ$ is a family~$(α_x)_{x ∈ \Base 
 	\end{tikzcd}
 \]
 commutes for every morphism~$g \colon x \to y$ in~$\Base G$.
-Given the specific shape of~$\Base G$, this means that the square diagram
+Given the specific shapes of~$\Base G$ and~$\Base H$, the entire transformation~$α$ consists of the single element~$α_\ast$ of~$H$, which has to satisfy the commutativity of the diagram
 \[
 	\begin{tikzcd}
 		\ast
@@ -37,9 +37,9 @@ Given the specific shape of~$\Base G$, this means that the square diagram
 		\ast
 	\end{tikzcd}
 \]
-needs to commute for every~$g ∈ G$.
+for every~$g ∈ G$.
 A natural transformation from~$Φ$ to~$Ψ$ is therefore \enquote{the same} as an element~$h$ of~$H$ such that~$h φ(g) = ψ(g) h$ for every~$g ∈ G$.
 In other words, the element~$h$ needs to satisfy~$ψ(g) = h φ(g) h^{-1}$ for every~$g ∈ G$.
 
-We see that the functors~$Φ$ and~$Ψ$ are naturally isomorphic if and only if the corresponding group homomorphisms~$φ$ and~$ψ$ are conjugated.
-More explicitly, natural transformations from~$Φ$ to~$Ψ$ corresponds to elements of~$H$ that realize the conjugation of~$φ$ and~$ψ$.
+We see overall that there exists a natural transformation from~$Φ$ to~$Ψ$ if and only if~$φ$ is conjugated to~$ψ$.
+More explicitly, natural transformations from~$Φ$ to~$Ψ$ correspond bijectively to elements of~$H$ that realize the conjugation of~$φ$ and~$ψ$.

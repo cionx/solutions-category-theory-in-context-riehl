@@ -1,43 +1,44 @@
 \subsection{}
 
-For every object~$(d, e, f)$ of the comma category~$F ↓ G$ let~$α_{(d, e, f)}$ be the morphism
+For every object~$x = (d, e, f)$ of the comma category~$F ↓ G$ let~$α_x$ be the morphism
 \[
-	f \colon F(d) \to G(e) \,.
+	f \colon F d \to G e \,.
 \]
-Then, since~$d = \dom((d, e, f))$ and~$e = \codom((d, e, f))$,~$α_{(d, e, f)}$ is a morphism from~$F(\dom((d, e, f)))$ to~$G(\codom((d, e, f)))$.
-Therefore,~$α$ is a transformation from~$F ∘ \dom$ to~$G ∘ \codom$.
+Then, since~$d = \dom x$ and~$e = \codom x$, the component~$α_x$ is a morphism from~$F \dom x$ to~$G \codom x$.
+Therefore,~$α$ is a transformation from~$F \dom$ to~$G \codom$.
 We claim that this transformation is natural.
 
-Indeed, we have for every morphism~$(h, k) \colon (d, e, f) \to (d', e', f')$ in~$F ↓ G$ the following commutative diagram:
+Indeed, let~$(h, k) \colon x \to x'$ be an arbitrary morphism in~$F ↓ G$ with domain~$x = (d, e, f)$ and codomain~$x' = (d', e', f')$.
+This means that we have the following commutative diagram:
 \[
 	\begin{tikzcd}
-		F(d)
+		F d
 		\arrow{r}[above]{f}
-		\arrow{d}[left]{F(h)}
+		\arrow{d}[left]{F h}
 		&
-		G(e)
-		\arrow{d}[right]{G(k)}
+		G e
+		\arrow{d}[right]{G k}
 		\\
-		F(d')
+		F d'
 		\arrow{r}[above]{f'}
 		&
-		G(e')
+		G e'
 	\end{tikzcd}
 \]
 This diagram can be rewritten as follows:
 \[
 	\begin{tikzcd}
-		(F ∘ \dom)((d, e, f))
-		\arrow{r}[above]{α_{(d, e, f)}}
-		\arrow{d}[left]{(F ∘ \dom)((h, k))}
+		F \dom x
+		\arrow{r}[above]{α_x}
+		\arrow{d}[left]{F \dom {} (h, k)}
 		&
-		(G ∘ \codom)((d, e, f))
-		\arrow{d}[right]{(G ∘ \codom)((h, k))}
+		G \codom x
+		\arrow{d}[right]{G \codom {} (h, k)}
 		\\
-		(F ∘ \dom)((d', e', f'))
-		\arrow{r}[above]{α_{(d', e', f')}}
+		F \dom x'
+		\arrow{r}[above]{α_{x'}}
 		&
-		(G ∘ \codom)((d', e', f'))
+		G \codom x'
 	\end{tikzcd}
 \]
-The commutativity of this last square diagram shows precisely that~$α$ is natural.
+The commutativity of this square diagram shows precisely that~$α$ is natural.
