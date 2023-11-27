@@ -1,16 +1,16 @@
 \subsection{}
 
 Let~$F \colon \cat{C} \to \cat{D}$ be a faithful functor.
-Let~$f \colon x \to y$ be a morphism in~$\cat{C}$ for which the induced~$F f \colon F x \to F y$ in~$\cat{D}$ is a monomorphism.
+Let~$f \colon x \to y$ be a morphism in~$\cat{C}$ for which the induced morphism~$F f \colon F x \to F y$ in~$\cat{D}$ is a monomorphism.
 
 
 
 \subsubsection*{Faithful functors reflect monomorphisms, first solution}
 
-Let~$g_1, g_2 \colon c \to x$ be two morphisms in~$\cat{C}$ with~$f g_1 = f g_2$.
+Let~$g_1, g_2 \colon w \to x$ be two morphisms in~$\cat{C}$ with~$f g_1 = f g_2$.
 Then also
 \[
-	(F f) (F g_1) = F (f g_1) = F (f g_2) = (F f) (F g_2) \,,
+	F f ⋅ F g_1 = F (f g_1) = F (f g_2) = F f ⋅ F g_2 \,,
 \]
 and thus~$F g_1 = F g_2$ because~$F f$ is a monomorphism.
 It then further follows that~$g_1 = g_2$ because the functor~$F$ is faithful.
@@ -52,7 +52,7 @@ As this holds for every object~$c$ of~$\cat{C}$, this shows that~$f$ is a monomo
 \subsubsection*{Faithful functors reflect epimorphisms}
 
 The covariant functor~$F \colon \cat{C} \to \cat{D}$ is also a covariant
-functor from~$\cat{C}^{\op}$ to~$\cat{D}^{\op}$.
+functor from~$\cat{C}^{\op}$ to~$\cat{D}^{\op}$, and still faithful.
 We thus have for every morphism~$f$ in~$\cat{C}$ the logical steps
 \begin{align*}
 	{}&
@@ -73,7 +73,7 @@ We thus have for every morphism~$f$ in~$\cat{C}$ the logical steps
 \subsubsection*{Monomorphisms and epimorphisms in concrete categories}
 
 Let~$\cat{C}$ be a concrete category with forgetful functor~$U \colon \cat{C} \to \Set$.
-We have for every functor~$f$ in~$\cat{C}$ the logical steps
+We have for every morphism~$f$ in~$\cat{C}$ the logical steps
 \begin{align*}
 	{}&
 	\text{$U f$ is injective}
@@ -93,5 +93,6 @@ as well as the logical steps
 	\text{$U f$ is an epimorphism in~$\Set$}
 	\\
 	\implies{}&
-	\text{$f$ is an epimorphism in~$\cat{C}$} \,.
+	\text{$f$ is an epimorphism in~$\cat{C}$} \,,
 \end{align*}
+because the functor~$U$ is faithful.
