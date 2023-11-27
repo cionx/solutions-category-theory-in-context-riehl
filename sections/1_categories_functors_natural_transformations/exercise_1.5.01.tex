@@ -9,58 +9,58 @@ We first prove an auxiliary result.
 
 		\item
 			Let~$α \colon F \To G$ be a natural transformation.
-			For every morphism~$f \colon x \to y$ in~$\cat{C}$ let~$η_f \colon F(x) \to G(y)$ be the diagonal morphism in the following commutative square diagram:
+			For every morphism~$f \colon x \to y$ in~$\cat{C}$ let~$η_f \colon F x \to G y$ be the diagonal morphism in the resulting commutative square diagram:
 			\begin{equation}
 				\label{construction of diagonal transformation}
 				\begin{tikzcd}[row sep = huge]
-					F(x)
-					\arrow{r}[above]{F(f)}
+					F x
+					\arrow{r}[above]{F f}
 					\arrow{d}[left]{α_x}
 					\arrow[dashed]{dr}[above right]{η_f}
 					&
-					F(y)
+					F y
 					\arrow{d}[right]{α_y}
 					\\
-					G(x)
-					\arrow{r}[below]{G(f)}
+					G x
+					\arrow{r}[below]{G f}
 					&
-					G(y)
+					G y
 				\end{tikzcd}
 			\end{equation}
-			In other words,~$η_f = α_y ∘ F(f)$ and also~$η_f = G(f) ∘ α_x$.
+			In other words,~$η_f = α_y ⋅ F f$ and also~$η_f = G f ⋅ α_x$.
 
 			Then the following triangular diagrams commute for all composable morphisms~$f \colon x \to y$ and~$g \colon y \to z$ in~$\cat{C}$:
 			\[
 				\begin{tikzcd}[column sep = normal]
 					{}
 					&
-					F(x)
+					F x
 					\arrow{dl}[above left]{η_f}
 					\arrow{dr}[above right]{η_{g f}}
 					&
 					{}
 					\\
-					G(y)
-					\arrow{rr}[above]{G(g)}
+					G y
+					\arrow{rr}[above]{G g}
 					&
 					{}
 					&
-					G(z)
+					G z
 				\end{tikzcd}
 				\qquad
 				\begin{tikzcd}[column sep = normal]
-					F(x)
-					\arrow{rr}[above]{F(f)}
+					F x
+					\arrow{rr}[above]{F f}
 					\arrow{dr}[below left]{η_{gf}}
 					&
 					{}
 					&
-					F(y)
+					F y
 					\arrow{dl}[below right]{η_g}
 					\\
 					{}
 					&
-					G(z)
+					G z
 					&
 					{}
 				\end{tikzcd}
@@ -68,13 +68,13 @@ We first prove an auxiliary result.
 			In other words, we have
 			\begin{equation}
 				\label{algebraic condition for diagonal natural transformation}
-				η_{gf} = G(g) ∘ η_f
+				η_{gf} = G g ⋅ η_f
 				\quad\text{and}\quad
-				η_{gf} = η_g ∘ F(f) \,.
+				η_{gf} = η_g ⋅ F f \,.
 			\end{equation}
 
 		\item
-			Suppose conversely that~$(η_f)_f$ is a family of morphisms~$η_f \colon F(x) \to G(y)$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, such that the conditions~\eqref{algebraic condition for diagonal natural transformation} hold for all morphisms~$f \colon x \to y$ and~$g \colon y \to z$ in~$\cat{C}$.
+			Suppose conversely that~$(η_f)_f$ is a family of morphisms~$η_f \colon F x \to G y$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, such that the conditions~\eqref{algebraic condition for diagonal natural transformation} hold for all morphisms~$f \colon x \to y$ and~$g \colon y \to z$ in~$\cat{C}$.
 
 			Then there exists a unique natural transformation~$α \colon F \To G$ such that the diagram~\eqref{construction of diagonal transformation} commutes for every morphism~$f \colon x \to y$ in~$\cat{C}$.
 
@@ -86,7 +86,7 @@ We first prove an auxiliary result.
 					natural transformations~$α \colon F \To G$ and
 
 				\item
-					families~$(η_f)_f$ of morphisms~$η_f \colon F(x) \to G(y)$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, such that~$η_{gf} = G(g) ∘ η_f$ and~$η_{gf} = η_g ∘ F(f)$ for all morphisms~$f \colon x \to y$ and~$g \colon y \to z$ in~$\cat{C}$.
+					families~$(η_f)_f$ of morphisms~$η_f \colon F x \to G y$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, such that~$η_{gf} = G g ⋅ η_f$ and~$η_{gf} = η_g ⋅ F f$ for all morphisms~$f \colon x \to y$ and~$g \colon y \to z$ in~$\cat{C}$.
 
 			\end{itemize}
 
@@ -101,102 +101,111 @@ We first prove an auxiliary result.
 			We have for all morphisms~$f \colon x \to y$ and~$g \colon y \to z$ in~$\cat{C}$ the following two commutative diagrams:
 			\[
 				\begin{tikzcd}
-					F(x)
-					\arrow[bend left = 40]{rr}[above]{F(g ∘ f)}
-					\arrow{r}[above]{F(f)}
+					F x
+					\arrow[bend left = 40]{rr}[above]{F (g f)}
+					\arrow{r}[above]{F f}
 					\arrow{d}[left]{α_x}
 					\arrow[dashed]{dr}[above right]{η_f}
 					&
-					F(y)
-					\arrow{r}[above]{F(g)}
+					F y
+					\arrow{r}[above]{F g}
 					\arrow{d}[right]{α_y}
 					\arrow[dashed]{dr}[above right]{η_g}
 					&
-					F(z)
+					F z
 					\arrow{d}[right]{α_z}
 					\\
-					G(x)
-					\arrow{r}[below]{G(f)}
-					\arrow[bend right = 40]{rr}[below]{G(g ∘ f)}
+					G x
+					\arrow{r}[below]{G f}
+					\arrow[bend right = 40]{rr}[below]{G (g f)}
 					&
-					G(y)
-					\arrow{r}[below]{G(g)}
+					G y
+					\arrow{r}[below]{G g}
 					&
-					G(z)
+					G z
 				\end{tikzcd}
 				\qquad
 				\begin{tikzcd}
-					F(x)
-					\arrow{r}[above]{F(g ∘ f)}
+					F x
+					\arrow{r}[above]{F (g f)}
 					\arrow{d}[left]{α_x}
 					\arrow[dashed]{dr}[above right]{η_{gf}}
 					&
-					F(z)
+					F z
 					\arrow{d}[right]{α_z}
 					\\
-					G(x)
-					\arrow{r}[below]{G(g ∘ f)}
+					G x
+					\arrow{r}[below]{G (g f)}
 					&
-					G(z)
+					G z
 				\end{tikzcd}
 			\]
 			The outer square part of these diagrams is the same.
-			The overall diagonal morphism from~$F(x)$ to~$G(z)$ is therefore the same in both diagrams.
-			This entails that~$η_{gf} = η_g ∘ F(f)$ as well as~$η_{gf} = G(g) ∘ η_f$.
+			The overall diagonal morphism from~$F x$ to~$G z$ is therefore the same in both diagrams.
+			This entails that~$η_{gf} = η_g ⋅ F f$ as well as~$η_{gf} = G g ⋅ η_f$.
 
 		\item
-			If then such a natural transformation~$α$ were to exist, then we would have for every object~$x$ of~$\cat{C}$ the following commutative square diagram:
+			If such a natural transformation~$α$ were to exist, then we would have for every object~$x$ of~$\cat{C}$ the following commutative square diagram:
 			\[
 				\begin{tikzcd}[row sep = huge]
-					F(x)
-					\arrow{r}[above]{F(\id_x)}
+					F x
+					\arrow{r}[above]{F \id_x}
 					\arrow{d}[left]{α_x}
 					\arrow[dashed]{dr}[above right]{η_{\id_x}}
 					&
-					F(x)
+					F x
 					\arrow{d}[right]{α_x}
 					\\
-					G(x)
-					\arrow{r}[below]{G(\id_x)}
+					G x
+					\arrow{r}[below]{G \id_x}
 					&
-					G(x)
+					G x
 				\end{tikzcd}
 			\]
-			It would then follow from the identity~$F(\id_x) = \id_{F(x)}$ (or~$G(\id_x) = \id_{G(x)}$) that~$α_x = η_{\id_x}$.
+			It would then follow that
+			\[
+				η_{\id_x}
+				=
+				α_x ⋅ F \id_x
+				=
+				α_x ⋅ \id_{F x}
+				=
+				α_x \,.
+			\]
 			This shows the uniqueness of~$α$.
 
-			To prove the existence of~$α$ we now set
+			To prove the existence of~$α$ we conversely set
 			\[
 				α_x ≔ η_{\id_x}
 			\]
-			for every object~$x$ of~$\cat{C}$.
-			We need to show that the family~$α ≔ (α_x)_x$ is a natural transformation from~$F$ to~$G$, and that~$η_f = α_y ∘ F(f)$ and~$η_f = G(f) ∘ α_x$ for every morphism~$f \colon x \to y$ in~$\cat{C}$.
-			These equalities hold because
+			for every object~$x$ of~$\cat{C}$, which is a morphism from~$F x$ to~$G x$.
+			We need to show that the family~$α ≔ (α_x)_x$ is a natural transformation from~$F$ to~$G$, and that~$η_f = α_y ⋅ F f$ and~$η_f = G f ⋅ α_x$ for every morphism~$f \colon x \to y$ in~$\cat{C}$.
+			These two equalities hold because
 			\[
-				η_f = η_{\id_y f} = η_{\id_y} ∘ F(f) = α_y ∘ F(f)
+				η_f = η_{\id_y ⋅ f} = η_{\id_y} ⋅ F f = α_y ⋅ F f
 			\]
 			and similarly
 			\[
-				η_f = η_{f \id_x} = G(f) ∘ η_{\id_x} = G(f) ∘ α_x \,.
+				η_f = η_{f ⋅ \id_x} = G f ⋅ η_{\id_x} = G f ⋅ α_x \,,
 			\]
-			The resulting concatenation of equalities~$α_y ∘ F(f) = η_f = G(f) ∘ α_x$ also shows the naturality of~$α$.
+			and the resulting sequence of equalities~$α_y ⋅ F f = η_f = G f ⋅ α_x$ also shows that the family~$α$ is natural.
 
 		\item
 			Let~$α \colon F \To G$ be a natural transformation.
-			Let~$(η_f)_f$ be the resulting family of morphisms~$η_f \colon F(x) \to G(y)$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, given by~$η_f = α_y ∘ F(f)$ (and also~$η_f = G(f) ∘ α_x$).
+			Let~$(η_f)_f$ be the resulting family of morphisms~$η_f \colon F x \to G y$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, given by~$η_f = α_y ⋅ F f$ (and also~$η_f = G f ⋅ α_x$).
 			Let~$α'$ be the resulting natural transformation from~$F$ to~$G$ given by~$α'_x = η_{\id_x}$ for every object~$x$ of~$\cat{C}$.
 			We then have for every object~$x$ of~$\cat{C}$ the sequence of equalities
 			\[
-				α'_x = η_{\id_x} = α_x ∘ F(\id_x) = α_x ∘ \id_{F(x)} = α_x \,,
+				α'_x = η_{\id_x} = α_x ⋅ F \id_x = α_x ⋅ \id_{F x} = α_x \,,
 			\]
 			which shows that~$α' = α$.
 
-			Let now conversely~$(η_f)_f$ be a family of morphisms~$η_f \colon F(x) \to G(y)$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, satisfying the two conditions~$η_{gf} = G(g) ∘ η_f$ and~$η_{gf} = η_g ∘ F(f)$ for all morphisms~$f \colon x \to y$ and~$g \colon y \to z$ in~$\cat{C}$.
+			Let now conversely~$(η_f)_f$ be a family of morphisms~$η_f \colon F x \to G y$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, satisfying the two conditions~$η_{gf} = G g ⋅ η_f$ and~$η_{gf} = η_g ⋅ F f$ for all morphisms~$f \colon x \to y$ and~$g \colon y \to z$ in~$\cat{C}$.
 			Let~$α$ be the resulting natural transformation from~$F$ to~$G$ given by~$α_x = η_{\id_x}$ for every object~$x$ of~$\cat{C}$.
-			Let~$(η'_f)_f$ be the resulting family of morphisms~$η'_f \colon F(x) \to G(y)$, where once again~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, with~$η'_f$ given by~$η'_f = α_y ∘ F(f)$ (and also equivalently~$η'_f = G(f) ∘ α_x$).
+			Let~$(η'_f)_f$ be the resulting family of morphisms~$η'_f \colon F x \to G y$, where once again~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, with~$η'_f$ given by~$η'_f = α_y ⋅ F f$ (and also equivalently~$η'_f = G f ⋅ α_x$).
 			Then
 			\[
-				η'_f = α_y ∘ F(f) = η_{\id_y} ∘ F(f) = η_{\id_y f} = η_f
+				η'_f = α_y ⋅ F f = η_{\id_y} ⋅ F f = η_{\id_y ⋅ f} = η_f
 			\]
 			for every morphism~$f \colon x \to y$ in~$\cat{C}$.
 		\qedhere
@@ -213,24 +222,24 @@ consists of the following data:
 \begin{enumerate*}[label = D\arabic*., ref = D\arabic*]
 
 	\item
-		\label{data of H(x, 0)}
-		For every object~$x$ of~$\cat{C}$ an object~$H(x, 0)$ of~$\cat{D}$.
+		\label{data of H (x, 0)}
+		For every object~$x$ of~$\cat{C}$ an object~$H (x, 0)$ of~$\cat{D}$.
 
 	\item
-		\label{data of H(x, 1)}
-		For every object~$x$ of~$\cat{C}$ an object~$H(x, 1)$ of~$\cat{D}$.
+		\label{data of H (x, 1)}
+		For every object~$x$ of~$\cat{C}$ an object~$H (x, 1)$ of~$\cat{D}$.
 
 	\item
-		\label{data of H(f, id0)}
-		For every morphism~$f \colon x \to y$ in~$\cat{C}$ a morphism~$H(f, \id_0)$ from~$H(x, 0)$ to~$H(y, 0)$ in~$\cat{D}$.
+		\label{data of H (f, id0)}
+		For every morphism~$f \colon x \to y$ in~$\cat{C}$ a morphism~$H (f, \id_0)$ from~$H (x, 0)$ to~$H (y, 0)$ in~$\cat{D}$.
 
 	\item
-		\label{data of H(f, id1)}
-		For every morphism~$f \colon x \to y$ in~$\cat{C}$ a morphism~$H(f, \id_1)$ from~$H(x, 1)$ to~$H(y, 1)$ in~$\cat{D}$.
+		\label{data of H (f, id1)}
+		For every morphism~$f \colon x \to y$ in~$\cat{C}$ a morphism~$H (f, \id_1)$ from~$H (x, 1)$ to~$H (y, 1)$ in~$\cat{D}$.
 
 	\item
-		\label{data of H(f, j)}
-		For every morphism~$f \colon x \to y$ in~$\cat{C}$ a morphism~$H(f, j)$ from~$H(x, 0)$ to~$H(y, 1)$ in~$\cat{D}$, where~$j \colon 0 \to 1$ is the unique non-identity morphism in~$𝟚$.
+		\label{data of H (f, j)}
+		For every morphism~$f \colon x \to y$ in~$\cat{C}$ a morphism~$H (f, j)$ from~$H (x, 0)$ to~$H (y, 1)$ in~$\cat{D}$, where~$j \colon 0 \to 1$ is the unique non-identity morphism in~$𝟚$.
 
 \end{enumerate*}
 These data are subject to the following conditions:
@@ -243,11 +252,11 @@ These data are subject to the following conditions:
 
 			\item
 				\label{identities in the first coordinate}
-				$H(\id_x, \id_0) = \id_{H(x, 0)}$ and
+				$H (\id_x, \id_0) = \id_{H (x, 0)}$ and
 
 			\item
 				\label{identities in the second coordinate}
-				$H(\id_x, \id_1) = \id_{H(x, 1)}$.
+				$H (\id_x, \id_1) = \id_{H (x, 1)}$.
 
 		\end{enumerate}
 
@@ -257,39 +266,39 @@ These data are subject to the following conditions:
 
 			\item
 				\label{composition in the first coordinate}
-				$H(g f, \id_0) = H(g, \id_0) H(f, \id_0)$,
+				$H (g f, \id_0) = H (g, \id_0) ⋅ H (f, \id_0)$,
 
 			\item
 				\label{composition in the second coordinate}
-				$H(g f, \id_1) = H(g, \id_1) H(g, \id_0)$,
+				$H (g f, \id_1) = H (g, \id_1) ⋅ H (g, \id_0)$,
 
 			\item
 				\label{morphism in the first coordinate}
-				$H(g f, j) = H(g, j) H(f, \id_0)$,
+				$H (g f, j) = H (g, j) ⋅ H (f, \id_0)$,
 
 			\item
 				\label{morphism in the second coordinate}
-				$H(g f, j) = H(g, \id_1) H(f, j)$.
+				$H (g f, j) = H (g, \id_1) ⋅ H (f, j)$.
 
 		\end{enumerate}
 \end{enumerate*}
 For every object~$x$ of~$\cat{C}$ let
 \[
-	F(x) ≔ H(x, 0) \,,
+	F x ≔ H (x, 0) \,,
 	\quad
-	G(x) ≔ H(x, 1) \,,
+	G x ≔ H (x, 1) \,,
 \]
 and for every morphism~$f \colon x \to y$ in~$\cat{C}$ let
 \[
-	F(f) ≔ H(f, \id_0) \,,
+	F f ≔ H (f, \id_0) \,,
 	\quad
-	G(f) ≔ H(f, \id_1) \,,
+	G f ≔ H (f, \id_1) \,,
 	\quad
-	η_f ≔ H(f, j) \,.
+	η_f ≔ H (f, j) \,.
 \]
-The datum of~$F$ is equivalent to the data~\ref{data of H(x, 0)} and~\ref{data of H(f, id0)}, the datum of~$G$ is equivalent to the data~\ref{data of H(x, 1)} and~\ref{data of H(f, id1)}, and the datum of~$η$ is equivalent to the datum~\ref{data of H(f, j)}.
+The datum of~$F$ is equivalent to the data~\ref{data of H (x, 0)} and~\ref{data of H (f, id0)}, the datum of~$G$ is equivalent to the data~\ref{data of H (x, 1)} and~\ref{data of H (f, id1)}, and the datum of~$η$ is equivalent to the datum~\ref{data of H (f, j)}.
 The combination of conditions~\ref{identities in the first coordinate} and~\ref{composition in the first coordinate} is equivalent to the functoriality of~$F$, the combination of conditions~\ref{identities in the second coordinate} and~\ref{composition in the second coordinate} is equivalent to the functoriality of~$G$.
 The combination of conditions~\ref{morphism in the first coordinate} and~\ref{morphism in the second coordinate} is then equivalent to~$η$ defining a natural transformation from~$F$ to~$G$ via~\cref{natural transformations via diagonal morphisms}.
 
 This shows that functors~$H \colon \cat{C} × 𝟚 \to \cat{D}$ correspond to pairs of functors~$F, G \colon \cat{C} \to \cat{D}$ together with a natural transformation~$α \colon F \To G$.
-This correspondence is given by~$F = H i_0$ and~$G = H i_1$, and the natural transformation~$α$ corresponds to the morphisms~$H(f, i) \colon F(x) \to G(y)$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, as laid out in~\cref{natural transformations via diagonal morphisms}.
+This correspondence is given by~$F = H i_0$ and~$G = H i_1$, and the natural transformation~$α$ corresponds to the morphisms~$H (f, j) \colon F x \to G y$, where~$f \colon x \to y$ ranges through the morphisms in~$\cat{C}$, as laid out in~\cref{natural transformations via diagonal morphisms}.

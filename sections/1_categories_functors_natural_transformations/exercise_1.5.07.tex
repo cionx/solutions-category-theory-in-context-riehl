@@ -8,7 +8,7 @@ We choose~$φ_x$ as~$\id_x$.
 
 We define a functor~$F'$ from~$\cat{G}$ to~$\Base G$ as follows.
 On objects, we set~$F' y ≔ \ast$ for every object~$y$ of~$\cat{G}$ (the only possible choice).
-We define for every two objects~$y$ and~$z$ in~$\cat{G}$ the action of~$F'$ on the set~$\cat{G}(y, z)$ as
+We define for every two objects~$y$ and~$z$ in~$\cat{G}$ the action of~$F'$ on the set~$\cat{G}(y, z)$ as the map
 \[
 	\cat{G}(y, z)
 	\xto{φ_z^{-1} ∘ (\ph) ∘ φ_y}
@@ -16,9 +16,11 @@ We define for every two objects~$y$ and~$z$ in~$\cat{G}$ the action of~$F'$ on t
 	=
 	G
 	=
-	\Base G(\ast, \ast) \,.
+	\Base G(\ast, \ast)
+	=
+	\Base G(F' y, F' z) \,.
 \]
-More explicitly,
+In other words,
 \[
 	F' f ≔ φ_z^{-1} f φ_y
 \]
@@ -46,9 +48,9 @@ We need to check that the assignment~$F'$ is indeed functorial:
 	\item
 		We have for any two morphisms~$f_1 \colon y \to z$ and~$f_2 \colon z \to w$ in~$\cat{G}$ the sequence of equalities
 		\[
-			F' f_2 ∘ F' f_1
+			F' f_2 ⋅ F' f_1
 			=
-			φ_w^{-1} f_2 φ_z ∘ φ_z^{-1} f_1 φ_y
+			φ_w^{-1} f_2 φ_z ⋅ φ_z^{-1} f_1 φ_y
 			=
 			φ_w^{-1} f_2 f_1 φ_y
 			=
@@ -80,7 +82,7 @@ and we have for every morphism~$g \colon \ast \to \ast$ in~$\Base G$ the sequenc
 \]
 
 The composite~$F F'$ won’t be the identity functor on~$\cat{G}$ (unless~$x$ is the only object in~$\cat{G}$, in which case~$F$ is an isomorphism with inverse~$F'$), but it will be isomorphic to this identity functor.
-We claim more specifically that the family~$φ ≔ (φ_y)_y$, where~$y$ ranges over the objects of~$\cat{G}$, is a natural isomorphism from~$\Id_{\cat{G}}$ to~$F F'$.
+We claim more specifically that the family~$φ ≔ (φ_y)_y$, where~$y$ ranges over the objects of~$\cat{G}$, is a natural isomorphism from~$F F'$ to~$\Id_{\cat{G}}$.
 
 We already know that~$φ$ is an isomorphism in each component, and that~$φ_y$ goes from~$x = F F' y$ to~$y = \Id_{\cat{C}} y$ for every object~$y$ of~$\cat{G}$.
 It therefore only remains to check the naturality of~$φ$.
@@ -102,15 +104,15 @@ To this end, we need to check that for every morphism~$f \colon y \to z$ in~$\ca
 \]
 This diagram commutes because
 \[
-	φ_z ∘ F F' f
+	φ_z ⋅ F F' f
 	=
-	φ_z ∘ F (φ_z^{-1} f φ_y)
+	φ_z ⋅ F (φ_z^{-1} f φ_y)
 	=
-	φ_z ∘ (φ_z^{-1} f φ_y)
+	φ_z ⋅ (φ_z^{-1} f φ_y)
 	=
 	φ_z φ_z^{-1} f φ_y
 	=
 	f φ_y \,.
 \]
 
-This shows altogether that~$F'$ is an essential inverse to~$F$.
+We have altogether shown that~$F'$ is an essential inverse to~$F$.

@@ -9,8 +9,13 @@ To prove the claimed isomorphism between~$Γ^{\op}$ and~$\Fin^∂$, we will cons
 The main observation is that a partially defined function~$f \colon T \to S$ is uniquely determined by its fibres~$f^{-1}(s)$, which are disjoint subsets of~$T$ indexed by~$S$.
 Such an indexed family of pairwise disjoint subsets has the same data as a morphism from~$S$ to~$T$ in~$Γ$.
 
-We first define~$F$ and~$G$ on objects:
-for every set~$S$ let~$F(S) ≔ S$ and~$G(S) ≔ S$.
+
+
+\subsubsection*{The functor~$F$}
+
+We start with the functor~$F \colon Γ^{\op} \to \Fin^∂$.
+
+We define~$F$ on objects as~$F(S) ≔ S$ for every finite set~$S$.
 
 For every morphism~$θ \colon S \to T$ in~$Γ$ let~$F(θ)$ be the partially defined function from~$T$ to~$S$ given by
 \[
@@ -19,28 +24,18 @@ For every morphism~$θ \colon S \to T$ in~$Γ$ let~$F(θ)$ be the partially defi
 	t ∈ θ(s)
 \]
 for all~$s ∈ S$,~$t ∈ T$.
-The partially defined function~$F(θ)$ is well-defined because the sets~$θ(s)$, where~$s$ ranges through~$S$, are pairwise disjoint.%
+In other words, the set~$θ(s)$ is the fibre of~$s$ under~$F(θ)$:
+\[
+	F(θ)^{-1}(s) = θ(s) \,.
+\]
+The partially defined function~$F(θ)$ is well-defined since the sets~$θ(s)$, where~$s$ ranges through~$S$, are pairwise disjoint.%
 \footnote{
 	The partially defined function~$F(θ)$ is a total function if and only if the set~$T$ is completely covered by the sets~$θ(s)$ with~$s ∈ S$.
 }
 
-For every partially defined function~$f \colon S \to T$ between sets~$S$ and~$T$ let~$G(f)$ be the induced function
-\[
-	G(f)
-	\colon
-	T \to \Power(S) \,,
-	\quad
-	t \mapsto f^{-1}(t) \,.
-\]
-The fibres~$f^{-1}(t)$, where~$t$ ranges through~$T$, are pairwise disjoint.
-The function~$G(f)$ is therefore a morphism from~$T$ to~$S$ in~$Γ$.
+We us now verify the functoriality of~$F$.
 
-We claim that~$F$ and~$G$ are mutually inverse contravariant functors.
-It remains to check the contravariant functorialities of~$F$ and~$G$, and that~$F$ and~$G$ are mutually inverse.
-
-We first check the functoriality of~$F$.
-
-Let~$S$ be a set, regarded as an object of~$Γ$, and let~$ι_S$ be the identity morphism of~$S$ in~$Γ$.
+Let~$S$ be a finite set, regarded as an object of~$Γ$, and let~$ι_S$ be the identity morphism of~$S$ in~$Γ$.
 In other words,~$ι_S$ is the function
 \[
 	ι_S
@@ -63,7 +58,7 @@ We have for all~$s ∈ S$,~$u ∈ U$ the sequence of equivalences
 	u ∈ (σ θ)(s)
 	\\
 	\iff{}&
-	u ∈ ⋃_{t ∈ θ(s)} σ(t)
+	\textstyle u ∈ ⋃_{t ∈ θ(s)} σ(t)
 	\\
 	\iff{}&
 	\text{there exists some~$t ∈ θ(s)$ with~$u ∈ σ(t)$}
@@ -81,10 +76,29 @@ We have for all~$s ∈ S$,~$u ∈ U$ the sequence of equivalences
 	(F(θ) ∘ F(σ))(u) = s \,.
 \end{align*}
 This shows that~$F(σ θ) = F(θ) ∘ F(σ)$.
-This means that the assignment~$F$ is contravariantly compatible with composition of morphisms.
 
-We have thus shown that~$F$ is a contravariant functor.
-We next check the contravariant functoriality of~$G$.
+We have thus shown that~$F$ is a contravariant functor from~$Γ$ to~$\Fin^∂$.
+
+
+
+\subsubsection*{The functor~$G$}
+
+We now define the functor~$G$.
+
+The action of~$G$ on objects is given by~$G(S) = S$ for every finite set~$S$.
+
+For every partially defined function~$f \colon S \to T$ between finite sets~$S$ and~$T$ let~$G(f)$ be the induced function
+\[
+	G(f)
+	\colon
+	T \to \Power(S) \,,
+	\quad
+	t \mapsto f^{-1}(t) \,.
+\]
+The fibres~$f^{-1}(t)$, where~$t$ ranges through~$T$, are pairwise disjoint.
+The function~$G(f)$ is therefore a morphism from~$T$ to~$S$ in~$Γ$.
+
+We have to verify the contravariant functoriality of~$G$.
 
 Let~$S$ be a set and let~$\id_S$ be the identity function on~$S$.
 Then
@@ -105,21 +119,28 @@ We have for every~$u ∈ U$ the sequence of equalities
 	f^{-1}( g^{-1}(u) )
 	\\
 	&=
-	⋃_{t ∈ g^{-1}(u)} f^{-1}(t)
-	\\[0.2em]
+	\textstyle ⋃_{t ∈ g^{-1}(u)} f^{-1}(t)
+	\\
 	&=
-	⋃_{t ∈ G(g)(u)} G(f)(t)
+	\textstyle ⋃_{t ∈ G(g)(u)} G(f)(t)
 	\\
 	&=
 	(G(f) ∘ G(g))(u) \,,
 \end{align*}
 and therefore the equality~$G(g ∘ f) = G(f) ∘ G(g)$.
-This shows that the assignment~$G$ is contravariantly compatible with composition of morphisms.
 
-We have thus shown that~$G$ is a contravariant functor.
-It remains to check that~$F$ and~$G$ are mutually inverse.
 
-We have for every set~$S$ the sequences of equalities~$G(F(S)) = G(S) = S$ and~$F(G(S)) = F(S) = S$, which means that~$F$ and~$G$ are mutually inverse on objects.
+
+\subsubsection*{The functors are mutually inverse}
+
+It remains to check that the functors~$F$ and~$G$ are mutually inverse.
+
+We have for every finite set~$S$ the sequences of equalities
+\[
+	G(F(S)) = G(S) = S \,, \quad
+	F(G(S)) = F(S) = S \,,
+\]
+which tells us that~$F$ and~$G$ are mutually inverse on objects.
 
 Let~$θ$ be a morphism in~$Γ$ from a set~$S$ to a set~$T$.
 We have for all~$s ∈ S$,~$t ∈ T$ the sequence of equivalences

@@ -3,6 +3,7 @@
 Let~$P$ be the partially ordered set consisting of the two natural numbers~$0$ and~$1$ with the usual ordering~$0 < 1$.
 Let~$Q$ be the preordered set consisting of two distinct elements~$x$ and~$y$ with both~$x ≤ y$ and~$y ≤ x$.
 Let~$\cat{P}$ and~$\cat{Q}$ be the categories corresponding to~$P$ and~$Q$ respectively.
+(The category~$\cat{P}$ is~$𝟙$, and the category~$\cat{Q}$ is~$𝕀$.)
 
 The map
 \[
@@ -13,7 +14,8 @@ The map
 	1 \mapsto y
 \]
 is isotone, and therefore describes a functor~$F \colon \cat{P} \to \cat{Q}$.
-The functor~$F$ is faithful because functors from a (category corresponding to a) preordered set into any other category are always faithful.
+The functor~$F$ is faithful because there exist no two distinct parallel morphisms in~$\cat{P}$.
+(More generally, every functor from a preordered set into any other category is faithful.)
 
 The unique arrow~$0 \to 1$ in~$\cat{P}$ is not an isomorphism.
 But its image under~$F$, which is the unique arrow~$x \to y$ in~$\cat{Q}$, is an isomorphism.

@@ -1,0 +1,68 @@
+\subsection*{Equivalences between skeletal categories are isomorphisms}
+
+For every category~$\cat{C}$ let~$\Iso(\cat{C})$ be the class of isomorphism classes of objects of~$\cat{C}$.
+We note that every functor~$F \colon \cat{C} \to \cat{D}$ induces a function~$\Iso(F)$ from~$\Iso(\cat{C})$ to~$\Iso(\cat{D})$ via~$\class{c} \mapsto \class{F c}$.
+The construction~$\Iso$ is functorial.
+
+\begin{lemma}
+	\label{isomorphic functors induce the same map on iso classes}
+	Let~$F, G \colon \cat{C} \to \cat{D}$ be two parallel functors.
+	If~$F$ and~$G$ are isomorphic, then the induced maps~$\Iso(F)$ and~$\Iso(G)$ are equal.
+\end{lemma}
+
+\begin{proof}
+	We have for every object~$c$ of~$\cat{C}$ the isomorphism~$F c ≅ G c$ and therefore the equality
+	\[
+		\Iso(F)(c)
+		=
+		\class{F c}
+		=
+		\class{G c}
+		=
+		\Iso(G)(c) \,.
+	\]
+	This shows that~$\Iso(F) = \Iso(G)$.
+\end{proof}
+
+\begin{proposition}
+	\label{equivalence induces bijection between iso classes}
+	Let~$F \colon \cat{C} \to \cat{D}$ be an equivalence of categories with quasi-inverse~$G \colon \cat{D} \to \cat{C}$.
+	The induced map~$\Iso(F)$ is bijective with inverse~$\Iso(G)$.
+\end{proposition}
+
+\begin{proof}
+	There exists an isomorphism of functors between~$G F$ and~$\Id_{\cat{C}}$.
+	It follows from \cref{isomorphic functors induce the same map on iso classes} that
+	\[
+		\Iso(G) \Iso(F)
+		=
+		\Iso(G F)
+		=
+		\Iso( \Id_{\cat{C}} )
+		=
+		\Id_{\Iso(\cat{C})} \,.
+	\]
+	We find in the same way that also~$\Iso(F) \Iso(G) = \Id_{\Iso(\cat{D})}$.
+\end{proof}
+
+\begin{proposition}
+	\label{full faithful and bijective is isomorphism}
+	Let~$F$ be a functor that is full, faithful, and induces a bijection between objects.
+	Then~$F$ is an isomorphism.
+	\qed
+\end{proposition}
+
+\begin{proof}
+	It follows that~$F$ also induces a bijection on morphisms.
+\end{proof}
+
+\begin{corollary}
+	An equivalence between skeletal categories is already an isomorphism of categories.
+\end{corollary}
+
+\begin{proof}
+	Let~$F \colon \cat{C} \to \cat{D}$ be an equivalence between skeletal categories.
+	It follows from \cref{equivalence induces bijection between iso classes} and~$\cat{C}$ and~$\cat{D}$ being skeletal that~$F$ induces a bijection between objects.
+	The functor~$F$ is also full and faithful.
+	It is therefore an isomorphism of categories by \cref{full faithful and bijective is isomorphism}.
+\end{proof}

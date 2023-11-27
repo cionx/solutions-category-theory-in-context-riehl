@@ -5,23 +5,23 @@
 \subsubsection{}
 
 Let~$f \colon x \to y$ be a morphism in~$\cat{C}$ for which the morphism~$F f \colon F x \to F y$ is an isomorphism in~$\cat{D}$.
-This means that there exists a morphism~$g \colon F y \to F x$ in~$\cat{D}$ with both~$F f ∘ g = \id_{F y}$ and~$g ∘ F f = \id_{F x}$.
+This means that there exists a morphism~$g \colon F y \to F x$ in~$\cat{D}$ with both~$F f ⋅ g = \id_{F y}$ and~$g ⋅ F f = \id_{F x}$.
 
 There exists a morphism~$f' \colon y \to x$ in~$\cat{C}$ with~$g = F f'$ because the functor~$F$ is full.
 It follows from the sequence of equalities
 \[
-	F (f ∘ f')
+	F (f ⋅ f')
 	=
-	F f ∘ F f'
+	F f ⋅ F f'
 	=
-	F f ∘ g
+	F f ⋅ g
 	=
 	\id_{F y}
 	=
 	F \id_y
 \]
-that~$f ∘ f' = \id_y$ because the functor~$F$ is faithful.
-We find in the same way that also~$f' ∘ f = \id_x$.
+that~$f ⋅ f' = \id_y$ because the functor~$F$ is faithful.
+We find in the same way that also~$f' ⋅ f = \id_x$.
 This shows that~$f$ is an isomorphism with inverse~$f'$.
 
 We have thus proven that the inverse of~$F f$ in~$\cat{D}$ lifts uniquely to an inverse of~$f$ in~$\cat{C}$.
@@ -33,5 +33,5 @@ This entails that~$f$ is an isomorphism.
 
 That the two objects~$F x$ and~$F y$ in~$\cat{D}$ are isomorphic means that there exists an isomorphism~$g \colon F x \to F y$ in~$\cat{D}$.
 There exists a morphism~$f \colon x \to y$ in~$\cat{C}$ with~$g = F f$ because the functor~$F$ is full.
-It follows from part~(i) of this exercise that~$f$ is also an isomorphism.
+It follows from part~(i) of this exercise that~$f$ is again an isomorphism.
 The existence of this isomorphism shows that the two objects~$x$ and~$y$ are isomorphic.
