@@ -1,18 +1,85 @@
 \subsection{}
 
-Let $\cat{C}$ be a category and let~$c$ be an object of~$\cat{C}$.
-Let~$\End(c)$ denote the collection of endomorphisms of~$c$ in~$\cat{C}$.
-For every two such endomorphisms~$f$ and~$g$, their composite~$gf$ is again an endomorphism of~$\cat{C}$.
-The composition of morphisms in~$\cat{C}$ therefore restricts to a binary operation on~$\End(c)$, making~$\End(c)$ into a magma.
-As composition of morphism in~$\cat{C}$ is associative, the restricted operation on~$\End(c)$ is again associative, upgrading~$\End(c)$ to a semigroup.
-The identity morphism~$\id_c$ acts as a neutral element in~$\End(c)$, further upgrading~$\End(c)$ to a monoid.
+Let $\cat{D}$ be a category and let~$d$ be an object of~$\cat{D}$.
+Let~$\End(d)$ denote the collection of endomorphisms of~$d$ in~$\cat{D}$.
+For every two such endomorphisms~$f$ and~$g$, their composite~$gf$ is again an endomorphism of~$\cat{D}$.
+The composition of morphisms in~$\cat{D}$ therefore restricts to a binary operation on~$\End(d)$, making~$\End(d)$ into a magma.
+As composition of morphism in~$\cat{D}$ is associative, the restricted operation on~$\End(d)$ is again associative, upgrading~$\End(d)$ to a semigroup.
+The identity morphism~$\id_d$ acts as a neutral element in~$\End(d)$, further upgrading~$\End(d)$ to a monoid.
 
 Let now~$\cat{C}$ be a category and let~$\cat{D}$ be the functor category~$\cat{C}^{\cat{C}}$.
-It follows from the above argumentation that~$\End_{\cat{D}}(\id_c)$ is a monoid under vertical composition of natural transformations.
-It follows from the upcoming \lcnamecref{horizontal composition gives monoid structure} that~$\End_{\cat{D}}(\id_c)$ is also a monoid under horizontal composition of natural transformation (with neutral element given by~$\id_{\Id_{\cat{C}}}$, the identity natural transformation of the identity functor on~$\cat{C}$).
-These two monoid structures on~$\End_{\cat{D}}(\id_c)$ satisfy the interchange property from Lemma~1.7.7.
+It follows from the above argumentation that~$\End_{\cat{D}}(\Id_{\cat{C}})$ is a monoid under vertical composition of natural transformations.
+It follows from the upcoming \lcnamecref{horizontal composition gives monoid structure} that~$\End_{\cat{D}}(\Id_{\cat{C}})$ is also a monoid under horizontal composition of natural transformation.
+These two monoid structures on~$\End_{\cat{D}}(\Id_{\cat{C}})$ satisfy the interchange property from Lemma~1.7.7.
 It follows from the Eckmann--Hilton argument that both monoid structures agree and are commutative.
 
+\begin{lemma}[Whiskering with identity functors]
+	\label{whiskering with identity functor}
+	Let~$F, G \colon \cat{C} \to \cat{D}$ be two parallel functors and let~$α \colon F \To G$ be a natural transformation.
+	Then~$α \Id_{\cat{C}} = α$ and~$\Id_{\cat{D}} α = α$.
+\end{lemma}
+
+\begin{proof}
+	For the first equality we observe that~$α \Id_{\cat{C}}$ is a natural transformation from~$F \Id_{\cat{C}}$ to~$G \Id_{\cat{C}}$, and thus again a natural transformation from~$F$ to~$G$.
+	We also have
+	\[
+		(α \Id_{\cat{C}})_c
+		=
+		α_{(\Id_{\cat{C}} c)}
+		=
+		α_c
+	\]
+	for every object~$c$ of~$\cat{C}$, and thus overall~$α \Id_{\cat{C}} = α$.
+
+	For the second equality we observe that~$\Id_{\cat{D}} α$ is a natural transformation from~$\Id_{\cat{D}} F$ to~$\Id_{\cat{D}} G$, and thus again a natural transformation from~$F$ to~$G$.
+	We also have
+	\[
+		(\Id_{\cat{D}} α)_c
+		=
+		\Id_{\cat{D}} α_c
+		=
+		α_c
+	\]
+	for every object~$c$ of~$\cat{C}$, and thus overall~$\Id_{\cat{D}} α = α$.
+\end{proof}
+
+\begin{lemma}[Whiskering of the identity natural transformation]
+	\label{whiskering of identity transformation}
+	Let
+	\[
+		F \colon \cat{C} \to \cat{D}
+		\quad\text{and}\quad
+		G \colon \cat{D} \to \cat{C}
+	\]
+	be two functors.
+	Then~$G \id_F = \id_{G F}$ and~$\id_G F = \id_{G F}$.
+\end{lemma}
+
+\begin{proof}
+	We have for every object~$c$ of~$\cat{C}$ the sequences of equalities
+	\[
+		(G \id_F)_c
+		=
+		G (\id_F)_c
+		=
+		G \id_{F c}
+		=
+		\id_{G F c}
+		=
+		(\id_{G F})_c
+	\]
+	and
+	\[
+		(\id_G F)_c
+		=
+		(\id_G)_{F c}
+		=
+		\id_{G F c}
+		=
+		(\id_{G F})_c \,,
+	\]
+	and thus altogether~$G \id_F = \id_{G F}$ and~$\id_G F = \id_{G F}$.
+\end{proof}
 
 \begin{proposition}[Assocativity and units for horizontal composition]
 	\label{horizontal composition gives monoid structure}
@@ -41,7 +108,7 @@ It follows from the Eckmann--Hilton argument that both monoid structures agree a
 					\cat{F}
 				\end{tikzcd}
 			\]
-			we have the equality~$(γ * β) * α = γ * (β * α)$.
+			we have the equality~$(γ * β) * α = γ * (β * α)$ of natural transformations from~$KHF$ to~$LJG$.
 
 		\item
 			We have for every natural transformation~$α \colon F \To G$ between two functors~$F, G \colon \cat{C} \to \cat{D}$ the equalities
@@ -50,6 +117,7 @@ It follows from the Eckmann--Hilton argument that both monoid structures agree a
 				\quad\text{and}\quad
 				\id_{\Id_{\cat{D}}} * α = α \,.%
 				\footnote{
+					Here~$\id_{\Id_{\cat{C}}}$ denotes the identity natural transformation of the identity functor of~$\cat{C}$.
 					Note that~$α * \id_{\Id_{\cat{C}}}$ is a natural transformation from~$F \Id_{\cat{C}} = F$ to~$G \Id_{\cat{C}} = G$, and that similarly~$\id_{\Id_{\cat{D}}} * α$ is a natural transformation from~$\Id_{\cat{D}} F = F$ to~$\Id_{\cat{D}} G = G$.
 				}
 			\]
@@ -58,29 +126,45 @@ It follows from the Eckmann--Hilton argument that both monoid structures agree a
 \end{proposition}
 
 \begin{proof}
-	We prove both claims independent of one another.
+	We prove both claims independently of one another.
 	\begin{enumerate}
 
 		\item
 			The horizontal composition~$γ * β$ is a natural transformation from~$K H$ to~$L J$, and the horizontal composition~$β * α$ is a natural transformation from~$H F$ to~$J G$.
-			We have therefore the sequence of equalities
+			We have therefore the sequences of equalities
 			\begin{align*}
 				(γ * β) * α
 				&=
+				(γ * β) \codom(α) ⋅ \dom(γ * β) α \\
+				&=
+				(γ * β) \codom(α) ⋅ \dom(γ) \dom(β) α \\
+				&=
 				(γ * β) G ⋅ K H α \\
+				&=
+				(γ \codom(β) ⋅ \dom(γ) β) G ⋅ K H α \\
 				&=
 				(γ J ⋅ K β) G ⋅ K H α \\
 				&=
 				γ J G ⋅ K β G ⋅ K H α \\
+			\end{align*}%
+			and similarly
+			\begin{align*}
+				γ * (β * α)
 				&=
-				γ J G ⋅ K (β G ⋅ H α) \\
+				γ \codom(β * α) ⋅ \dom(γ) (β * α) \\
+				&=
+				γ \codom(β) \codom(α) ⋅ \dom(γ) (β * α) \\
 				&=
 				γ J G ⋅ K (β * α) \\
 				&=
-				γ * (β * α) \,.%
-				\footnotemark
+				γ J G ⋅ K (β \codom(α) ⋅ \dom(β) α) \\
+				&=
+				γ J G ⋅ K (β G ⋅ H α) \\
+				&=
+				γ J G ⋅ K β G ⋅ K H α \,,
 			\end{align*}
-			\footnotetext{
+			by \cref{one-sided whiskering and vertical composition}.%
+			\footnote{
 				More generally, given functors~$F_i, G_i \colon \cat{C}_i \to \cat{C}_{i + 1}$ and natural transformations~$α_i \colon F_i \to G_i$ for~$i = 1, \dotsc, n$, we have the identity
 				\[
 					α_n * \dotsb * α_1
@@ -93,24 +177,34 @@ It follows from the Eckmann--Hilton argument that both monoid structures agree a
 			}
 
 		\item
-			We have the sequences of equalities
-			\begin{gather*}
+			It follows from \cref{whiskering with identity functor} and \cref{whiskering of identity transformation} that
+			\begin{align*}
 				α * \id_{\Id_{\cat{C}}}
-				=
-				α \Id_{\cat{C}} ⋅ F \id_{\Id_{\cat{C}}}
-				=
-				α ⋅ \id_F
-				=
+				&=
+				α \codom(\id_{\Id_{\cat{C}}}) ⋅ \dom(α) \id_{\Id_{\cat{C}}} \\
+				&=
+				α \Id_{\cat{C}} ⋅ F \id_{\Id_{\cat{C}}} \\
+				&=
+				α ⋅ \id_{F \Id_{\cat{C}}} \\
+				&=
+				α ⋅ \id_F \\
+				&=
 				α
-			\shortintertext{and}
-				\id_{\Id_{\cat{C}}} * α
-				=
-				\id_{\Id_{\cat{C}}} G ⋅ \Id_{\cat{C}} α
-				=
-				\id_G ⋅ α
-				=
+			\end{align*}
+			and
+			\begin{align*}
+				\id_{\Id_{\cat{D}}} * α
+				&=
+				\id_{\Id_{\cat{D}}} \codom(α) ⋅ \dom(\id_{\Id_{\cat{D}}}) α \\
+				&=
+				\id_{\Id_{\cat{D}}} G ⋅ \Id_{\cat{D}} α \\
+				&=
+				\id_{\Id_{\cat{D}} G} ⋅ α \\
+				&=
+				\id_G ⋅ α \\
+				&=
 				α \,.
-			\end{gather*}
+			\end{align*}
 			This shows the claimed equalities.
 		\qedhere
 

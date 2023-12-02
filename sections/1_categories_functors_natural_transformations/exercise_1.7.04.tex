@@ -1,6 +1,6 @@
 \subsection{}
 
-\begin{lemma}[Whiskering and vertical composition]
+\begin{lemma}[Whiskering and vertical composition~I]
 	\label{two-sided whiskering and vertical composition}
 	In the situation
 	\[
@@ -9,9 +9,9 @@
 				\arrow{r}[above]{F}
 				&
 				\cat{D}
-				\arrow[bend left = 70, r, "G", ""{name = U1, below}]
+				\arrow[bend left = 75, r, "G", ""{name = U1, below}]
 				\arrow[r, "H" description, ""{name = D1, above}, ""{name = U2, below}]
-				\arrow[bend right = 70, r, swap, "J", ""{name = D2, above}]
+				\arrow[bend right = 75, r, swap, "J", ""{name = D2, above}]
 				\arrow[Rightarrow, from = U1, to = D1, "α"]
 				\arrow[Rightarrow, from = U2, to = D2, "β"]
 				&
@@ -36,18 +36,18 @@
 		&=
 		K (β ⋅ α)_{F c} \\
 		&=
-		K (β_{F c} α_{F c}) \\
+		K (β_{F c} ⋅ α_{F c}) \\
 		&=
-		(K β_{F c}) (K α_{F c}) \\
+		K β_{F c} ⋅ K α_{F c} \\
 		&=
-		(K β F)_c (K α F)_c \\
+		(K β F)_c ⋅ (K α F)_c \\
 		&=
-		((K β F) ⋅ (K α F))_c \,,
+		(K β F ⋅ K α F)_c \,,
 	\end{align*}
-	and therefore altogether the equality~$K (β ⋅ α) F = (K β F) ⋅ (K α F)$.
+	and therefore altogether the equality~$K (β ⋅ α) F = K β F ⋅ K α F$.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}[Whiskering and vertical composition~II]
 	\label{one-sided whiskering and vertical composition}
 	Let~$\cat{C}$,~$\cat{D}$ and~$\cat{E}$ be three categories.
 	\begin{enumerate}
@@ -94,6 +94,40 @@
 	\end{enumerate}
 \end{corollary}
 
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+
+		\item
+			We have~$K (β ⋅ α) = K (β ⋅ α) \Id_{\cat{C}} = K β \Id_{\cat{C}} ⋅ K α \Id_{\cat{C}} = K β ⋅ K α$.
+
+		\item
+			We have~$(β ⋅ α) F = \Id_{\cat{E}} (β ⋅ α) F = \Id_{\cat{E}} β F ⋅ \Id_{\cat{E}} α F = β F ⋅ α F$.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
+
+We now return to the given situation:
+\[
+	\begin{tikzcd}
+		\cat{C}
+		\arrow[r, bend left = 70, "F", ""{name=A1, below}]
+		\arrow[r, "G" description, ""{name=B1, above}, ""{name=C1, below}]
+		\arrow[r, bend right = 70, "H", swap, ""{name=D1, above}]
+		\arrow[Rightarrow, from=A1, to=B1, "α"]
+		\arrow[Rightarrow, from=C1, to=D1, "β"]
+		&
+		\cat{D}
+		\arrow[r, bend left = 70, "J", ""{name=A2, below}]
+		\arrow[r, "K" description, ""{name=B2, above}, ""{name=C2, below}]
+		\arrow[r, bend right = 70, "L", swap, ""{name=D2, above}]
+		\arrow[Rightarrow, from=A2, to=B2, "γ"]
+		\arrow[Rightarrow, from=C2, to=D2, "δ"]
+		&
+		\cat{E}
+	\end{tikzcd}
+\]
 The diagram
 \[
 	\begin{tikzcd}[every arrow/.append style={Rightarrow}, row sep = huge]
@@ -136,26 +170,35 @@ The diagram
 		L H
 	\end{tikzcd}
 \]
-commutes by the definition of the horizontal composition of natural transformations (the four inner squares) and by \cref{one-sided whiskering and vertical composition} (the four outer parts).
-The overall natural transformation from $J F$ to~$L H$ in this diagram is given by $(δ * β) ⋅ (γ * α)$.
-But we also know that the diagram
+commutes by definition of the horizontal composition of natural transformations (the four inner squares) and by \cref{one-sided whiskering and vertical composition} (the four outer parts).
+The above diagram has the following subdiagram:
 \[
-	\begin{tikzcd}[every arrow/.append style={Rightarrow}, column sep = 6em, row sep = huge]
+	\begin{tikzcd}[
+			every arrow/.append style = {Rightarrow},
+			column sep = 7em,
+			row sep = 4em
+		]
 		J F
 		\arrow{r}[above]{(δ ⋅ γ) F}
-		\arrow{dr}[above right]{(δ ⋅ γ) * (β ⋅ α)}
+		\arrow{dr}[above right]{(δ * β) ⋅ (γ * α)}
 		\arrow{d}[left]{J (β ⋅ α)}
 		&
 		L F
 		\arrow{d}[right]{L (β ⋅ α)}
 		\\
 		J H
-		\arrow{r}[above]{(δ ⋅ γ) H}
+		\arrow{r}[below]{(δ ⋅ γ) H}
 		&
 		L H
 	\end{tikzcd}
 \]
-commutes by the definition of the horizontal composition of natural transformations, whence this natural transformation from~$J F$ to~$L H$ is also given by~$(δ ⋅ γ) * (β ⋅ α)$.
+But the composite of the upper horizontal arrow and right-side vertical arrow is given by
+\[
+	L(β ⋅ α) ⋅ (δ ⋅ γ)F
+	=
+	(δ ⋅ γ) * (β ⋅ α) \,.
+\]
+(The same goes for the composite of the left-side vertical arrow with the lower horizontal arrow.)
 Consequently,
 \[
 	(δ * β) ⋅ (γ * α) = (δ ⋅ γ) * (β ⋅ α) \,.

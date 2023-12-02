@@ -16,10 +16,18 @@ We have for every object~$c$ of~$\cat{C}$ the associated inclusion functor
 	\quad
 	g \mapsto (\id_c, g) \,.
 \]
-The composite~$F ∘ I_c$ is again a functor.
+The composite~$F I_c$ is again a functor.
 This composite is precisely~$F(c, \ph)$, whence we have found that~$F(c, \ph)$ is indeed a functor.
+It is given on objects by
+\[
+	F(c, \ph)(d) = F(c, d) \,,
+\]
+and on morphisms by
+\[
+	F(c, \ph)(g) = F(\id_c, g) \,.
+\]
 
-To describe the action of~$F(c, \ph)$ on morphisms in~$\cat{C}$, let~$f \colon c \to c'$ be such a morphism.
+To describe how~$F(c, \ph)$ depends on~$\cat{C}$, let~$f \colon c \to c'$ be a morphism in~$\cat{C}$.
 We have for every morphism~$g \colon d \to d'$ in~$\cat{D}$ the following commutative square diagram in~$\cat{C} × \cat{D}$:
 \[
 	\begin{tikzcd}[row sep = huge]
@@ -64,7 +72,7 @@ Denoting~$F(f, \id_d)$ as~$F(f, \ph)_d$, we can rewrite this commutative diagram
 		\arrow{d}[right]{F(f, \ph)_{d'}}
 		\\
 		F (c', \ph)(d)
-		\arrow{r}[below]{F (\id_{c'}, \ph)(g)}
+		\arrow{r}[below]{F (c', \ph)(g)}
 		&
 		F (c', \ph)(d')
 	\end{tikzcd}
@@ -91,9 +99,11 @@ The first equality holds true because
 	=
 	F (\id_c, \id_d)
 	=
+	F \id_{(c, d)}
+	=
 	\id_{F (c, d)}
 	=
-	\id_{F(c, \ph) d}
+	\id_{F(c, \ph)(d)}
 	=
 	(\id_{F(c, \ph)})_d
 \]
@@ -106,11 +116,11 @@ The second equality holds true because
 	&=
 	F (f' f, \id_d \id_d) \\
 	&=
-	F ( (f', \id_d) (f, \id_d) ) \\
+	F ( (f', \id_d) ⋅ (f, \id_d) ) \\
 	&=
-	F(f', \id_d) F(f, \id_d) \\
+	F(f', \id_d) ⋅ F(f, \id_d) \\
 	&=
-	F(f', \ph)_d F(f, \ph)_d \\
+	F(f', \ph)_d ⋅ F(f, \ph)_d \\
 	&=
 	(F(f', \ph) ⋅ F(f, \ph))_d
 \end{align*}
@@ -148,7 +158,7 @@ We have for every morphism~$(f, g) \colon (c, d) \to (c', d')$ in~$\cat{C} × \c
 We let~$G'(f, g)$ be the diagonal morphism in this diagram, which is a morphism in~$\cat{E}$ from~$G'(c, d)$ to~$G'(c', d')$.
 
 We claim that the assignment~$G'$ is a functor from~$\cat{C} × \cat{D}$ to~$\cat{E}$.
-It remains to show the functoriality of~$G'$.
+It remains to verify the functoriality of~$G'$.
 \begin{itemize}
 
 	\item
@@ -169,7 +179,7 @@ It remains to show the functoriality of~$G'$.
 				G(c)(d)
 			\end{tikzcd}
 		\]
-		The functor value~$G(c')$ is itself a functor, from~$\cat{D}$ to~$\cat{E}$, whence
+		The functor value~$G(c)$ is itself a functor, from~$\cat{D}$ to~$\cat{E}$, whence
 		\[
 			G(c)(\id_d) = \id_{G(c)(d)} = \id_{G'(c, d)} \,.
 		\]
@@ -196,7 +206,7 @@ It remains to show the functoriality of~$G'$.
 		We see that the diagonal morphism in this diagram is~$\id_{G'(c, d)}$.
 
 	\item
-		We also need to show that~$G'((f', g') (f, g)) = G'(f', g') G'(f, g)$ for every two composable morphisms
+		We also need to show that~$G'((f', g') ⋅ (f, g)) = G'(f', g') ⋅ G'(f, g)$ for every two composable morphisms
 		\[
 			(f, g) \colon (c, d) \to (c', d')
 			\quad\text{and}\quad
@@ -241,19 +251,19 @@ It remains to show the functoriality of~$G'$.
 				G(c'')(d'')
 			\end{tikzcd}
 		\]
-		Leaving out the middle node of this diagram, we get the following commutative diagram:
+		Leaving out the middle node of this diagram, we get the following commutative subdiagram:
 		\[
 			\begin{tikzcd}[row sep = 4em, column sep = 7.2em]
 				G(c)(d)
-				\arrow{r}[above]{G(c)(g') G(c)(g)}
-				\arrow{d}[left]{G(f')_d G(f)_d}
-				\arrow{dr}[description]{G'(f', g') G(f, g)}
+				\arrow{r}[above]{G(c)(g') ⋅ G(c)(g)}
+				\arrow{d}[left]{G(f')_d ⋅ G(f)_d}
+				\arrow{dr}[description]{G'(f', g') ⋅ G(f, g)}
 				&
 				G(c)(d'')
-				\arrow{d}[right]{G(f')_{d''} G(f)_{d''}}
+				\arrow{d}[right]{G(f')_{d''} ⋅ G(f)_{d''}}
 				\\
 				G(c'')(d)
-				\arrow{r}[below]{G(c'')(g') G(c'')(g)}
+				\arrow{r}[below]{G(c'')(g') ⋅ G(c'')(g)}
 				&
 				G(c'')(d'')
 			\end{tikzcd}
@@ -281,8 +291,8 @@ It remains to show the functoriality of~$G'$.
 			\end{tikzcd}
 		\]
 
-		The morphism~$G'((f', g')(f, g)) = G'(f' f, g' g)$ is defined as the diagonal morphism in precisely this commutative square diagram.
-		Consequently, this morphism agrees with the composite~$G'(f', g') G'(f, g)$.
+		The morphism~$G'((f', g') ⋅ (f, g)) = G'(f' f, g' g)$ is defined as the diagonal morphism in precisely this commutative square diagram.
+		Consequently, this morphism agrees with the composite~$G'(f', g') ⋅ G'(f, g)$.
 
 \end{itemize}
 
@@ -291,6 +301,8 @@ It remains to show the functoriality of~$G'$.
 \subsubsection*{The constructions are mutually inverse}
 
 It remains to show that the two constructions are mutually inverse.
+
+\paragraph{First part}
 
 Let first~$F$ be a bifunctor from~$\cat{C} × \cat{D}$ to~$\cat{E}$, let~$F'$ be the induced functor from~$\cat{C}$ to~$\cat{E}^{\cat{D}}$, and let~$F''$ be the induced bifunctor from~$\cat{C} × \cat{D}$ to~$\cat{E}$.
 
@@ -338,15 +350,17 @@ Using the definition of~$F'$, this diagram can be rewritten as follows:
 \]
 The diagonal morphism in this diagram is given by
 \[
-	F(f, \id_{d'}) F(\id_c, g)
+	F(f, \id_{d'}) ⋅ F(\id_c, g)
 	=
-	F((f, \id_{d'}) (\id_c, g))
+	F((f, \id_{d'}) ⋅ (\id_c, g))
 	=
 	F(f \id_c, \id_{d'} g)
 	=
 	F(f, g) \,.
 \]
 This shows altogether that~$F''(f, g)$ equals~$F(f, g)$.
+
+\paragraph{Second part}
 
 Let now~$G$ be a functor from~$\cat{C}$ to~$\cat{E}^{\cat{D}}$.
 Let~$G'$ be the induced bifunctor from~$\cat{C} × \cat{D}$ to~$\cat{E}$, and let~$G''$ be the induced functor from~$\cat{C}$ to~$\cat{D}^{\cat{E}}$.
@@ -393,9 +407,9 @@ We need to show that the two functors~$G''(c)$ and~$G(c)$ from~$\cat{D}$ to~$\ca
 		\]
 		It follows that the diagonal morphism in the above diagram is
 		\[
-			G(c)(g) G(\id_c)_d
+			G(c)(g) ⋅ G(\id_c)_d
 			=
-			G(c)(g) \id_{G(c)(d)}
+			G(c)(g) ⋅ \id_{G(c)(d)}
 			=
 			G(c)(g) \,.
 		\]
@@ -427,9 +441,9 @@ The morphism~$G''(f)_d$ is defined as~$G'(f, \id_d)$, which in turn is defined a
 We know from the functoriality of~$G(c)$ that~$G(c)(\id_d) = \id_{G(c)(d)}$.
 The diagonal morphism in the above diagram is therefore given by
 \[
-	G(f)_d G(c)(\id_d)
+	G(f)_d ⋅ G(c)(\id_d)
 	=
-	G(f)_d \id_{G(c)(d)}
+	G(f)_d ⋅ \id_{G(c)(d)}
 	=
 	G(f)_d \,,
 \]

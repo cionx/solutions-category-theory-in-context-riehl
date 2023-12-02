@@ -17,7 +17,7 @@ Consider the following diagram of functors and natural transformations:
 		\cat{E}
 	\end{tikzcd}
 \end{equation}
-The vertical composite of~$α$ and~$β$ was originally defined componentwise as the composite morphism in the following commutative diagram:
+The vertical composite of~$α$ and~$β$ was originally defined componentwise as the diagonal morphism in the following commutative diagram:
 \[
 	\begin{tikzcd}[row sep = huge]
 		H F c
@@ -36,7 +36,7 @@ The vertical composite of~$α$ and~$β$ was originally defined componentwise as 
 \]
 We also know that the horizontal and vertical composition satisfy the interchange rule
 \[
-	(α ⋅ β) * (γ ⋅ δ) = (α * γ) ⋅ (β * δ)
+	(δ ⋅ γ) * (β ⋅ α) = (δ * β) ⋅ (γ * α)
 \]
 whenever we are in the following situation:
 \[
@@ -123,7 +123,7 @@ and therefore the natural transformations
 	β F ≔ β * \id_F \,.
 \]
 
-However, we can also conversely express horizontal composition via vertical composition and whiskering:
+However, we can also conversely express horizontal composition via vertical composition and whiskering, as required by this exercise:
 in the situation of the diagram~\eqref{diagram for horizontal composition of natural transformations} we have the sequence of equalities
 \[
 	β * α
@@ -146,20 +146,23 @@ as well as the sequence of equalities
 \]
 These equations give us two ways of expressing horizontal composition via vertical composition and whiskering.
 
-We can derive whiskering from the previous exercise:
-In the situations of the diagrams~\eqref{diagrams for the whiskering of natural transformations} we can express the whiskered natural transformations~$H α$ and~$β F$ via the previous exercise as
+We can express the overall situation by the following commutative diagram of natural transformations:
 \[
-	H α = H α \Id_{\cat{C}}
-	\quad\text{and}\quad
-	β F = \Id_{\cat{E}} β F \,.
+	\begin{tikzcd}[
+			every arrow/.append style={Rightarrow},
+			row sep = huge
+		]
+		HF
+		\arrow{r}[above]{Hα}
+		\arrow{d}[left]{βF}
+		\arrow{dr}[above right]{β * α}
+		&
+		HG
+		\arrow{d}[right]{βG}
+		\\
+		KF
+		\arrow{r}[below]{Kα}
+		&
+		KG
+	\end{tikzcd}
 \]
-
-Altogether we can redefine the horizontal composition of natural transformations via the previous exercise and the vertical composition of natural transformations as
-\[
-	β * α = \Id_{\cat{E}} K α ⋅ β F \Id_{\cat{C}} \,,
-	\quad{\text{or equivalently}}
-	β * α = \Id_{\cat{E}} β G ⋅ H α \Id_{\cat{C}} \,.
-\]
-
-One upshot of this possible redefinition of the horizontal composition is that the horizontal composite~$β * α$ is indeed a natural transformation.
-Indeed, we have already seen that the vertical composite of natural transformations is again a natural transformation, and we have seen in the previous exercise that~$\Id_{\cat{E}} K α$,~$β F \Id_{\cat{C}}$,~$\Id_{\cat{E}} β G$ and~$H α \Id_{\cat{C}}$ are again natural transformations.
