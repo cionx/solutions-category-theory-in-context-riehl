@@ -84,13 +84,43 @@ Whether the functor~$F$ is full depends on the ring~$R$:
 \begin{itemize*}
 
 	\item
-		If~$R$ is a localization of~$ℤ$, then every additive map between~$R$-modules is already~\linear{$R$}.
-
-	\item
 		The functor~$F$ will typically not be full, because an additive map between~\modules{$R$} is not necessarily~\linear{$R$}.
 
 	\item
-		The author suspects that the functor~$F$ is full whenever the unique ring homomorphism~$ℤ \to R$ is an epimorphism, but doesn’t have a proof for this conjecture (nor a counterexample).
+		If~$R$ is either a quotient or localization of~$ℤ$, then every additive map between~$R$-modules is already~\linear{$R$}.
+
+	\item
+		Suppose more generally that the unique homomorphism of rings from~$ℤ$ to~$R$ is an epimorphism.
+
+		It then follows that the two canonical homomorphisms of rings from~$R$ to~$R ⊗_ℤ R$ are equal, since they are equal after pre-composition with the homomorphism~$ℤ \to R$.
+		In other words,~$r ⊗ 1 = 1 ⊗ r$ in~$R ⊗_ℤ R$ for every~$r ∈ R$.
+
+		Let now~$M$ and~$N$ be two~\modules{$R$} and let~$f \colon M \to N$ be an additive map.
+		For~$m ∈ M$ we can then consider the auxiliary map
+		\[
+			h
+			\colon
+			R ⊗_ℤ R \to N \,,
+			\quad
+			r_1 ⊗ r_2 \mapsto r_1 f (r_2 m)
+		\]
+		because~$f$ is additive.
+		We find that
+		\[
+			r f(m)
+			=
+			h(r ⊗ 1)
+			=
+			h(1 ⊗ r)
+			=
+			f(r m)
+		\]
+		for every~$r ∈ R$.
+		This shows that the map~$f$ is already~\linear{$R$}.
+
+		Our argumentation is essentially taken from \cite{stackexchange_epimorphisms_induces_full_forgetful_functor}.
+		A ring for which the unique homomorphism of rings~$ℤ \to R$ is an epimorphism is called \defemph{solid}.
+		More information and references about solid rings can be found at \cite{stackexchange_solid_rings}.
 
 \end{itemize*}
 
