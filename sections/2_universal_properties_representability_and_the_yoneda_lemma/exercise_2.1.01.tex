@@ -7,16 +7,12 @@ We denote the given functors by
 	𝟙 \to 𝟚 \,,
 	&\quad
 	0 &\mapsto 0 \,,
-	&\quad
-	\id_0 &\mapsto \id_0 \,,
 	\\
 	I_1
 	&\colon
 	𝟙 \to 𝟚 \,,
 	&\quad
 	0 &\mapsto 1 \,,
-	&\quad
-	\id_0 &\mapsto \id_1 \,,
 \end{alignat*}
 as well as
 \[
@@ -26,9 +22,9 @@ as well as
 	\quad
 	0, 1 \mapsto 0 \,,
 	\quad
-	\id_0, \id_1, e \mapsto \id_0 \,,
+	i \mapsto \id_0 \,,
 \]
-where~$e \colon 0 \to 1$ denotes the unique non-identity morphism in~$𝟚$.
+where~$i \colon 0 \to 1$ denotes the unique non-identity morphism in~$𝟚$.
 These functors induce morphisms in~$\Cat$, i.e., natural transformations,
 \begin{align*}
 	I_0^* &\colon \Cat(𝟚, \ph) \to \Cat(𝟙, \ph) \,,
@@ -37,4 +33,71 @@ These functors induce morphisms in~$\Cat$, i.e., natural transformations,
 	\\
 	P^* &\colon \Cat(𝟙, \ph) \to \Cat(𝟚, \ph) \,.
 \end{align*}
-Under the canonical isomorphisms~$\Cat(𝟚, \ph) ≅ \Mor$ and~$\Cat(𝟙, \ph) ≅ \Ob$ the natural transformation~$I_0^*$ maps each morphism to its domain, the natural transformation~$I_1^*$ maps each morphism to its codomain, and the natural transformation~$P^*$ assigns to each object its identity morphism.
+Under the canonical isomorphisms~$\Cat(𝟚, \ph) ≅ \mor$ and~$\Cat(𝟙, \ph) ≅ \ob$ these natural transformation correspond to natural transformations
+\begin{align*}
+	α, β \colon \mor \to \ob \,,
+	\quad
+	γ \colon \ob \to \mor \,.
+\end{align*}
+
+
+
+\subsubsection*{The natural transformation~$α$}
+
+Let~$f \colon x \to y$ be a morphism in a small category~$\cat{C}$.
+Under the isomorphism~$\Cat(𝟚, \cat{C}) ≅ \mor \cat{C}$ the morphism~$f$ corresponds to the functor
+\[
+	F
+	\colon
+	𝟚 \to \cat{C} \,,
+	\quad
+	0 \mapsto x \,,
+	\quad
+	1 \mapsto y \,,
+	\quad
+	i \mapsto f \,.
+\]
+The resulting functor~$I_0^*(F) = F I_0$ is given by
+\[
+	F I_0
+	\colon
+	𝟙 \to \cat{C} \,,
+	\quad
+	0 \mapsto x \,.
+\]
+Under the isomorphism~$\Cat(𝟙, \cat{C}) ≅ \ob \cat{C}$ the functor~$F I_0$ corresponds to the object~$x$.
+
+We find overall that the component~$α_{\cat{C}} \colon \mor \cat{C} \to \ob \cat{C}$ assigns to each morphism its domain.
+
+
+
+\subsubsection*{The natural transformation~$β$}
+
+We find in the same way that for every small category~$\cat{C}$ the component~$β_{\cat{C}}$ assigns to each morphism in~$\cat{C}$ its codomain.
+
+
+
+\subsubsection*{The natural transformation~$γ$}
+
+Let~$x$ be an object of a small category~$\cat{C}$.
+The corresponding functor under the isomorphism~$\Cat(𝟙, \cat{C}) ≅ \ob \cat{C}$ is given by
+\[
+	F
+	\colon
+	𝟙 \to \cat{C} \,,
+	\quad
+	0 \mapsto x \,.
+\]
+The resulting functor~$P^*(F) = P F$ is given by
+\[
+	P F
+	\colon
+	𝟚 \to \cat{C} \,,
+	\quad
+	0, 1 \mapsto x \,,
+	\quad
+	i \mapsto \id_x \,.
+\]
+Under the isomorphism~$\Cat(𝟚, \cat{C}) ≅ \mor \cat{C}$ the functor~$P F$ corresponds to the morphism~$\id_x$.
+
+We find overall that the component~$γ_{\cat{C}} \colon \ob \cat{C} \to \mor \cat{C}$ assigns to each object its identity morphism.
