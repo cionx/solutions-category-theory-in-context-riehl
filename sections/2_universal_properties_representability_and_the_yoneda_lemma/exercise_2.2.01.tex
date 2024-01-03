@@ -1,11 +1,12 @@
 \subsection{}
 
-A dual version of the Yoneda lemma is as follows:
+The dual version of the Yoneda lemma is as follows:
 \begin{quote}
-	\itshape
 	For every contravariant functor~$F \colon \cat{C} \to \Set$, whose domain~$\cat{C}$ is locally small, and every object~$c$ of~$\cat{C}$, the map
 	\[
-		Φ \colon \Hom( \cat{C}(\ph, c), F )
+		Φ
+		\colon
+		\Hom( \cat{C}(\ph, c), F )
 		\to
 		F c \,,
 		\quad
@@ -42,7 +43,7 @@ that
 \[
 	α_x( f )
 	=
-	α_x( \id_c f )
+	α_x( \id_c ⋅ f )
 	=
 	α_x( f^*( \id_c ) )
 	=
@@ -65,9 +66,10 @@ We consider for every object~$x$ of~$\cat{C}$ the map
 	\quad
 	g \mapsto (F g)(u) \,.
 \]
+(Note that if~$g$ is a morphism from~$x$ to~$c$ in~$\cat{C}$, then~$F g$ is a map from~$F c$ to~$F x$, whence~$(F g)(u)$ is a well-defined element of the set~$F x$.)
 We claim that the family~$α ≔ (α_x)_{x ∈ \cat{C}}$ is a natural transformation from~$\cat{C}(\ph, c)$ to~$F$ with~$Φ(α) = u$.
 
-To see that~$α$ is a natural transformation from~$\cat{C}(\ph, c)$ to~$F$, we consider an arbitrary morphism~$f \colon x \to y$ in~$\cat{C}$ and the resulting commutative diagram:
+To see that~$α$ is a natural transformation from~$\cat{C}(\ph, c)$ to~$F$, we consider an arbitrary morphism~$f \colon x \to y$ in~$\cat{C}$ and the resulting diagram:
 \[
 	\begin{tikzcd}
 		\cat{C}(y, c)
@@ -85,17 +87,17 @@ To see that~$α$ is a natural transformation from~$\cat{C}(\ph, c)$ to~$F$, we c
 \]
 This diagram commutes because
 \[
-	α_x( f^*( g ) )
+	α_x( f^*( h ) )
 	=
-	α_x( g f )
+	α_x( h f )
 	=
-	F(g f)(u)
+	F(h f)(u)
 	=
-	(F f)( (F g)( u ) )
+	(F f)( (F h)( u ) )
 	=
-	(F f)( α_y( g ) )
+	(F f)( α_y( h ) )
 \]
-for every element~$g$ of~$\cat{C}(y, c)$, i.e., every morphism~$g \colon c \to y$ in~$\cat{C}$.
+for every element~$h$ of~$\cat{C}(y, c)$, i.e., every morphism~$h \colon c \to y$ in~$\cat{C}$.
 This shows the naturality of~$α$.
 
 We also have~$Φ(α) = α_c(\id_c) = (F \id_c)(u) = \id_{F(c)}(u) = u$, as desired.
@@ -134,11 +136,11 @@ One path from the top-left corner to the bottom-right corner in the diagram~\eqr
 	&=
 	(α ⋅ f_*)_c( \id_c ) \\
 	&=
-	(α_c ∘ (f_*)_c)(\id_c) \\
+	(α_c ⋅ (f_*)_c)(\id_c) \\
 	&=
 	α_c( (f_*)_c( \id_c ) ) \\
 	&=
-	α_c( f \id_c ) \\
+	α_c( f ⋅ \id_c ) \\
 	&=
 	α_c( f ) \,.
 \end{align*}
@@ -166,7 +168,7 @@ commutes by the naturality of~$α$, whence
 	=
 	α_c( f^*( \id_d ) )
 	=
-	α_c( \id_d f )
+	α_c( \id_d ⋅ f )
 	=
 	α_c( f ) \,.
 \]
@@ -205,10 +207,10 @@ The sequence of equalities
 	=
 	(β ⋅ α)_c( \id_c )
 	=
-	(β_c α_c)( \id_c )
+	(β_c ⋅ α_c)( \id_c )
 	=
 	β_c( α_c( \id_c ) )
 	=
 	β_c( Φ_F( α ) )
 \]
-tells us that the above diagram indeed commutes.
+tells us that the diagram indeed commutes.

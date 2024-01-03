@@ -46,10 +46,10 @@ We denote this natural isomorphism from~$\Set(\ph, Ω)$ to~$P$ by~$α$.
 \begin{enumerate}
 
 	\item
-		The natural endomorphism~$\id_*$ of~$\Set(\ph, Ω)$ is~$\id_{\Set(\ph, Ω)}$.
+		The natural endomorphism~$(\id_Ω)_*$ of~$\Set(\ph, Ω)$ is~$\id_{\Set(\ph, Ω)}$.
 		The corresponding endomorphism of~$P$ is given by
 		\[
-			α \id_* α^{-1}
+			α ⋅ (\id_Ω)_* ⋅ α^{-1}
 			=
 			α \id_{\Set(\ph, Ω)} α^{-1}
 			=
@@ -62,8 +62,7 @@ We denote this natural isomorphism from~$\Set(\ph, Ω)$ to~$P$ by~$α$.
 	\item
 		The natural endomorphism of~$P$ induced by~$σ$ is given by~$α σ_* α^{-1}$, and its components are given by
 		\begin{align*}
-			\SwapAboveDisplaySkip
-			(α σ_* α^{-1})_X(A)
+			(α ⋅ σ_* ⋅ α^{-1})_X(A)
 			&=
 			α_X( (σ_*)_X( α_X^{-1}( A ) ) ) \\
 			&=
@@ -84,7 +83,7 @@ We denote this natural isomorphism from~$\Set(\ph, Ω)$ to~$P$ by~$α$.
 	\item
 		The natural endomorphism of~$P$ induced by~$c_⊤$ is given by~$α (c_⊤)_* α^{-1}$, and its components are given by
 		\begin{align*}
-			(α (c_⊤)_* α^{-1})_X(A)
+			(α ⋅ (c_⊤)_* ⋅ α^{-1})_X(A)
 			&=
 			\dotsb \\
 			&=
@@ -99,11 +98,11 @@ We denote this natural isomorphism from~$\Set(\ph, Ω)$ to~$P$ by~$α$.
 	\item
 		The natural endomorphism of~$P$ induced by~$c_⊥$ is given by~$α (c_⊥)_* α^{-1}$, and its components are given by
 		\begin{align*}
-			(α (c_⊥)_* α^{-1})_X(A)
+			(α ⋅ (c_⊥)_* ⋅ α^{-1})_X(A)
 			&=
 			\dotsb \\
 			&=
-			χ_A^{-1}( c_⊥^{-1}( ⊥ ) ) \\
+			χ_A^{-1}( c_⊥^{-1}( ⊤ ) ) \\
 			&=
 			χ_A^{-1}( ∅ ) \\
 			&=

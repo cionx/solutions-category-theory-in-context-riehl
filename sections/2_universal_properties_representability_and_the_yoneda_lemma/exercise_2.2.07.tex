@@ -29,29 +29,29 @@ We can further characterize homeomorphisms of the unit interval.
 	Also,~$f$ is strictly decreasing if and only if~$σ f$ is strictly increasing.
 	It therefore suffices to consider the first case.
 
-	We observe that if~$x$ and~$y$ are two points in~$I$ with~$x < y$ and~$f(x) < f(y)$, then we have~$f(x) < f(z) < f(y)$ for every~$z$ with~$x < z < y$.
+	We observe that if~$x$ and~$y$ are two points in~$I$ with~$x < y$ and~$f(x) < f(y)$, then we have~$f(x) < f(t) < f(y)$ for every~$t$ with~$x < t < y$.
 	Indeed, suppose otherwise.
-	Then either~$f(z) ≤ f(x) < f(y)$ or~$f(x) < f(y) ≤ f(z)$.
+	Then either~$f(t) ≤ f(x) < f(y)$ or~$f(x) < f(y) ≤ f(t)$.
 	\begin{itemize*}
 
 		\item
-			If~$f(z) ≤ f(x) < f(y)$, then it follows from the intermediate value theorem that
+			If~$f(t) ≤ f(x) < f(y)$, then it follows from the intermediate value theorem that
 			\[
-				f(x) ∈ [f(z), f(y)] ⊆ f([z, y])
+				f(x) ∈ [f(t), f(y)] ⊆ f([t, y])
 			\]
-			even though~$x$ is not contained in the interval~$[z, y]$.
+			even though~$x$ is not contained in the interval~$[t, y]$.
 			This contradicts the injectivity of~$f$.
 
 		\item
-			If~$f(x) < f(y) ≤ f(z)$, then it follows from the intermediate value theorem that
+			If~$f(x) < f(y) ≤ f(t)$, then it follows from the intermediate value theorem that
 			\[
-				f(y) ∈ [f(x), f(z)] ⊆ f([x, z])
+				f(y) ∈ [f(x), f(t)] ⊆ f([x, t])
 			\]
-			even though~$y$ is not contained in the interval~$[x, z]$.
+			even though~$y$ is not contained in the interval~$[x, t]$.
 			This contradicts the injectivity of~$f$.
 
 	\end{itemize*}
-	This shows that indeed~$f(x) < f(z) < f(y)$.
+	This shows that indeed~$f(x) < f(t) < f(y)$.
 
 	Let now~$x, y ∈ I$ with~$x < y$.
 	\begin{itemize*}
@@ -80,7 +80,7 @@ We can further characterize homeomorphisms of the unit interval.
 	It hence suffices to show that under the given conditions,~$f$ is continuous.
 	(As swapping the roles of~$f$ and~$f^{-1}$ will then also show that~$f^{-1}$ is continuous.)
 
-	We have~$f(0) ≤ x$ for every~$x ∈ I$, therefore~$f(0) ≤ f(x)$ for every~$x ∈ I$, and thus~$f(0) = 0$ because~$f$ is surjective.
+	We have~$0 ≤ x$ for every~$x ∈ I$, therefore~$f(0) ≤ f(x)$ for every~$x ∈ I$, thus~$f(0) ≤ y$ for every~$y ∈ I$ because~$f$ is surjective, and hence~$f(0) = 0$.
 	We find in the same way that also~$f(1) = 1$.
 
 	It follows that the extended map
