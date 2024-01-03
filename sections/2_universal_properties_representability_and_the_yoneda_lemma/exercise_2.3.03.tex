@@ -1,20 +1,51 @@
 \subsection{}
 
-The evaluation map is given by
+The isomorphism
 \[
-	\ev
+	α
 	\colon
-	B^A × A \to B \,,
-	\quad
-	(f, a) \mapsto f(a) \,,
+	\Set(\ph, B^A)
+	\cong
+	\Set(\ph × A, B)
 \]
-and it has the following universal property:
+is explicitly given by
+\begin{equation}
+	\label{explicit description of currying}
+	α_X(φ)(x, a) = φ(x)(a)
+\end{equation}
+for every set~$X$, every function~$φ \colon X \to B^A$ and all~$(x, a) ∈ X × A$.
+
+The universal element~$\ev$ corresponding to the isomorphism~$α$ is given by~$α_{B^A}(\id_{B^A})$.
+It is thus an element of~$\Set(B^A × A, B)$, i.e., a map from~$B^A × A$ to~$B$.
+It follows from the explicit formula~\eqref{explicit description of currying} that this map is given by
+\[
+	\ev(f, a)
+	=
+	α_{B^A}( \id_{B^A} )(f, a)
+	=
+	\id_{B^A}(f)(a)
+	=
+	f(a)
+\]
+for all~$(f, a) ∈ B^A × A$.
+The map~$\ev$ is thus given by evaluation of the first item at the second item.
+
+The Yoneda lemma tells us for the functor~$F ≔ \Set(\ph × A, B)$ that the entire natural transformation~$α \colon \Set(\ph, B^A) \To F$ is uniquely determined by the element~$\ev$ of~$F(B^A)$.
+More explicitly,~$α_X(φ) = (F φ)(\ev)$ for every set~$X$, and therefore
+\[
+	α_X(φ) = (F φ)(\ev) = {\ev} ⋅ (φ × \id_A) \,.
+\]
+That~$α$ is a natural isomorphism means that~$α_X$ is bijective for every set~$X$.
+In other words:
 \begin{quote}
-	\itshape
-	For every set~$C$ and every map~$f \colon C × A \to B$, there exists a unique map~$φ \colon C \to B^A$ such that~$f(c, a) = \ev(φ(c), a)$ for all~$(c, a) ∈ C × A$, i.e., such that the following diagram commutes:
+	For every set~$X$ and every element~$f$ of~$F X$ there exists a unique element~$φ$ of~$\Set(X, B^A)$ with~$α_X(φ) = f$.
+\end{quote}
+We can expand this condition as follows:
+\begin{quote}
+	For every set~$X$ and every map~$f \colon X × A \to B$, there exists a unique map~$φ \colon X \to B^A$ such that~$f(c, a) = \ev(φ(c), a)$ for all~$(c, a) ∈ X × A$, i.e., such that the following diagram commutes:
 	\[
 		\begin{tikzcd}
-			C × A
+			X × A
 			\arrow{r}[above]{f}
 			\arrow{d}[left]{φ × \id_A}
 			&
