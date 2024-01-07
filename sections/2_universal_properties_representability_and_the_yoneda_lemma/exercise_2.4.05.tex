@@ -11,29 +11,30 @@ In other words, the preorders~$≤_X$ and~$≤_Y$ and the map~$f$ need to satisf
 	f(x) ≤_Y f(x')
 \]
 for all~$x, x' ∈ X$.
-(This entails that the map~$f$ is increasing with~$≤_X$ and~$≤_Y$, but the actual condition is stronger than that.)
+(This entails that the map~$f$ is increasing with respect to the preorders~$≤_X$ and~$≤_Y$.)
 
-The functor~$F$ is not representable.
+We claim that the functor~$F$ is not representable.
 
-To see this, we note that for every preorder~$≤$ on a set~$X$ we have an associated equivalence relation~$∼$ given by
+To prove this claim, we note that for every preorder~$≤$ on a set~$X$ we have an associated equivalence relation~$∼$ given by
 \[
 	x ∼ x' \iff (\text{$x ≤ x'$ and~$x' ≤ x$}) \,.
 \]
 We call the number of equivalence classes of this equivalence relation the \defemph{order size} of~$≤$, and denote it by~$\size(X, ≤)$, or simply by~$\size(X)$.
 
-The order size of a preorder tells how many elements can be at most distinguished by the preorder.
+The order size of a preorder tells how many elements can be at most distinguished by that preorder.
 Consequently, if a preorder on a set~$X$ is the pullback of a preorder on a set~$Y$ via a map~$f \colon X \to Y$, then
 \[
 	\size(X) ≤ \size(Y) \,.
 \]
-Note that this entails that if~$X$ is a subset of~$Y$ together with the restricted preorder, then~$\size(X) ≤ \size(Y)$.
 
-It follows that if the functor~$F$ is representable, then the order size of \emph{every} preordered set would be bound by that of the representing object:
+Suppose that the functor~$F$ were representable by an object~$R$ and a universal element~$≤_R$.
+This would mean that there exists for every preordered set~$(X, ≤_X)$ a unique function~$f \colon X \to R$ such that~$≤_X$ is the pullback of~$≤_R$ along~$f$.
+This then entails that the order size of \emph{every} preordered set~$X$ would be bound by that of the representing object:
 \[
 	\size(X) ≤ \size(R)
 \]
 for every preordered set~$X$ and the representing preordered set~$R$.
-To show that the functor~$F$ is not representable, it therefore suffices to show that for every order size~$κ$ (which is a cardinal number) there exists a preordered set whose order size is strictly larger than~$κ$.
+To show that the functor~$F$ is not representable it therefore suffices to show that for any arbitrarily large cardinal number~$κ$ there exists a preordered set whose order size at least~$κ$.
 
 We can consider for every set~$X$ the discrete preorder on~$X$, for which no two distinct elements are comparable.
 The order size of~$X$ is then its cardinality.

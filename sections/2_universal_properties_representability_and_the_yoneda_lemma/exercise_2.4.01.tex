@@ -1,15 +1,15 @@
 \subsection{}
 
-Let~$S$ be the singleton category consisting of only a single object~$s$ and its identity morphism.
-Let~$C$ be the functor from~$S$ to~$\Set$ corresponding to the singleton set~$\{ \ast \}$, i.e., the unique functor with~$C s = \{ \ast \}$.
+Let~$\cat{S}$ be the singleton category consisting of only a single object~$s$ and its identity morphism.
+Let~$C$ be the functor from~$\cat{S}$ to~$\Set$ corresponding to the singleton set~$\{ \ast \}$, i.e., the unique functor with~$C s = \{ \ast \}$.
 The comma category~$C ↓ F$ looks as follows:
 \begin{itemize*}
 
 	\item
-		The objects of~$C ↓ F$ are triples of the form~$(s, c, ξ)$ consisting of the unique object~$s$ of~$S$, an object~$c$ of~$\cat{C}$, and a map~$f$ from the set~$C s = \{ \ast \}$ to the set~$F c$.
+		The objects of~$C ↓ F$ are triples of the form~$(s, c, ξ)$ consisting of the unique object~$s$ of~$\cat{S}$, an object~$c$ of~$\cat{C}$, and a map~$f$ from the set~$C s = \{ \ast \}$ to the set~$F c$.
 
 	\item
-		A morphism in~$\ast ↓ F$ from an object~$(s, c, ξ)$ to an object~$(s, c', ξ')$ is a pair~$(f_0, f_1)$ of morphisms~$f_0 \colon s \to s$ in~$S$ and~$f \colon c \to c'$ in~$\cat{C}$ that makes the following diagram commute:
+		A morphism in~$C ↓ F$ from an object~$(s, c, ξ)$ to an object~$(s, c', ξ')$ is a pair~$(f_0, f_1)$ of morphisms~$f_0 \colon s \to s$ in~$\cat{S}$ and~$f \colon c \to c'$ in~$\cat{C}$ that makes the following diagram commute:
 		\[
 			\begin{tikzcd}
 				\{ \ast \}
@@ -28,7 +28,7 @@ The comma category~$C ↓ F$ looks as follows:
 
 \end{itemize*}
 
-The category~$S$ has a single object and single morphism.
+The category~$\cat{S}$ has a single object and single morphism.
 This allows us to simplify the comma category~$C ↓ F$ by replacing it with the following isomorphic category~$\cat{D}$:
 \begin{itemize*}
 

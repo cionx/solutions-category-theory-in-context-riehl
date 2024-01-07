@@ -35,33 +35,33 @@ We will use the following observations:
 	\[
 		F \id_d = \id_{F d}
 		\quad\text{and}\quad
-		F (g f) = (F g) (F f)
+		F (g f) = F g ⋅ F f
 	\]
 	for every object~$d$ of~$\cat{D}$, and for every two composable morphisms~$f \colon d \to d'$ and~$g \colon d' \to d''$ in~$\cat{D}$.
 	As~$Π'$ is faithful, these two conditions are equivalent to the conditions
 	\[
 		Π' F \id_d = Π' \id_{F d}
 		\quad\text{and}\quad
-		Π' F (g f) = Π' ((F g) (F f)) \,.
+		Π' F (g f) = Π' (F g ⋅ F f) \,.
 	\]
-	By the functoriality of~$Π'$ we can rewrite (the right-hand sides of) these two equations as follows:
+	By the functoriality of~$Π'$ we can rewrite these two equations as follows:
 	\[
 		Π' F \id_d = \id_{Π' F d}
 		\quad\text{and}\quad
-		Π' F (g f) = (Π' F g) (Π' F f) \,.
+		Π' F (g f) = Π' F g ⋅ Π' F f \,.
 	\]
-	By the commutativity of the diagram~\eqref{auxiliary diagram for functoriality between categories of elements} we can simplify these equations to
+	By the commutativity of the diagram~\eqref{auxiliary diagram for functoriality between categories of elements} we can now simplify these two equations to
 	\[
 		Π \id_d = \id_{Π d}
 		\quad\text{and}\quad
-		Π (g f) = (Π g) (Π f)) \,.
+		Π (g f) = Π g ⋅ Π f \,.
 	\]
 	These final equations are satisfied by the functoriality of~$Π$.
 \end{proof}
 
 Let~$\cat{C}$ be a category.
 For every functor~$F$ from~$\cat{C}$ to~$\Set$ we denote its category of elements by~$\Elements F$, and the forgetful functor from~$\Elements F$ to~$\cat{C}$ by~$Π_F$.
-The pair~$(\Elements F, Π_F)$ is an object of the category~$\CAT / \cat{C}$.
+The pair~$(\Elements F, Π_F)$ is an object of the slice category~$\CAT / \cat{C}$.
 
 Let~$F, G \colon \cat{C} \to \Set$ be two functors and let~$α \colon F \To G$ be a natural transformation.
 The natural transformation~$α$ induces a functor
@@ -101,9 +101,13 @@ as follows:
 		\]
 		The commutativity of this diagram tells us that
 		\[
-			(G f)(α_c(x)) = α_{c'}(x) \,,
+			(G f)( α_c(x) )
+			=
+			α_{c'}( (F f)(x) )
+			=
+			α_{c'}(x') \,,
 		\]
-		whence~$f$ is a morphism from~$(c, α_c(x))$ to~$(c', α_{c'}(x))$.
+		whence~$f$ is a morphism from~$(c, α_c(x))$ to~$(c', α_{c'}(x'))$.
 		In other words,~$f$ is a morphism from~$(\Elements α) (c, x)$ to~$(\Elements α) (c', x')$.
 		We therefore define
 		\[
@@ -140,7 +144,7 @@ as follows:
 		commutes, whence it follows from \cref{lemma for constructing a functor between categories of elements} that~$\Elements α$ is a functor from~$\Elements F$ to~$\Elements G$.
 \end{itemize}
 
-It remains to show that the induced functor~$\Elements α$ is \emph{itself} functorial in~$α$.
+It remains to show that this induced functor~$\Elements α$ is \emph{itself} functorial in~$α$.
 \begin{itemize}
 
 	\item
@@ -159,7 +163,7 @@ It remains to show that the induced functor~$\Elements α$ is \emph{itself} func
 		for every morphism~$f$ in~$\Elements F$.
 
 	\item
-		We need to show that~$\Elements (β ⋅ α) = (\Elements β) (\Elements α)$ for every two composable natural transformations~$α \colon F \To G$ and~$β \colon G \To H$.%
+		We need to show that~$\Elements (β ⋅ α) = \Elements β ⋅ \Elements α$ for every two composable natural transformations~$α \colon F \To G$ and~$β \colon G \To H$.%
 		This holds true because
 		\begin{align*}
 			\bigl( \Elements β \bigr) \bigl( \Elements α \bigr) (c, x)

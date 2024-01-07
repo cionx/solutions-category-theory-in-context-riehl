@@ -1,23 +1,23 @@
 \subsection{}
 
-We denote the category of elements of the functor~$\Hom(\ph, \ph)$ by~$\cat{E}$, i.e.,
+We denote the category of elements of the functor~$\Hom$ by~$\cat{E}$, i.e.,
 \[
 	\cat{E}
 	≔
-	\Elements \Hom(\ph, \ph) \,.
+	\Elements \Hom{} \,.
 \]
 The category~$\cat{E}$ looks as follows:
 \begin{itemize*}
 
 	\item
-		The objects of~$\cat{E}$ are pairs~$((c, d), f)$ consisting of an object~$(c, d)$ of~$\cat{C}^{\op} × \cat{C}$ and an element~$f$ of~$\Hom(\ph, \ph)(c, d)$.
+		The objects of~$\cat{E}$ are pairs~$((c, d), f)$ consisting of an object~$(c, d)$ of~$\cat{C}^{\op} × \cat{C}$ and an element~$f$ of~$\Hom(c, d)$.
 
 	\item
 		A morphism~$φ$ in~$\cat{E}$ from an object~$((c, d), f)$ to an object~$((c', d'), f')$ is a morphism~$φ \colon (c, d) \to (c', d')$ in~$\cat{C}^{\op} × \cat{C}$ such that~$\Hom(\ph, \ph)(φ)(f) = f'$.
 
 \end{itemize*}
 
-We can simplify this description of~$\cat{E}$ by unraveling the structure of~$\cat{C}^{\op} × \cat{C}$.
+We can simplify this description of~$\cat{E}$ by unraveling the structure of~$\cat{C}^{\op} × \cat{C}$ and of the bifunctor~$\Hom$.
 We then arrive at the following category~$\cat{T}$:
 \begin{itemize*}
 
@@ -25,7 +25,7 @@ We then arrive at the following category~$\cat{T}$:
 		The objects of~$\cat{T}$ are triples~$(c, f, d)$ consisting of two objects~$c$ and~$d$ of~$\cat{C}$ and a morphism~$f \colon c \to d$ in~$\cat{C}$.
 
 	\item
-		A morphism~$φ$ in~$\cat{T}$ from an object~$(c, f, d)$ to another object~$(c', f', d')$ is a pair~$(φ, ψ)$ of morphisms~$φ \colon c' \to c$ and~$ψ \colon d \to d'$ in~$\cat{C}$ such that~$ψ f φ = f'$, i.e., such that the following square diagram commutes:
+		A morphism in~$\cat{T}$ from an object~$(c, f, d)$ to another object~$(c', f', d')$ is a pair~$(φ, ψ)$ of morphisms~$φ \colon c' \to c$ and~$ψ \colon d \to d'$ in~$\cat{C}$ such that~$ψ f φ = f'$, i.e., such that the following square diagram commutes:
 		\begin{equation}
 			\label{morphisms in twisted arrow category}
 			\begin{tikzcd}
