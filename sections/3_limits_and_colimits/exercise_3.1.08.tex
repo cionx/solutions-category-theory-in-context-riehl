@@ -31,7 +31,7 @@ We provide a diagram to keep track of the auxiliary morphisms that will be intro
 		\arrow[dashed]{dr}[above right]{k}
 		\arrow[dashed, bend right]{ddr}[below left]{l}
 		\arrow[dashed, bend left = 20]{drr}[below left]{m}
-		\arrow[dashed, bend right = 15, crossing over]{ddrr}[pos = 0.8, above right]{p}
+		\arrow[dashed, bend right = 15, crossing over]{ddrr}[pos = 0.25, below left]{p}
 		\arrow[dashed, bend left = 25]{drrr}[above right]{q}
 		&
 		{}
@@ -70,7 +70,11 @@ Suppose first that the left-hand square diagram is a pullback square.
 We then have for every object~$x$ of~$\cat{C}$ the sequence of bijections
 \begin{align*}
 	{}&
-	\{ k \suchthat k \colon x \textto c \}
+	\{
+		k
+		\suchthat
+		k \colon x \textto c
+	\}
 	\\
 	≅{}&
 	\left\{
@@ -88,7 +92,7 @@ We then have for every object~$x$ of~$\cat{C}$ the sequence of bijections
 		\suchthat*
 		\begin{tabular}{l}
 			$l \colon x \to d$,~$p \colon x \to d'$ and~$q \colon x \to c''$ \\
-			with~$g' p = h'' q$ and~$g l = p$
+			with~$g l = p$ and~$g' p = h'' q$
 		\end{tabular}
 	\right\}
 	\\
@@ -118,7 +122,11 @@ Suppose now conversely that the outer rectangular diagram is a pullback square.
 We then have for every object~$x$ of~$\cat{C}$ the sequence of bijections
 \begin{align*}
 	{}&
-	\{ k \suchthat k \colon x \textto c \}
+	\{
+		k
+		\suchthat
+		k \colon x \textto c
+	\}
 	\\
 	≅{}&
 	\left\{
@@ -136,7 +144,7 @@ We then have for every object~$x$ of~$\cat{C}$ the sequence of bijections
 		\suchthat*
 		\begin{tabular}{l}
 			$l \colon x \to d$,~$p \colon x \to d'$ and~$q \colon x \to c''$ \\
-			with~$g' p = h'' q$ and~$p = g l$
+			with~$p = g l$ and~$g' p = h'' q$
 		\end{tabular}
 	\right\}
 	\\
@@ -146,7 +154,7 @@ We then have for every object~$x$ of~$\cat{C}$ the sequence of bijections
 		\suchthat*
 		\begin{tabular}{l}
 			$l \colon x \to d$ and~$m \colon x \to c'$ \\
-			with~$g' h' m = h'' f' m$ and~$h' m = g l$
+			with~$h' m = g l$ and~$g' h' m = h'' f' m$
 		\end{tabular}
 	\right\}
 	\\
@@ -158,8 +166,12 @@ We then have for every object~$x$ of~$\cat{C}$ the sequence of bijections
 			$l \colon x \to d$ and~$m \colon x \to c'$ \\
 			with~$h' m = g l$
 		\end{tabular}
-	\right\}
+	\right\}%
+	\footnotemark
 \end{align*}
+\footnotetext{
+	We can drop the condition~$g' h' m = h'' f' m$ since it follows from the commutativity of the right-hand square.
+}
 given by
 \[
 	k
@@ -172,7 +184,7 @@ given by
 \]
 where~$m$ is the unique morphism from~$x$ to~$c'$ with~$h' m = g h k$ and~$f' m = f' f k$.
 The morphism~$f k$ satisfies these defining equations of~$m$, whence~$m = f k$.
-The above bijections are thus overall given by
+The above bijection is thus overall given by
 \[
 	k \mapsto (h k, f k) \,.
 \]

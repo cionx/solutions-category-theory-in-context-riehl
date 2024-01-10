@@ -52,10 +52,9 @@ Given that~$ι_j = F u_j$ and~$ι_k = F u_k$, this diagram is the image of the d
 under the functor~$F$.
 This original diagram in~$\cat{J}$ commutes because there exists \emph{exactly one} morphism from~$i$ to~$k$ in~$\cat{J}$.
 It follows from the functoriality of~$F$ that the original diagram~\eqref{original diagram for initial limit cone} commutes.
-This shows that~$ι$ is a cone over~$F$ with summit~$F i$.
 
-We now need to check that~$ι$ is the universal cone over~$F$.
-We need to show that for every other cone~$λ$ over~$F$, with cone~$c$, there exists a unique morphism~$f$ from~$c$ to~$F i$ in~$\cat{C}$ that is a morphism of cones from~$λ$ to~$ι$.
+We now need to check that~$(Fi, ι)$ is a universal cone over~$F$.
+We need to show that for every other cone~$(c, λ)$ over~$F$ there exists a unique morphism of cones~$f$ from~$λ$ to~$ι$.
 \begin{itemize*}
 
 	\item
@@ -138,7 +137,6 @@ We need to show that for every other cone~$λ$ over~$F$, with cone~$c$, there ex
 
 We have thus proven the following:
 \begin{quote}
-	\itshape
 	Let~$\cat{J}$ be a category with initial object~$i$, let~$\cat{C}$ be another category and let~$F \colon \cat{J} \to \cat{C}$ be a diagram of shape~$\cat{J}$ in~$\cat{C}$.
 	For every object~$j$ of~$\cat{J}$ let~$u_j$ be the unique morphism from~$i$ to~$j$.
 	The family~$(F u_j)_{j ∈ \cat{J}}$ is a limit cone over~$F$ with summit~$F i$.
@@ -150,8 +148,7 @@ We have thus proven the following:
 We can dualize the above result:
 
 \begin{quote}
-	\itshape
-	Let~$\cat{J}$ be a category with terminal object~$t$, let~$\cat{C}$ be another category and let~$F \colon \cat{J} \to \cat{C}$ be a diagram of shape~$\cat{J}$ in~$\cat{C}$.
+	Let~$\cat{J}$ be a category with terminal object~$t$, let~$\cat{C}$ be another category and let~$F$ be a diagram of shape~$\cat{J}$ in~$\cat{C}$.
 	For every object~$j$ of~$\cat{J}$ let~$v_j$ be the unique morphism from~$j$ to~$t$.
 	The family~$(F v_j)_{j ∈ \cat{J}}$ is a colimit cone under~$F$ with nadir~$F t$.
 \end{quote}

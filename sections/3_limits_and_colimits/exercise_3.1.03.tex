@@ -9,7 +9,7 @@ This category therefore looks as follows:
 \begin{itemize*}
 
 	\item
-		The objects of~$\Cones(F)$ are pairs~$(c, (λ_j)_j)$ consisting of an object~$c$ of~$\cat{C}$ and a cone~$(λ_j)_j$ over~$F$ with summit~$c$.
+		The objects of~$\Cones(F)$ are pairs~$(c, λ)$ consisting of an object~$c$ of~$\cat{C}$ and a cone~$λ = (λ_j)_j$ over~$F$ with summit~$c$.
 		This means that each~$λ_j$ is a morphism from~$c$ to~$F j$, subject to the commutativity of the triangular diagram
 		\[
 			\begin{tikzcd}[column sep = normal]
@@ -32,7 +32,7 @@ This category therefore looks as follows:
 		for every morphism~$u \colon j \to k$ in~$\cat{J}$.
 
 	\item
-		A morphism in~$\Cones(F)$ from a cone~$(c, (λ_j)_j)$ to a cone~$(d, (μ_j)_j)$ is a morphism~$f \colon c \to d$ in~$\cat{C}$ such that the triangular diagram
+		A morphism in~$\Cones(F)$ from a cone~$(c, λ)$ to a cone~$(d, μ)$ is a morphism~$f \colon c \to d$ in~$\cat{C}$ such that the triangular diagram
 		\[
 			\begin{tikzcd}[column sep = normal]
 				c
@@ -52,13 +52,13 @@ This category therefore looks as follows:
 			\end{tikzcd}
 		\]
 		commutes for every object~$j$ of~$\cat{J}$.
-		In other words, we need to have for the induced map
+		In other words, we have for the induced map
 		\[
 			f^*
 			\colon
 			\Cone(d, F) \to \Cone(c, F) \,,
 			\quad
-			(μ_j)_j \mapsto (μ_j f)_j
+			(ν_j)_j \mapsto (ν_j f)_j
 		\]
 		the equality~$λ = f^*(μ)$.
 
@@ -90,7 +90,7 @@ The category~$Δ ↓ F$, on the other hand, looks as follows:
 				{}
 			\end{tikzcd}
 		\]
-		That is, we need to have the equality~$α = Δ(f)^*(β)$.
+		That is, we have the equality~$α = Δ(f)^*(β)$.
 
 \end{itemize*}
 We have already seen in our solution to the previous exercise (Exercise~3.1.ii) that objects of~$\Cones(F)$ are the same as objects of~$Δ ↓ F$, as a family~$λ = (λ_j)_j$ is a cone over~$F$ with summit~$c$ if and only if~$λ$ is a natural transformation from~$Δ(c)$ to~$F$.

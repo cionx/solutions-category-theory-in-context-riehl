@@ -2,8 +2,7 @@
 
 The general definition of a cone over~$F$ is as follows:
 \begin{quote}
-	\itshape
-	A cone over~$F$ with summit~$p$, where~$p$ is some object in~$\cat{P}$, is a family~$(λ_j)_{j ∈ \cat{J}}$ of morphisms~$λ_j \colon p \to F j$ with~$j ∈ \cat{J}$, subject to the commutivity of the triangular diagram
+	A cone over~$F$ with summit~$p$, where~$p$ is some object in~$\cat{P}$, is a family~$(λ_j)_{j ∈ \cat{J}}$ of morphisms~$λ_j \colon p \to F j$ with~$j ∈ \cat{J}$, subject to the commutativity of the triangular diagram
 	\[
 		\begin{tikzcd}[column sep = normal]
 			{}
@@ -28,14 +27,12 @@ The general definition of a cone over~$F$ is as follows:
 The category~$\cat{P}$ is a poset, whence every diagram in~$\cat{P}$ commutes.
 We can therefore simplify the above definition:
 \begin{quote}
-	\itshape
 	A cone over~$F$ with summit~$p$, where~$p$ is some object in~$\cat{P}$, is a family~$(λ_j)_{j ∈ \cat{J}}$ of morphisms~$λ_j \colon p \to F j$ with~$j ∈ \cat{J}$.
 \end{quote}
 
 There exists for every object~$p$ of~$\cat{P}$ at most one morphism from~$p$ to~$F j$ in~$\cat{P}$, and this morphism exists if and only if~$p ≤ F j$.
 We therefore find the following:
 \begin{quote}
-	\itshape
 	Let~$p$ be an object of~$\cat{P}$.
 	There exists a cone on~$F$ with summit~$p$ if and only if~$p ≤ F j$ for every~$j ∈ \cat{J}$.
 	This cone is then unique.
@@ -46,12 +43,11 @@ Every morphism from~$p$ to~$p'$ is then automatically a morphism of cones, becau
 Consequently, there exists a morphism of cones from~$p$ to~$p'$ if and only if there exists a morphism from~$p$ to~$p'$ in~$\cat{P}$, which is the case if and only if~$p ≤ p'$.
 We thus find the following:
 \begin{quote}
-	\itshape
 	Let~$p$ be an object of~$\cat{P}$ with~$p ≤ F j$ for every~$j ∈ \cat{J}$, i.e., the summit of a cone over~$F$.
 	The cone determined by~$p$ is a limit cone for~$F$ if and only if for every other summit~$p'$ we have~$p' ≤ p$.
 \end{quote}
 
-In other words, a limit cone over~$F$ is uniquely determined by its summit, which is precisely a greatest upper bound for the objects~$F j$ with~$j ∈ \cat{J}$.
+In other words, a limit cone over~$F$ is uniquely determined by its summit, which is precisely a greatest lower bound for the objects~$F j$ with~$j ∈ \cat{J}$.
 The limit of~$F$ is thus the infimum of the elements~$F j$ with~$j ∈ \cat{J}$.
 
 Dually, the colimit of~$F$ is the supremum of the elements~$F j$ with~$j ∈ \cat{J}$.
