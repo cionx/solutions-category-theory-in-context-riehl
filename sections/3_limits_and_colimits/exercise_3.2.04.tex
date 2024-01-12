@@ -1,0 +1,45 @@
+\subsection{}
+
+A natural transformation~$α \colon F \To G$ is a family~$α = (α_j)_{j ∈ \cat{J}}$ such that for every morphism~$f \colon j \to k$ in~$J$ the following diagram commutes:
+\[
+	\begin{tikzcd}
+		F j
+		\arrow{r}[above]{F f}
+		\arrow{d}[left]{α_j}
+		&
+		F k
+		\arrow{d}[right]{α_k}
+		\\
+		G j
+		\arrow{r}[above]{G f}
+		&
+		G k
+	\end{tikzcd}
+\]
+In other words, we need the equality
+\[
+	α_k ⋅ F f = G f ⋅ α_j
+\]
+for every morphism~$f \colon j \to k$ in~$\cat{C}$.
+We can therefore describe~$\Hom(F, G)$ as the equalizer
+\[
+	\begin{tikzcd}
+		\Hom(F, G)
+		\arrow[tail]{r}
+		&
+		\displaystyle
+		∏_{j ∈ \cat{J}} \cat{C}(F j, G j)
+		\arrow[shift left]{r}[above]{φ}
+		\arrow[shift right]{r}[below]{ψ}
+		&
+		\displaystyle
+		∏_{\substack{f \colon j \to k \\ \text{in~$\cat{J}$}}} \cat{C}(F j, G k)
+	\end{tikzcd}
+\]
+where the two maps~$φ$ and~$ψ$ are given by
+\[
+	φ( α )_f = α_k ⋅ F f \,,
+	\quad
+	ψ( α )_f = G f ⋅ α_j \,,
+\]
+for every morphism~$f \colon j \to k$ in~$\cat{C}$.
