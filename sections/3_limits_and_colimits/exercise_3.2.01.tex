@@ -1,0 +1,151 @@
+\subsection{}
+
+We abbreviate the sets~$\mor C$ and~$\ob C$ as~$M$ and~$O$ respectively.
+We have thus two sets~$M$ and~$O$ and the functions
+\[
+	\dom, \codom \colon M \to O \,,
+	\quad
+	\idfun \colon O \to M \,.
+\]
+The domain of the composition function is the set
+\[
+	\{
+		(f, g) ∈ M × M
+		\suchthat
+		\codom f = \dom g
+	\} \,,
+\]
+which can be described as the pullback of the following diagram:
+\[
+	\begin{tikzcd}
+		{}
+		&
+		M
+		\arrow{d}[right]{\codom}
+		\\
+		M
+		\arrow{r}[below]{\dom}
+		&
+		O
+	\end{tikzcd}
+\]
+We thus denote this domain by~$M ×_O M$, so that
+\[
+	\comp
+	\colon
+	M ×_O M \to M \,,
+	\quad
+	(f, g) \mapsto gf
+\]
+is the composition function.
+
+We need to express in terms of diagrams the associativity of~$\comp$ and that identities act as neutral elements with respect to decomposition.
+\begin{itemize}
+
+	\item
+		To express the associativity of composition we need to introduce the triple-pull\-back
+		\[
+			M ×_O M ×_O M
+			≔
+			\left\{
+				(f, g, h) ∈ M × M × M
+				\suchthat*
+				\begin{array}{l}
+					\codom f = \dom g \,, \\
+					\codom g = \dom h
+				\end{array}
+			\right\} \,.
+		\]
+		The associativity of~$\comp$ can be expressed by the commutativity of the following diagram:
+		\[
+			\begin{tikzcd}
+				M ×_O M ×_O M
+				\arrow{d}[left]{{\comp} × {\id}}
+				\arrow{r}[above]{{\id} × {\comp}}
+				&
+				M ×_O M
+				\arrow{d}[right]{\comp}
+				\\
+				M ×_O M
+				\arrow{r}[below]{\comp}
+				&
+				M
+			\end{tikzcd}
+		\]
+
+	\item
+		We need for every object~$x$ that~$x$ is both the domain and the codomain of~$\id_x$:
+		This means that the following two diagrams have to commute:
+		\[
+			\begin{tikzcd}
+				O
+				\arrow{r}[above]{\idfun}
+				\arrow{dr}[below left]{\id}
+				&
+				M
+				\arrow{d}[right]{\dom}
+				\\
+				{}
+				&
+				O
+			\end{tikzcd}
+			\qquad
+			\begin{tikzcd}
+				O
+				\arrow{r}[above]{\idfun}
+				\arrow{dr}[below left]{\id}
+				&
+				M
+				\arrow{d}[right]{\codom}
+				\\
+				{}
+				&
+				O
+			\end{tikzcd}
+		\]
+		This then ensures that we have well-defined maps
+		\[
+			α_1
+			\colon
+			M \to M ×_O M \,,
+			\quad
+			f \mapsto (\id_{\dom f}, f)
+		\]
+		and
+		\[
+			α_2
+			\colon
+			M \to M ×_O M \,,
+			\quad
+			f \mapsto (f, \id_{\codom f}) \,.
+		\]
+		We need for the following two diagrams to commute:
+		\[
+			\begin{tikzcd}
+				M
+				\arrow{r}[above]{α_1}
+				\arrow{dr}[below left]{\id}
+				&
+				M ×_O M
+				\arrow{d}[right]{\comp}
+				\\
+				{}
+				&
+				M
+			\end{tikzcd}
+			\qquad
+			\begin{tikzcd}
+				M
+				\arrow{r}[above]{α_2}
+				\arrow{dr}[below left]{\id}
+				&
+				M ×_O M
+				\arrow{d}[right]{\comp}
+				\\
+				{}
+				&
+				M
+			\end{tikzcd}
+		\]
+
+\end{itemize}
