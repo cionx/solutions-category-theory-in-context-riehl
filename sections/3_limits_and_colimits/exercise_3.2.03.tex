@@ -1,0 +1,28 @@
+\subsection{}
+
+We can describe~$\Sq(f, g)$ more explicitly as
+\[
+	\Sq(f, g)
+	=
+	\{
+		(h, k)
+		\suchthat
+		h \colon a \textto c, \,
+		k \colon b \textto d, \,
+		g h = k f
+	\} \,.
+\]
+In other words,~$\Sq(f, g)$ is the pullback of the following diagram:
+\[
+	\begin{tikzcd}
+		{}
+		&
+		\cat{C}(a, c)
+		\arrow{d}[right]{g_*}
+		\\
+		\cat{C}(b, d)
+		\arrow{r}[below]{f^*}
+		&
+		\cat{C}(a, d)
+	\end{tikzcd}
+\]
