@@ -1,0 +1,34 @@
+\subsection{}
+
+The category~$∫ F$ looks as follows:
+\begin{itemize*}
+
+	\item
+		The objects of~$∫ F$ are pairs~$(j, x)$ consisting of an object~$j$ of~$\cat{J}$ and an element~$x$ of~$F j$.
+
+	\item
+		A morphism from~$(j, x)$ to~$(k, y)$ in~$∫ F$ is a morphism~$f \colon j \to k$ in~$\cat{J}$ with~$y = (F f)(x)$.
+
+\end{itemize*}
+
+A section~$Σ$ to the canonical projection functor~$Π \colon ∫ F \to \cat{J}$ therefore looks as follows:
+\begin{itemize*}
+
+	\item
+		To every object~$j$ of~$\cat{J}$ we associate an object~$(j, x_j)$ of~$∫ F$, with~$x_j$ an element of the set~$F j$.
+
+	\item
+		To every morphism~$f \colon j \to k$ in~$\cat{J}$ we associate~$f$ regarded as a morphism from~$(j, x_j)$ to~$(k, x_k)$.
+		This means precisely that we have~$(F f)(x_j) = x_k$.
+
+\end{itemize*}
+The functor conditions~$Σ(\id_j) = \id_{Σ j}$ and~$Σ(g f) = Σ g ⋅ Σ f$ are then automatically satisfied.
+
+We hence see that a section of~$Π$ is the same as a choice of elements~$x_j ∈ F j$ for~$j ∈ \cat{J}$ that is consistent in the sense that~$(F f)(x_j) = x_k$ for every morphism~$f \colon j \to k$ in~$\cat{J}$.
+But these conditions mean precisely that the family~$(x_j)_{j ∈ \cat{J}}$ defines an element of~$\lim F$.
+We hence see that sections of~$Π$ correspond one-to-one to elements of~$\lim F$.
+
+This observation allows us to \emph{define}~$\lim F$ as the set of sections of~$Π$.
+The legs~$λ \colon \lim F \To F$ can then be described as follows:
+if~$Σ$ is a section of~$Π$, and thus an element of~$\lim F$, then~$Σ j = (j, λ_j(Σ))$.
+In other words,~$λ_j(Σ)$ is the projection of~$Σ j$ onto its second coordinate.
