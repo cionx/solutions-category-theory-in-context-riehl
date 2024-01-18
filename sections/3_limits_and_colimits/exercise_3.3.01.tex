@@ -1,0 +1,45 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+We have in~$\cat{C}$ the colimit cone~$κ \colon K \To \colim K$ under~$K$.
+Applying the functor~$F$ to the diagram~$K$ and the cone~$κ \colon K \to \colim K$ under it yields the cone
+\[
+	F κ \colon F K \To F \colim K
+\]
+under~$F K$ in~$\cat{D}$.
+The colimit cone~$γ \colon F K \To \colim F K$ is the initial cone under~$F K$, whence there exists a unique morphism of cones~$f$ as depicted:
+\[
+	\begin{tikzcd}[column sep = small]
+		{}
+		&
+		F K
+		\arrow[Rightarrow]{dl}[above left]{γ}
+		\arrow[Rightarrow]{dr}[above right]{F κ}
+		&
+		{}
+		\\
+		\colim F K
+		\arrow{rr}[above]{f}
+		&
+		{}
+		&
+		F \colim K
+	\end{tikzcd}
+\]
+
+
+
+\subsubsection{}
+
+Suppose first that~$F$ preserves colimits.
+The cone~$F κ \colon F K \To F \colim K$ is then a colimit cone under~$F K$.
+The morphism~$f$ is thus an isomorphism of cones by the uniqueness of colimits.
+
+Suppose now that the morphism~$f$ is an isomorphism in~$\cat{D}$.
+It is then an isomorphism of cones from~$γ \colon F K \To \colim F K$ to~$F κ \colon F K \To F \colim K$.
+As~$γ \colon F K \To \colim F K$ is initial in the category of cones under~$F K$, it follows that the isomorphic cone~$F κ \colon F K \To F \colim K$ is also initial.
+In other words, it is again a colimit cone.
+This shows that~$F$ preserves colimits.
