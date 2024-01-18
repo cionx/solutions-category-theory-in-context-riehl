@@ -1,0 +1,79 @@
+\subsection{}
+
+We consider for simplicity only limits.
+Colimits can be dealt with in the same way.
+
+Let~$F \colon \cat{C} \to \cat{D}$ be a full and faithful functor.
+Let~$K \colon \cat{J} \to \cat{C}$ be a diagram in~$\cat{C}$ and let~$λ \colon ℓ \To K$ be a cone over~$K$.
+Suppose that the induced cone~$F λ \colon F ℓ \To F K$ is a limit cone in~$\cat{D}$.
+We need to show that~$λ \colon ℓ \To K$ was a limit cone to begin with.
+In other words, we need to show that for every cone~$κ \colon c \To K$ in~$\cat{C}$ there exists a unique morphism of cones from~$κ \colon c \To K$ to~$λ \colon ℓ \To K$.
+
+We start with the existence.
+To this end we consider in~$\cat{D}$ the induced cone~$F κ \colon F c \To F K$.
+There exists a unique morphism of cones~$h$ as depicted below because~$F λ \colon F ℓ \To F K$ is a limit cone over~$F K$:
+\[
+	\begin{tikzcd}[column sep = small]
+		F c
+		\arrow{rr}[above]{h}
+		\arrow[Rightarrow]{dr}[below left]{F κ}
+		&
+		{}
+		&
+		F ℓ
+		\arrow[Rightarrow]{dl}[below right]{F λ}
+		\\
+		{}
+		&
+		F K
+		&
+		{}
+	\end{tikzcd}
+\]
+There exists a unique morphism~$f \colon c \to ℓ$ in~$\cat{C}$ with~$h = F f$ because~$F$ is both full and faithful.
+We have therefore the following commutative diagram in~$\cat{D}$:
+\[
+	\begin{tikzcd}[column sep = small]
+		F c
+		\arrow{rr}[above]{F f}
+		\arrow[Rightarrow]{dr}[below left]{F κ}
+		&
+		{}
+		&
+		F ℓ
+		\arrow[Rightarrow]{dl}[below right]{F λ}
+		\\
+		{}
+		&
+		F K
+		&
+		{}
+	\end{tikzcd}
+\]
+It follows from the faithfulness of~$F$ that the original diagram
+\[
+	\begin{tikzcd}[column sep = small]
+		c
+		\arrow{rr}[above]{f}
+		\arrow[Rightarrow]{dr}[below left]{κ}
+		&
+		{}
+		&
+		ℓ
+		\arrow[Rightarrow]{dl}[below right]{λ}
+		\\
+		{}
+		&
+		K
+		&
+		{}
+	\end{tikzcd}
+\]
+in~$\cat{C}$ commutes.
+This tells us that~$f$ is a morphism of cones from~$κ \colon c \To K$ to~$λ \colon ℓ \To K$.
+
+We now show the uniqueness.
+To this end let~$g$ be any morphism of cones from~$κ \colon c \To K$ to~$λ \colon ℓ \To K$ in~$\cat{C}$.
+It follows that~$F g$ is a morphism of cones from~$F κ \colon F c \to FK$ to~$F λ \colon F ℓ \to F K$ in~$\cat{D}$.
+Therefore,~$F g = h$ by the uniqueness of~$h$.
+This means that~$F g = F f$, and thus~$g = f$ because~$F$ is faithful.
